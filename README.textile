@@ -40,10 +40,10 @@ h3. Mobello Studio (coming soon)
 
 h1. Documentation (Korean)
 
-* "¼³Ä¡ÇÏ±â - FileSystem":http://mobello-kr.tumblr.com/post/21685709384/filesystem
-* "¼³Ä¡ÇÏ±â - WebServer":http://mobello-kr.tumblr.com/post/21692818757/webserver
-* "Ã³À½ ½ÃÀÛÇÏ±â - part1":http://mobello-kr.tumblr.com/post/21686783051/part1
-* "Ã³À½ ½ÃÀÛÇÏ±â - part2":http://mobello-kr.tumblr.com/post/21691198274/part2
+* "ì„¤ì¹˜í•˜ê¸° - FileSystem":http://mobello-kr.tumblr.com/post/21685709384/filesystem
+* "ì„¤ì¹˜í•˜ê¸° - WebServer":http://mobello-kr.tumblr.com/post/21692818757/webserver
+* "ì²˜ìŒ ì‹œì‘í•˜ê¸° - part1":http://mobello-kr.tumblr.com/post/21686783051/part1
+* "ì²˜ìŒ ì‹œì‘í•˜ê¸° - part2":http://mobello-kr.tumblr.com/post/21691198274/part2
 
 h1. License
 
