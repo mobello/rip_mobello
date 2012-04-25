@@ -40,10 +40,15 @@ h3. Mobello Studio (coming soon)
 
 h1. Documentation (Korean)
 
-* "설치하기 - FileSystem":http://mobello-kr.tumblr.com/post/21685709384/filesystem
-* "설치하기 - WebServer":http://mobello-kr.tumblr.com/post/21692818757/webserver
-* "처음 시작하기 - part1":http://mobello-kr.tumblr.com/post/21686783051/part1
-* "처음 시작하기 - part2":http://mobello-kr.tumblr.com/post/21691198274/part2
+* "설치하기 - FileSystem":http://mobello.tumblr.com/post/21685709384/filesystem
+* "설치하기 - WebServer":http://mobello.tumblr.com/post/21692818757/webserver
+* "처음 시작하기 - part1":http://mobello.tumblr.com/post/21686783051/part1
+* "처음 시작하기 - part2":http://mobello.tumblr.com/post/21691198274/part2
+* "네비게이션 구현하기 - part1":http://mobello.tumblr.com/post/21706116835/part1
+* "네비게이션 구현하기 - part2":http://mobello.tumblr.com/post/21706121024/part2
+* "Table과 TableCell을 이용한 연락처 구현하기 - part1":http://mobello.tumblr.com/post/21706131998/table-tablecell-part1
+* "Table과 TableCell을 이용한 연락처 구현하기 - part2":http://mobello.tumblr.com/post/21706135932/table-tablecell-part2
+
 
 h1. License
 
@@ -55,6 +60,6 @@ h1. Contacts
 
 * Email: "mobello.js@gmail.com":mailto:mobello.js@gmail.com
 * Twitter: <a href="https://twitter.com/mobello_js" target="_blank">@mobello_js</a>
-* Blog: <a href="http://mobello.tumblr.com/" target="_blank">http://mobello.tumblr.com/</a>
+* Blog: <a href="http://mobello.tumblr.com/" target="_blank">http://mobello.tumblr.com/ (korean) </a> <br> &nbsp;&nbsp;&nbsp;&nbsp; <a href="http://mobellojs.tumblr.com/" target="_blank">http://mobellojs.tumblr.com/ (english) </a>
 * Location: KT R&D Center, 17 Woomyeon-dong, Seocho-gu, Seoul, Korea 137-792
 	<a href="http://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=kt+%EC%97%B0%EA%B5%AC%EA%B0%9C%EB%B0%9C&amp;aq=&amp;sll=37.470941,127.029542&amp;sspn=0.003683,0.006968&amp;ie=UTF8&amp;hq=kt+%EC%97%B0%EA%B5%AC%EA%B0%9C%EB%B0%9C&amp;hnear=&amp;t=m&amp;ll=37.470941,127.029542&amp;spn=0.003683,0.006968" style="color:#0000FF;text-align:left" target="_blank">View on google map</a></small>
