@@ -6,7 +6,7 @@ h1. Features
 
 h3. UI Components
 
-!{width:250px}http://mobello.github.com/img/feature-02.png!
+!{width:250px;}http://mobello.github.com/img/feature-02.png!
 
 Mobello includes a complete set of user interface components for building rich mobile web apps.
 
@@ -17,7 +17,7 @@ Mobello includes a complete set of user interface components for building rich m
 
 h3. Mobello Runtime 
 
-!{width:250px}http://mobello.github.com/img/feature-01.png!
+!{width:250px;}http://mobello.github.com/img/feature-01.png!
 
 Runtime manages the lifecycle of installed apps and provides abstractions for interaction and animation, advanced effects.
 
@@ -28,7 +28,7 @@ Runtime manages the lifecycle of installed apps and provides abstractions for in
 
 h3. Mobello Studio (coming soon)
 
-!{width:250px}http://mobello.github.com/img/feature-04.jpg!
+!{width:250px;}http://mobello.github.com/img/feature-04.jpg!
 
 * Design standard web with HTML5 and CSS3
 * Visual Design Editor
