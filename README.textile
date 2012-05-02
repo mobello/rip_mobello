@@ -25,12 +25,12 @@ Runtime manages the lifecycle of installed apps and provides abstractions for in
 
 h3. Mobello Studio (coming soon)
 
-* Design standard web with HTML5 and CSS3
-* Visual Design Editor
+* Design web apps with HTML5 and CSS3
+* Visual design editor
 * Real-time synchronized editing
-* Javascript Debugging
-* Device Emulator
-* Layout Editing
+* Javascript debugging
+* Device emulator
+* Layout editing
 * Eclipse based
 
 h1. Documentation (Korean)
