@@ -48,9 +48,10 @@ h1. Documentation (Korean)
 
 h1. License
 
-Copryright(c) 2012 KT Corp.
-
 Licensed under the LGPL, Version 3.0: http://www.gnu.org/copyleft/lesser.html
+
+Serviced by olleh. Copryright(c) 2012 KT Corp.
+
 
 h1. Contacts
 
