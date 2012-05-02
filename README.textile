@@ -1,7 +1,6 @@
 h1. Mobello, framwork for building HTML5 mobile apps
 
-Mobello is high performance javascript framework for HTML5 mobile apps. You can build native-like HTML5 apps for smartphones and tablets with Mobello. 
-Mobello is open source provided under the LGPL license.
+Mobello is high performance javascript framework for HTML5 mobile apps. You can build native-like HTML5 apps for smartphones and tablets with Mobello. Mobello is open source provided under the LGPL license.
 
 h1. Features
 
