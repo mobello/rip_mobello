@@ -1,60 +1,65 @@
-h1. Mobello, HTML5 framwork for building mobile webapp
+h1. Mobello, HTML5 framwork for building mobile apps
 
-Mobello is HTML5 framwork for building mobile webapp. 
+Mobello is high performance javascript framework for HTML5 mobile apps. You can build native-like HTML5 apps for smartphones and tablets with Mobello. Mobello is open source provided under the LGPL license.
 
 h1. Features
 
 h3. UI Components
 
-!http://mobello.github.com/img/feature-02.png!
 
 Mobello includes a complete set of user interface components for building rich mobile web apps.
 
 * 20+ beautifully designed components
-* Support a wide range of device form-factor
+* Supports wide range of device form-factor
 * Optimized for touch UI
-* Easily extends base components and creates new custom component
+* Extendable and customizable components in easy way
 
 h3. Mobello Runtime 
 
-!http://mobello.github.com/img/feature-01.png!
+Runtime manages the lifecycle of applications and provides abstraction layers for interaction and animation, advanced effects.
 
-Runtime manages the lifecycle of installed apps and provides abstractions for interaction and animation, advanced effects.
-
-* Device indepandant event system (touch events)
+* Device agnostic event system (touch events)
 * Provides advanced amimation
-* Run-time system for multi-app running
-* Provides controllers for general ux patterns.
+* Runtime system for multi-tasking
+* Provides Controllers for general UX patterns
 
 h3. Mobello Studio (coming soon)
 
-!http://mobello.github.com/img/feature-04.jpg!
-
-* Design standard web with HTML5 and CSS3
-* Visual Design Editor
+* Design web apps with HTML5 and CSS3
+* Visual design editor
 * Real-time synchronized editing
-* Javascript Debugging
-* Device Emulator
-* Layout Editing
+* Javascript debugging
+* Device emulator
+* Layout editing
 * Eclipse based
 
-h1. Documentation (Korean)
+h1. Documentation
 
-* "설치하기 - FileSystem":http://mobello-kr.tumblr.com/post/21685709384/filesystem
-* "설치하기 - WebServer":http://mobello-kr.tumblr.com/post/21692818757/webserver
-* "처음 시작하기 - part1":http://mobello-kr.tumblr.com/post/21686783051/part1
-* "처음 시작하기 - part2":http://mobello-kr.tumblr.com/post/21691198274/part2
+h3. "API Documents":http://mobello.github.com/api/index.html
+
+h3. Tutorials
+
+* "모벨로를 소개합니다 [korean]":http://mobello.tumblr.com/post/21634260724
+* "설치하기 - FileSystem [korean]":http://mobello.tumblr.com/post/21685709384/filesystem
+* "설치하기 - WebServer [korean]":http://mobello.tumblr.com/post/21692818757/webserver
+* "처음 시작하기 - part1 [korean]":http://mobello.tumblr.com/post/21686783051/part1
+* "처음 시작하기 - part2 [korean]":http://mobello.tumblr.com/post/21691198274/part2
+* "네비게이션 구현하기 - part1 [korean]":http://mobello.tumblr.com/post/21706116835/part1
+* "네비게이션 구현하기 - part2 [korean]":http://mobello.tumblr.com/post/21706121024/part2
+* "Table과 TableCell을 이용한 연락처 구현하기 - part1 [korean]":http://mobello.tumblr.com/post/21706131998/table-tablecell-part1
+* "Table과 TableCell을 이용한 연락처 구현하기 - part2 [korean]":http://mobello.tumblr.com/post/21706135932/table-tablecell-part2
 
 h1. License
 
-Copryright(c) 2012 KT Corp.
-
 Licensed under the LGPL, Version 3.0: http://www.gnu.org/copyleft/lesser.html
+
 
 h1. Contacts
 
 * Email: "mobello.js@gmail.com":mailto:mobello.js@gmail.com
 * Twitter: <a href="https://twitter.com/mobello_js" target="_blank">@mobello_js</a>
-* Blog: <a href="http://mobello.tumblr.com/" target="_blank">http://mobello.tumblr.com/</a>
+* Blog: <a href="http://mobello.tumblr.com/" target="_blank">http://mobello.tumblr.com/ (korean) </a> <br> &nbsp;&nbsp;&nbsp;&nbsp; <a href="http://mobellojs.tumblr.com/" target="_blank">http://mobellojs.tumblr.com/ (english) </a>
 * Location: KT R&D Center, 17 Woomyeon-dong, Seocho-gu, Seoul, Korea 137-792
 	<a href="http://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=kt+%EC%97%B0%EA%B5%AC%EA%B0%9C%EB%B0%9C&amp;aq=&amp;sll=37.470941,127.029542&amp;sspn=0.003683,0.006968&amp;ie=UTF8&amp;hq=kt+%EC%97%B0%EA%B5%AC%EA%B0%9C%EB%B0%9C&amp;hnear=&amp;t=m&amp;ll=37.470941,127.029542&amp;spn=0.003683,0.006968" style="color:#0000FF;text-align:left" target="_blank">View on google map</a></small>
+
+Serviced by olleh. Copyright(c) 2012 KT Corp.
