@@ -62,4 +62,4 @@ h1. Contacts
 * Location: KT R&D Center, 17 Woomyeon-dong, Seocho-gu, Seoul, Korea 137-792
 	<a href="http://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=kt+%EC%97%B0%EA%B5%AC%EA%B0%9C%EB%B0%9C&amp;aq=&amp;sll=37.470941,127.029542&amp;sspn=0.003683,0.006968&amp;ie=UTF8&amp;hq=kt+%EC%97%B0%EA%B5%AC%EA%B0%9C%EB%B0%9C&amp;hnear=&amp;t=m&amp;ll=37.470941,127.029542&amp;spn=0.003683,0.006968" style="color:#0000FF;text-align:left" target="_blank">View on google map</a></small>
 
-Serviced by olleh. Copryright(c) 2012 KT Corp.
+Serviced by olleh. Copyright(c) 2012 KT Corp.
