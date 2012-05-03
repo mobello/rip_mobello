@@ -10,18 +10,18 @@ h3. UI Components
 Mobello includes a complete set of user interface components for building rich mobile web apps.
 
 * 20+ beautifully designed components
-* Support a wide range of device form-factor
+* Supports wide range of device form-factor
 * Optimized for touch UI
-* Easily extends base components and creates new custom component
+* Extendable and customizable components in easy way
 
 h3. Mobello Runtime 
 
-Runtime manages the lifecycle of installed apps and provides abstractions for interaction and animation, advanced effects.
+Runtime manages the lifecycle of applications and provides abstraction layers for interaction and animation, advanced effects.
 
-* Device indepandant event system (touch events)
+* Device agnostic event system (touch events)
 * Provides advanced amimation
-* Run-time system for multi-app running
-* Provides controllers for general ux patterns.
+* Runtime system for multi-tasking
+* Provides Controllers for general UX patterns
 
 h3. Mobello Studio (coming soon)
 
