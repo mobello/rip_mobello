@@ -35,6 +35,10 @@ h3. Mobello Studio (coming soon)
 
 h1. Documentation (Korean)
 
+h3. "API Documents":http://mobello.github.com/api/index.html
+
+h3. Korean version
+
 * "모벨로를 소개합니다.":http://mobello.tumblr.com/post/21634260724
 * "설치하기 - FileSystem":http://mobello.tumblr.com/post/21685709384/filesystem
 * "설치하기 - WebServer":http://mobello.tumblr.com/post/21692818757/webserver
@@ -44,8 +48,6 @@ h1. Documentation (Korean)
 * "네비게이션 구현하기 - part2":http://mobello.tumblr.com/post/21706121024/part2
 * "Table과 TableCell을 이용한 연락처 구현하기 - part1":http://mobello.tumblr.com/post/21706131998/table-tablecell-part1
 * "Table과 TableCell을 이용한 연락처 구현하기 - part2":http://mobello.tumblr.com/post/21706135932/table-tablecell-part2
-
-h3. "API Documents":http://mobello.github.com/api/index.html
 
 h1. License
 
