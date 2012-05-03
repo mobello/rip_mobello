@@ -33,21 +33,21 @@ h3. Mobello Studio (coming soon)
 * Layout editing
 * Eclipse based
 
-h1. Documentation (Korean)
+h1. Documentation
 
 h3. "API Documents":http://mobello.github.com/api/index.html
 
-h3. Korean version
+h3. Tutorials
 
-* "모벨로를 소개합니다.":http://mobello.tumblr.com/post/21634260724
-* "설치하기 - FileSystem":http://mobello.tumblr.com/post/21685709384/filesystem
-* "설치하기 - WebServer":http://mobello.tumblr.com/post/21692818757/webserver
-* "처음 시작하기 - part1":http://mobello.tumblr.com/post/21686783051/part1
-* "처음 시작하기 - part2":http://mobello.tumblr.com/post/21691198274/part2
-* "네비게이션 구현하기 - part1":http://mobello.tumblr.com/post/21706116835/part1
+* "모벨로를 소개합니다. (korean)":http://mobello.tumblr.com/post/21634260724
+* "설치하기 - FileSystem (korean)":http://mobello.tumblr.com/post/21685709384/filesystem
+* "설치하기 - WebServer (korean)":http://mobello.tumblr.com/post/21692818757/webserver
+* "처음 시작하기 - part1 (korean)":http://mobello.tumblr.com/post/21686783051/part1
+* "처음 시작하기 - part2 (korean)":http://mobello.tumblr.com/post/21691198274/part2
+* "네비게이션 구현하기 - part1 (korean)":http://mobello.tumblr.com/post/21706116835/part1
 * "네비게이션 구현하기 - part2":http://mobello.tumblr.com/post/21706121024/part2
-* "Table과 TableCell을 이용한 연락처 구현하기 - part1":http://mobello.tumblr.com/post/21706131998/table-tablecell-part1
-* "Table과 TableCell을 이용한 연락처 구현하기 - part2":http://mobello.tumblr.com/post/21706135932/table-tablecell-part2
+* "Table과 TableCell을 이용한 연락처 구현하기 - part1 (korean)":http://mobello.tumblr.com/post/21706131998/table-tablecell-part1
+* "Table과 TableCell을 이용한 연락처 구현하기 - part2 (korean)":http://mobello.tumblr.com/post/21706135932/table-tablecell-part2
 
 h1. License
 
