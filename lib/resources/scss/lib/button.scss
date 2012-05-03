@@ -1,0 +1,273 @@
+$tau-button-back-icon: "navigationbar/back_ar.png" !default;
+$button-height: 44px !default;
+$button-small-height: 32px !default;
+
+$button-border: 1px solid #000 !default;
+
+$button-start-bgcolor: #999B9A !default;
+$button-stop1-bgcolor: #6A6B6D !default;
+$button-stop2-bgcolor: #555 !default;
+$button-end-bgcolor: #7E7E7E !default;
+
+$button-highlighted-start-bgcolor: #C2C4C3 !default;
+$button-highlighted-stop1-bgcolor: #868789 !default;
+$button-highlighted-stop2-bgcolor: #6A6C6B !default;
+$button-highlighted-end-bgcolor: #9E9FA1 !default;
+
+$button-selected-start-bgcolor: #008CFF !default;
+$button-selected-stop1-bgcolor: #0074D3 !default;
+$button-selected-stop2-bgcolor: #005Ca7 !default;
+$button-selected-end-bgcolor: #015EAB !default;
+
+$button-disabled-start-bgcolor: #919392 !default;
+$button-disabled-stop1-bgcolor: #717173 !default;
+$button-disabled-stop2-bgcolor: #606261 !default;
+$button-disabled-end-bgcolor: #7E7E7E !default;
+
+$backbutton-start-bgcolor: #6C6C6C !default;
+$backbutton-stop1-bgcolor: #454545 !default;
+$backbutton-stop2-bgcolor: #343434 !default;
+$backbutton-end-bgcolor: #414141 !default;
+
+$backbutton-highlighted-start-bgcolor: #5C5C5A !default;
+$backbutton-highlighted-stop1-bgcolor: #313131 !default;
+$backbutton-highlighted-stop2-bgcolor: #1C1C1C !default;
+$backbutton-highlighted-end-bgcolor: #2C2C2C !default;
+
+$backbutton-selected-start-bgcolor: #005CA9 !default;
+$backbutton-selected-stop1-bgcolor: #013765 !default;
+$backbutton-selected-stop2-bgcolor: #01203C !default;
+$backbutton-selected-end-bgcolor: #012440 !default;
+
+$backbutton-disabled-start-bgcolor: #60605E !default;
+$backbutton-disabled-stop1-bgcolor: #454545 !default;
+$backbutton-disabled-stop2-bgcolor: #383838 !default;
+$backbutton-disabled-end-bgcolor: #414141 !default;
+
+/**
+ * @param {string} [$shape= corner]
+ */
+@mixin tau-button($shape: corner) {
+  /** button *******************************************************************/
+  .tau-button {
+    position: relative;
+    
+    @include tau-inline-flexbox;
+    @include box-orient;
+    @include box-align(center);
+    @include box-pack(center);
+  
+    height: $button-height;
+    width: auto;
+    padding: 0;
+    margin: 0;
+    
+    @include tau-container-text;
+    overflow: visible;
+    font-size: 1em;
+  
+    border: $button-border;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    @include tau-gradient($button-start-bgcolor, 
+      $button-stop1-bgcolor, 
+      $button-stop2-bgcolor, 
+      $button-end-bgcolor);
+    
+    @extend .tau-button-#{$shape};
+    
+    /** shape ********************************************************************/
+    &.tau-button-rectangle {
+      @include border-radius(0);
+      color: $default-color;
+    }
+    
+    &.tau-button-round {
+      @include tau-round;
+    }
+    
+    &.tau-button-corner {
+    	@if ($enable-border-radius) {
+        @include border-radius;
+      }
+    }
+    
+    &.tau-button-back {
+      padding: 0 2px 0 0;
+      text-align: left;
+      max-width: 33%;
+      @include display-box;
+    }
+    
+    &.tau-button-back:before {
+      content: url(#{$images-path}/#{$tau-button-back-icon});
+      padding: 0 4px;
+    }
+  }
+  
+  
+  /** text ********************************************************************/
+  .tau-button-text {
+    @include tau-content-text;
+    @include box-flex(1);
+    padding: 2px;
+  }
+  
+  /** badge ********************************************************************/
+  .tau-button-badge {
+    @include tau-badge;
+  }
+  
+  .tau-button-badge-text {
+    @include tau-badge-text;
+  }
+  
+  /** type *********************************************************************/
+  .tau-button-normal {
+    @include box-shadow(none !important);
+    @include background-image(none !important);
+  }
+  
+  /** size **********************************************************************/
+  // TODO 이외에 대해 반영해야함.
+  .tau-button-small, .tau-navigationbar .tau-button, .tau-toolbar .tau-button {
+    max-height: $button-small-height;
+    font-size: .75em;
+  }
+  
+  
+  /** display *******************************************************************/
+  .tau-button {
+    &._tau-disp-block, &.tau-disp-block {
+      @include display-box;
+    }
+  }
+  
+  @include tau-button-state ('', selected, 
+    $button-selected-start-bgcolor, 
+    $button-selected-stop1-bgcolor, 
+    $button-selected-stop2-bgcolor, 
+    $button-selected-end-bgcolor);
+  @include tau-button-state ('', highlighted, 
+    $button-highlighted-start-bgcolor, 
+    $button-highlighted-stop1-bgcolor, 
+    $button-highlighted-stop2-bgcolor, 
+    $button-highlighted-end-bgcolor);
+  @include tau-button-state ('', disabled, 
+    $button-disabled-start-bgcolor, 
+    $button-disabled-stop1-bgcolor, 
+    $button-disabled-stop2-bgcolor, 
+    $button-disabled-end-bgcolor);
+  
+  @include tau-button-type (back, 
+    $backbutton-start-bgcolor, 
+    $backbutton-stop1-bgcolor, 
+    $backbutton-stop2-bgcolor, 
+    $backbutton-end-bgcolor);
+  @include tau-button-state (back, selected, 
+    $backbutton-selected-start-bgcolor, 
+    $backbutton-selected-stop1-bgcolor, 
+    $backbutton-selected-stop2-bgcolor, 
+    $backbutton-selected-end-bgcolor);
+  @include tau-button-state (back, highlighted, 
+    $backbutton-highlighted-start-bgcolor, 
+    $backbutton-highlighted-stop1-bgcolor, 
+    $backbutton-highlighted-stop2-bgcolor, 
+    $backbutton-highlighted-end-bgcolor);
+  @include tau-button-state (back, disabled, 
+    $backbutton-disabled-start-bgcolor,
+     $backbutton-disabled-stop1-bgcolor, 
+     $backbutton-disabled-stop2-bgcolor, 
+     $backbutton-disabled-end-bgcolor);
+       
+  @include tau-button-type (dark, #525250, #2C2C2C, #191919, #272727);
+  @include tau-button-state (dark, selected, #005CA9, #013765, #01203C, #012440);
+  @include tau-button-state (dark, highlighted, #5C5C5A, #313131, #1C1C1C, #2C2C2C);
+  @include tau-button-state (dark, disabled, #60605E, #454545, #383838, #414141);
+  
+  @include tau-button-type (red, #FC2020, #A00000, #880000, #AC0000);
+  @include tau-button-state (red, selected, #FC0001, #710100, #500000, #860001);
+  @include tau-button-state (red, highlighted, #FF2021, #F20001, #CE0000, #FE0000);
+  @include tau-button-state (red, disabled, #BE504F, #904041, #854140, #96403F);
+  
+  @include tau-button-type (khaki, #FECC00, #C59F00, #AD8C00, #B69200);
+  @include tau-button-state (khaki, selected, #FCAF01, #A66C00, #834E00, #855700);
+  @include tau-button-state (khaki, highlighted, #FFF500, #FCC000, #DFA900, #E8B001);
+  @include tau-button-state (khaki, disabled, #BDA640, #A28F40, #978640, #9B893F);
+  
+  @include tau-button-type (green, #00FF08, #00AB04, #009203, #00A604);
+  @include tau-button-state (green, selected, #01A300, #005200, #013800, #004D00);
+  @include tau-button-state (green, highlighted, #00FE06, #01FE03, #00E003, #00FF03);
+  @include tau-button-state (green, disabled, #40BE41, #409540, #408940, #409343);
+}
+
+/**
+ * @param {color} $top-shadow
+ * @param {color} $bottom-shadow
+ * @param {measurement} [$inner-size=2px]
+ * @param {measurement} [$drop-size=2px]
+ * @param {measurement} [$alpha=.5]
+ */
+@mixin tau-button-box-shadow ($top-shadow, $bottom-shadow, $inner-size: 2px, $drop-size: 2px, $alpha: .5) {
+  $minus-inner-size: -$inner-size;
+  @include box-shadow(
+  inset $top-shadow  $inner-size $minus-inner-size $inner-size, 
+  inset $top-shadow  $minus-inner-size $minus-inner-size $inner-size, 
+  inset $bottom-shadow  0 $inner-size $inner-size, 
+  rgba(#000, $alpha) 0 $drop-size $drop-size);
+}
+
+/**
+ * @param {string}$type
+ * @param {color} $start-bgcolor
+ * @param {color} $stop1-bgcolor
+ * @param {color} $stop2-bgcolor
+ * @param {color} $end-bgcolor
+ */
+@mixin tau-button-type ($type, $start-bgcolor, $stop1-bgcolor, $stop2-bgcolor, $end-bgcolor) {
+  $sep: '-';
+  @if ($type == '') {
+    $sep: '';
+  }
+  .tau-button#{$sep}#{$type} {
+  	@include tau-gradient(
+  		$start-bgcolor, 
+  		$stop1-bgcolor, 
+  		$stop2-bgcolor,
+  		$end-bgcolor);
+  }
+}
+
+/**
+ * @param {string} $type
+ * @param {string} $state
+ * @param {color} $start-bgcolor
+ * @param {color} $stop1-bgcolor
+ * @param {color} $stop2-bgcolor
+ * @param {color} $end-bgcolor
+ */
+@mixin tau-button-state ($type, $state, $start-bgcolor, $stop1-bgcolor, $stop2-bgcolor, $end-bgcolor) {
+  $active: '';
+  $sep: '-';
+  @if ($type == '') {
+    $sep: '';
+  }
+  @if ($state == highlighted) { 
+    $active: ', .tau-button#{$sep}#{$type}:active';
+  } 
+  .tau-button#{$sep}#{$type}.tau-button-#{$state} #{$active} {
+  	@include tau-gradient(
+  		$start-bgcolor,
+  		$stop1-bgcolor,
+  		$stop2-bgcolor, 
+  		$end-bgcolor);
+    @if ($state == selected) {
+      @include tau-selected;
+    } @else if ($state == highlighted) {
+      @include tau-highlighted;
+    } @else if ($state == disabled) {
+      @include tau-disabled;
+    }
+  }
+}

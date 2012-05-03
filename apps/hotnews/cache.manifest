@@ -1,0 +1,23 @@
+CACHE MANIFEST
+
+CACHE:
+config.json
+icon.png
+main.js
+detail.js
+detail.scene.js
+list.js
+img/entertainment_selected.png
+img/entertainment.png
+img/home_selected.png
+img/home.png
+img/hot_news.png
+img/shopping_selected.png
+img/shopping.png
+img/star_selected.png
+img/star.png
+
+FALLBACK:
+
+NETWORK:
+*

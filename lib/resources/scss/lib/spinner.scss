@@ -1,0 +1,48 @@
+@mixin tau-spinner {
+  /** spinner **********************************************************************/
+  .tau-spinner {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #7E7E7E #919191 #B3B3B3 #9C9C9C;
+    @include display-box;
+    @include box-align(center);
+    @include box-orient(horizontal);
+    @include box-pack(center);
+    width: 160px;
+    height: 40px;
+  }
+
+  .tau-spinner-button {
+    position: relative;
+    @include display-box;
+    @include box-align(center);
+    @include box-pack(center);
+    min-width: 40px;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    line-height: 1.2;
+    overflow: visible;
+    font-size: 1em;
+    background-color: #555555;
+    @if ($enable-gradient) {
+      background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #999b9a), color-stop(50%, #6a6b6d), color-stop(51%, #555555), color-stop(100%, #7e7e7e));
+      background-image: -webkit-linear-gradient(#999b9a, #6a6b6d 50%, #555555 51%, #7e7e7e);
+      background-image: linear-gradient(#999b9a, #6a6b6d 50%, #555555 51%, #7e7e7e);
+    }
+  }
+  
+  .tau-spinner-control {
+    position: relative;
+    @include display-box;
+    height: 100%;
+    @include box-flex(1);
+    text-align: right;
+  }
+}

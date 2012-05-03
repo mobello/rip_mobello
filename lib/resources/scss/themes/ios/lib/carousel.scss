@@ -1,0 +1,118 @@
+$carousel-button-bgcolor: #686868 !default;
+$carousel-button-color: #fff !default;
+$carousel-button-selected-bgcolor: #fff !default;
+$carousel-button-selected-color: #000 !default;
+$carousel-indicator-height: 30px !default;
+
+@mixin tau-carousel {
+  /** carousel ***************************************************************/
+  @include tau-scrollpanel(tau-carousel);
+  
+  /** carousel content *********************************************************/
+  .tau-carousel-content {
+    @include box-orient(inherit);
+
+    & > .tau {
+      position: relative;
+      display: block;
+    }
+  }
+  
+  @each $direction in vertical, horizontal {
+    $pos1: right;
+    $pos2: top;
+    
+    $size1: height;
+    $size2: width;
+    
+    @if ($direction == horizontal) {
+      $pos1: bottom;
+      $pos2: left;
+    
+      $size1: width;
+      $size2: height;
+    }
+    
+    .tau-carousel-#{$direction} {
+    
+      @include box-orient($direction);
+    
+      & > .tau-carousel-indicator {
+        #{$pos1}: 0;
+        #{$pos2}: 0;
+        #{$size1}: 100%;
+        #{$size2}: $carousel-indicator-height;
+      }
+      
+      & .tau-carousel-content {
+        #{$size2}: 100%;
+          @if $direction == horizontal {
+            @include display-box;
+          }
+      }
+      
+      & .tau-carousel-content > * {
+        #{$size2}: 100%;
+      }
+    }
+  }  
+
+  /** indicator *****************************************************************/
+  .tau-carousel-indicator {
+    position: absolute;
+    z-index: 100;
+  
+    @include display-box;
+    @include box-pack(center);
+    @include box-align(center);
+    @include box-orient(inherit);
+    
+    color: $carousel-button-color;
+  }
+  
+  /** indicator button **********************************************************/
+  .tau-carousel-indicator-indexvisible {
+    & .tau-carousel-indicator-button {
+      width: auto;
+      min-width: 14px;
+      min-height: 14px;
+      font-size: .8em;
+
+      @include box-align(center);
+      @include box-pack(center);
+    }
+    
+    & .tau-carousel-indicator-button-text {
+      @include display-box;
+      @include box-pack(center);
+      @include box-align(center);
+    }
+  }
+  
+  .tau-carousel-indicator-button {
+    width: 8px;
+    height: 8px;
+    margin: 2px;
+    padding: 0;
+    border: none;
+    @if ($enable-border-radius) {
+      @include tau-round;
+    }
+    @include box-shadow(none !important);
+    @include background-image(none !important);
+    background-color: $carousel-button-bgcolor;
+  }
+  
+  .tau-carousel-indicator-button-text {
+    display: none;
+  }
+  
+  .tau-carousel-vertical > .tau-carousel-indicator >  .tau-carousel-indicator-button {
+    @include display-box;
+  }
+  
+  .tau-carousel-indicator-button-selected {
+    background-color: $carousel-button-selected-bgcolor;
+    color: $carousel-button-selected-color;
+  }
+}

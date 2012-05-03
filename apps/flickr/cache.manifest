@@ -1,0 +1,13 @@
+CACHE MANIFEST
+
+CACHE:
+config.json
+main.js
+detail.scene.js
+flickritems.js
+flickr.png
+
+FALLBACK:
+
+NETWORK:
+*

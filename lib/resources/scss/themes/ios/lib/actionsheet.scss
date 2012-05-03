@@ -1,0 +1,192 @@
+$actionsheet-border-color: #363A3D !default;
+
+$actionsheet-button-height: 44px !default;
+$actionsheet-button-bgcolor: #eee !default;
+$actionsheet-active-bgcolor: #0043F2 !default;
+
+$actionsheet-small-radius: 10px;
+$actionsheet-arrow-img: "actionSheet/arrow.png" !default;
+
+$actionsheet-large-bgcolor: #393F48;
+$actionsheet-large-dark-bgcolor: black;
+
+@mixin tau-actionsheet {
+  /** actionsheet *****************************************************************/
+
+  .tau-actionsheet{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 10px;   
+    overflow: hidden;
+  }
+  
+  .tau-actionsheet-large{
+	
+	&.tau-actionsheet-dark{
+      & .tau-actionsheet-popup{
+  	    background-color:rgba($actionsheet-large-dark-bgcolor,0.5);
+  	  }
+  	  & .tau-button.tau-button-dark {
+       background-color:rgba($actionsheet-large-dark-bgcolor,0.8);
+      }
+	}
+
+    & > .tau-actionsheet-mask {
+      @include tau-mask(fixed);
+    }
+  
+    & > .tau-actionsheet-popup{
+      @include display-box;
+      @include box-orient(vertical);
+      @include box-pack(end);
+      @include box-align(justify);
+      @include tau-popup;
+      
+      @include tau-box-shadow(0 1px 0 #fff inset !important);
+    
+      background-color:rgba($actionsheet-large-bgcolor,0.5);
+      @if ($enable-gradient) {
+        @include background-image(linear-gradient(color_stops(
+          rgba(#fff, 0.4),
+          rgba(#fff, 0.2) 20px,
+          rgba(#000, 0.2) 20px,
+          rgba(#000, 0)
+        )));
+      }
+      border-width: 1px 0px;
+      border-style: solid;
+      border-color: $actionsheet-border-color;
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: auto;
+      padding: 10px 20px;
+      
+      & > .tau-button-dark {
+        background-color:rgba($actionsheet-large-bgcolor,0.8);
+        color: white;
+        margin: 10px 0;
+      }
+    }
+
+    & .tau-actionsheet-title {
+      text-align: center;
+      text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.8);
+      color: white;
+      font-size: 14px;
+      margin-bottom: 10px;
+      margin-top: 5px;
+    }
+    
+    & .tau-scrollpanel {
+      display: block;
+      height: auto;
+    }
+    
+    & .tau-button {
+      position: relative;
+      width: 100%;
+      height: $actionsheet-button-height;
+      font-size: 1.2em;
+      font-weight: bold;
+      border: 3px groove $actionsheet-border-color;
+      margin-bottom: 10px;
+      background-color: $actionsheet-button-bgcolor;
+      color:black;
+      @include tau-border-radius(10px);
+      @if ($enable-gradient) {
+        @include background-image(linear-gradient(color_stops(
+          rgba(#fff, 0.5),
+          rgba(#fff, 0.2) 50%,
+          rgba(#000, 0.1) 50%,
+          rgba(#000, 0)
+        )));
+      }  
+      &:active {
+        background-color: $actionsheet-active-bgcolor;
+      }
+    }
+  }
+  
+  .tau-actionsheet-small {  
+ 
+    & > .tau-actionsheet-mask {
+      @include tau-mask(fixed, transparent);
+    }
+      
+    & > .tau-actionsheet-popup{
+      @include tau-dialog-popup;
+      position: fixed;
+      overflow: visible; /** arrow를 표시하기 위해 visible이어야 함.*/
+      z-index: 999982;
+      & > .tau-button-dark {
+        @extend .tau-button-blue;
+        @extend .tau-button;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        font-size: 0.7em;
+        height: 30px;
+        padding: 5px 6px;
+        margin:3px;
+      }
+    }
+      
+    & .tau-actionsheet-title {
+      position: relative;
+      display: block !important;
+      margin-bottom: 10px;
+      height:20px;
+    
+      color: white;
+      font-size: 1.4em;
+      text-align: center;
+      text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.8);
+    }
+      
+    & .tau-button {
+      @include tau-border-radius(0);
+      @include background-image(none);
+      position: relative;
+      width: 100%;
+      height: $actionsheet-button-height;
+      font-size: 1.2em;
+      font-weight: bold;
+      border-width : 0; 
+      border-bottom: 1px solid #CACACA;
+      padding-left: 25px;
+      padding-right: 20px;
+      overflow: hidden;
+      margin: 0;
+        
+      &:first-child {
+         @include tau-border-radius($actionsheet-small-radius $actionsheet-small-radius 0 0);
+         @include tau-box-shadow(inset 0px 2px 2px 0px #999);
+      }
+	    
+	  &:last-child {
+	    @include tau-border-radius(0 0 $actionsheet-small-radius $actionsheet-small-radius);
+	    border-width : 0; 
+	  }
+    }
+      
+    & .tau-vscroll {
+      color: $segmentedbutton-vertical-color;
+      @include box-shadow(inset 0 1px rgba(0, 0, 0, .08), 0 1px rgba(255, 255, 255, .81));
+      @include tau-border-radius($actionsheet-small-radius);
+      text-align: left;
+        
+    }
+    
+   & .tau-actionsheet-popup-arrow {
+     position: absolute;
+     height: 20px;
+     width: 36px;
+     background-image: url(#{$images-path}/#{$actionsheet-arrow-img});
+    }
+  }
+}

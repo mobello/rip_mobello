@@ -1,0 +1,190 @@
+$tabbar-height: 51px !default;
+$tabbar-start-bgcolor: #2D2D2D !default;
+$tabbar-stop1-bgcolor: #151515 !default;
+$tabbar-stop2-bgcolor: #000 !default;
+$tabbar-end-bgcolor: #000 !default;
+$tabbar-selected-start-bgcolor: #484848 !default;
+$tabbar-selected-stop1-bgcolor: #353535 !default;
+$tabbar-selected-stop2-bgcolor: #232323 !default;
+$tabbar-selected-end-bgcolor: #232323 !default;
+$tabbar-highlighted-color: #555 !default;
+$tabbar-indicator-size: 8px !default;
+$tabbar-indicator-default-bgcolor: #fff !default;
+$tabbar-indicator-highlighted-bgcolor: #636363 !default;
+
+@mixin tau-parallelnavigator {
+  /** parallelnavigator **********************************************************/
+  .tau-tabbarnavigator {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .tau-hastabbar {
+    padding-bottom: $tabbar-height;
+  }
+  
+  .tau-tabbarnavigator-content{
+    position: relative;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .tau-tabbar {
+    position: absolute;
+    
+    bottom: 0;
+    z-index: 2;
+    
+    width: 100%;
+    height: $tabbar-height;
+  
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    text-align: center;
+    
+    border: 1px #000 solid;
+    border-top: 1px  #0D0D0D solid;
+
+    background-color: $tabbar-start-bgcolor;
+	@include tau-gradient($tabbar-start-bgcolor,
+	      $tabbar-stop1-bgcolor,
+	      $tabbar-stop2-bgcolor,
+	      $tabbar-end-bgcolor);
+    
+    & .tau-scrollpanel-content {
+      @include display-box;
+      @include box-pack(center);
+      @include box-align(center);
+      /*overflow: hidden;*/
+    } 
+  }
+  
+  /** tabbar button - shape *****************************************************/
+  .tau-tab {
+    @include display-box;
+    position: relative !important;
+  
+    height: 44px;
+    /*width: 64px;*/
+    min-width: 64px;
+    max-width: 160px;
+    
+    margin: 4px 0 3px 0;
+    padding: 0;
+    background: transparent;
+  
+    @include box-flex(1);
+    border: none;
+    @include tau-container-text(#888);
+    
+    -webkit-box-align: end;
+    font-size: 0.8em;
+    
+    & > .icon {
+      position: absolute;
+      overflow: hidden;
+      top: 0;
+      height: 28px;
+      width: 100%;
+      background-repeat: no-repeat;
+      background-position: top center;
+      background-size: contain;
+      background-color: transparent;
+    }    
+  }
+  
+  /** tabbar button - text ******************************************************/
+  .tau-tab-text {
+    width: 100%;
+    /*height: 16px;*/
+    text-overflow: inherit;
+    overflow: hidden;
+    padding: 0 3px;
+  }
+  
+  /** tabbar button - state *****************************************************/
+  .tau-tab-selected {
+  	background-color: $tabbar-selected-start-bgcolor;
+	@include tau-gradient(
+		$tabbar-selected-start-bgcolor,
+	    $tabbar-selected-stop1-bgcolor,
+	    $tabbar-selected-stop2-bgcolor,
+	    $tabbar-selected-end-bgcolor 
+	);
+    @include tau-border-radius(3px);
+    @include tau-selected;
+  }
+  
+  .tau-tab:active {
+    background-color: $tabbar-highlighted-color;
+    @include tau-border-radius(3px);
+    @include tau-selected;
+  }
+  
+  /** more tab - scroll type ***************************************************************/
+  .tau-tabbar-scroll {
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 100%;
+  }
+  
+  .tau-tabbar-noscroll {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  
+  .tau-tab-prev {
+    @include display-box;
+    @include box-align(center);
+    @include box-pack(center);
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 20px;
+      
+    &:before {
+      display: block;
+      position: relative;
+      border-color: transparent $tabbar-indicator-default-bgcolor transparent transparent;
+      border-style: solid;
+      border-width: $tabbar-indicator-size;
+      margin-left: -$tabbar-indicator-size;
+      width: 0;
+      height: 0;
+      content: "";
+    }
+   &:active:before {
+      border-color: transparent $tabbar-indicator-highlighted-bgcolor transparent transparent;
+   }
+  }
+  
+  .tau-tab-next {
+    position: absolute;
+    @include display-box;
+    @include box-align(center);
+    @include box-pack(center);
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 20px;
+    
+   &:before {
+      display: block;
+      position: relative;
+      border-color: transparent transparent transparent $tabbar-indicator-default-bgcolor;
+      border-style: solid;
+      border-width: $tabbar-indicator-size;
+      margin-left: $tabbar-indicator-size;
+      width: 0;
+      height: 0;
+      content: "";
+    }
+    
+   &:active:before {
+      border-color: transparent transparent transparent $tabbar-indicator-highlighted-bgcolor;
+   }
+  }
+}

@@ -1,0 +1,4199 @@
+@IMPORT url("../../font/arimo/stylesheet.css");
+
+@IMPORT url("../../font/museosans/stylesheet.css");
+
+#tau-root {
+	background: #fff;
+	color: #000
+}
+
+#tau-dashboard {
+	background-color: #c5ccd3;
+	background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(75%, rgba(255, 255
+		, 255, 0) ), color-stop(75%, rgba(255, 255, 255, 0.1) ) );
+	background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0)
+		75%, rgba(255, 255, 255, 0.1) 75% );
+	background-image: linear-gradient(left, rgba(255, 255, 255, 0) 75%,
+		rgba(255, 255, 255, 0.1) 75% );
+	background-size: 7px;
+	min-width: 320px;
+	min-height: 460px
+}
+
+#tau-dashboard td {
+	text-align: center;
+	height: 100px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: #fff;
+	text-align: center;
+	text-decoration: none;
+	line-height: 1.2
+}
+
+#tau-dashboard td img {
+	margin: 15px 0 0
+}
+
+#tau-dashboard li {
+	float: left;
+	list-style: none
+}
+
+#tau-dashboard ul {
+	width: 100%;
+	height: 100%;
+	text-align: center
+}
+
+#tau-dashboard li div.shortcuts {
+	position: absolute;
+	text-align: center
+}
+
+#tau-dashboard li div.empty_placeholder {
+	position: absolute;
+	text-align: center;
+	border: 0px
+}
+
+#tau-dashboard li .replacable {
+	opacity: 0.5
+}
+
+#tau-dashboard li div.dashed {
+	border: 3px dashed green
+}
+
+#tau-dashboard>.dashboard_section {
+	text-align: center
+}
+
+.tau-dashboard-banner {
+	height: 38px;
+	background-image: url(../../images/dashboard/lefttmp_ci.png),
+		url(../../images/dashboard/xtmp_ci.png);
+	background-position: left top, center top;
+	background-repeat: no-repeat, repeat-x
+}
+
+#addToHomeScreen {
+	z-index: 9999;
+	-webkit-user-select: none;
+	-webkit-box-sizing: border-box;
+	width: 240px;
+	font-size: 15px;
+	padding: 12px 14px;
+	text-align: left;
+	font-family: helvetica;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(0, #fff),
+		color-stop(0.02, #eee), color-stop(0.98, #ccc), color-stop(1, #a3a3a3)
+		);
+	border: 1px solid #505050;
+	-webkit-border-radius: 8px;
+	-webkit-background-clip: padding-box;
+	color: #333;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.75);
+	line-height: 130%;
+	-webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.5)
+}
+
+#addToHomeScreen.addToHomeIpad {
+	width: 268px;
+	font-size: 18px;
+	padding: 14px
+}
+
+#addToHomeScreen.addToHomeWide {
+	width: 296px
+}
+
+#addToHomeScreen.addToHomeIpad.addToHomeWide {
+	width: 320px;
+	font-size: 18px;
+	padding: 14px
+}
+
+#addToHomeScreen .addToHomeArrow {
+	position: absolute;
+	background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(0, rgba(204, 204,
+		204, 0) ), color-stop(0.4, rgba(204, 204, 204, 0) ),
+		color-stop(0.4, #ccc) );
+	border-width: 0 1px 1px 0;
+	border-style: solid;
+	border-color: #505050;
+	width: 16px;
+	height: 16px;
+	-webkit-transform: rotateZ(45deg);
+	bottom: -9px;
+	left: 50%;
+	margin-left: -8px;
+	-webkit-box-shadow: inset -1px -1px 0 #a9a9a9;
+	-webkit-border-bottom-right-radius: 2px
+}
+
+#addToHomeScreen.addToHomeIpad .addToHomeArrow {
+	-webkit-transform: rotateZ(-135deg);
+	background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(0, rgba(238, 238,
+		238, 0) ), color-stop(0.4, rgba(238, 238, 238, 0) ),
+		color-stop(0.4, #eee) );
+	-webkit-box-shadow: inset -1px -1px 0 #fff;
+	top: -9px;
+	bottom: auto;
+	left: 50%
+}
+
+#addToHomeScreen .addToHomeClose {
+	-webkit-box-sizing: border-box;
+	position: absolute;
+	right: 4px;
+	top: 4px;
+	width: 18px;
+	height: 18px;
+	line-height: 14px;
+	text-align: center;
+	text-indent: 1px;
+	-webkit-border-radius: 9px;
+	background: rgba(0, 0, 0, 0.12);
+	color: #707070;
+	-webkit-box-shadow: 0 1px 0 #fff;
+	font-size: 16px
+}
+
+#addToHomeScreen .addToHomePlus {
+	font-weight: bold;
+	font-size: 1.3em
+}
+
+#addToHomeScreen .addToHomeShare {
+	display: inline-block;
+	width: 18px;
+	height: 15px;
+	background-repeat: no-repeat;
+	background-image:
+		url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAPCAQAAABDj1eZAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAUdJREFUKFNtkLtLw1AYxS/qJLhXVKr2ZRulUNtiqgSb3CziICI6ucTFVYcOnaQOFRwUnNTRwUWXgpP/QdHNUEQUHGxofYBTlRs83iZNjKTncOGe7/vx3QchXUWn6FL3jhfKUdCCr5zuifV5oDiHQM+c+CIhiiCSWNu08iq9oHXKLAiqrgR4UXqlOEYZt++ExEL0wW7+OW0G10muLv9gmqfe5FAWKmTMYQYiFL7PYwyLOD8lSjNh2gdnPzMII4QUBxc4OothbAF7GCBKQ0YbSWyPQsIhqvetS+y0ygGMo/KFZfviDvR4AhwgZU9dGYnA0J/6ndc15i3ouYIMcVVUcEXIoOxCeRCfwP8sXBSdjtpUv/1QW+K16kCCIUC4id9Fa0JtkluwVkSfqPL6RwfSDA0aNlx7k/bWgViB7bMS2/1vk5sdsZLN/ALSuL3tylO4RAAAAABJRU5ErkJggg==);
+	background-size: 18px 15px;
+	text-indent: -9999em;
+	overflow: hidden
+}
+
+#addToHomeScreen .addToHomeTouchIcon {
+	display: block;
+	float: left;
+	-webkit-border-radius: 6px;
+	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5), inset 0 0 2px
+		rgba(255, 255, 255, 0.9);
+	background-repeat: no-repeat;
+	width: 57px;
+	height: 57px;
+	-webkit-background-size: 57px 57px;
+	margin: 0 12px 0 0;
+	border: 1px solid #333;
+	-webkit-background-clip: padding-box
+}
+
+@media all and (-webkit-min-device-pixel-ratio: 2) {
+	#addToHomeScreen .addToHomeShare {
+		background-image:
+			url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAeCAQAAADu6HTYAAADPElEQVR4Xq3TX2gcRRzA8e/M7mVv2+TSNpc/TZtrY6jUGqgaSAmEChKLrYK0YH0RFC2CSCkEfCghiKU04J8qNigq6os+iQV98MHWFwVBrQQRWs21lBw5cw3NNb1/udu72RGG5Y77IzXW77D7sAwf5scyYoL6BGXSDKFZwaGpLvIUaeoCkvX1MmsM0Ny6oRSQYOLuIS+YZOpfQdqslpUxcZrzTVAz4qPwW2O3CeIwC/RSzeY6Ow1QhUrkr+YOWfEKDkEP8Rij7CHKJmrFSDHBdwGEE5wiGChPN+PnT8VdRtEIl1d4gRj/1EVe5ZSBKGh8iqQpo/Fo5+3C/gz0MYg4zgwbqday1/Q4B8BGQ45d/Hi54lakCrU5obOcidJpu1+Lg9whjabyaOYLnrIBFFaRD+xe2ybMDWY66GmP/WA9cGfGp0CWhy0wkMN8inepFiH2rV1j0NQSNQbFLRQnS8/8YSDBBpadfv4CYDub2fmeHDNAsL1MBWUel0iA+Xik6eHcyvD3vAMSU1TGuA/YRS+dD7ovCQN43GKRFCU20Kd3V/avDVVyAZ5niTEuLA5/zBGWg9EEEhfJKN200Tat8CmRAQb9+wv7soPlHt2tQorsz1uPbr0HTY4sJwrH47zJZwABBAKLMBoQXepwgTwdHCo+fXMkQ4lrxEmQ5AaXipPqDY9V2vn09tgvTPI71EEGYxM+/uMJLJ4svpgaWGKOi/xKgmqLSUGSUd5f2vIVJ/CgBaTIUsZ7ZBsn0+NzfMOXLFCXQyTcybN6ep5ZZgUOHn7jpfUpsZshdugPGf+E5zjbyHTSRyQ8xfRPPM/s63RHeuknSoT22mjmmnAOIMkUZ6D1xSfPPAfd1WFKM3sO2CMaHx8M1NjnXKHaAGGkOW0C02WeYHUz4qMtx+w5gUDS8NckYe5lHsMYwCZEPyEEmjLDZFmAS7CDviMdxyTkMNVBKEmYLvbiQQBIBBbCQG04bGQvFWz6CfsCQLWCigILFwcfkGYBiOpbYuOizTAyYyDdCtrGaRG1LCkIgMYEFhI0WqQZoSlbGRyHKe4qOx7iv2bVQW9dp4dlM/x6kmwnWQcd/Q3FCqwTEiT5s+6D5v/pb0SSHyg7uhMWAAAAAElFTkSuQmCC)
+	}
+}
+
+.tau-shortcut {
+	position: relative;
+	display: inline-block;
+	color: #000;
+	font: bold 11px helvetica;
+	text-align: center;
+	margin: 10px;
+	background: transparent
+}
+
+.tau-shortcut-icon {
+	width: 57px;
+	height: 57px;
+	margin: 0 auto 4px;
+	background-size: 100% 100%;
+	-webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
+	-webkit-border-radius: 8px;
+	border-radius: 8px
+}
+
+.tau-shortcut-icon:before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	content: "";
+	width: 57px;
+	height: 57px;
+	margin: 0 auto 4px;
+	background-size: 100% 100%;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	background-image: -webkit-gradient(radial, 50% -40, 37, 50% 0, 100, from(rgba(255, 255,
+		255, 0.75) ), color-stop(30%, rgba(255, 255, 255, 0) ),
+		color-stop(30%, rgba(0, 0, 0, 0.25) ), to(rgba(0, 0, 0, 0) ) )
+}
+
+.tau-shortcut-icon:active {
+	-webkit-transform: scale(1.1, 1.1);
+	transform: scale(1.1, 1.1)
+}
+
+.tau-shortcut-badge {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: #fff;
+	text-align: center;
+	text-decoration: none;
+	line-height: 1.2;
+	background-color: #fff;
+	position: absolute;
+	z-index: 91;
+	margin: -10px;
+	-webkit-border-radius: 999999px;
+	border-radius: 999999px;
+	top: 0;
+	right: 0
+}
+
+.tau-shortcut-delete {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: #fff;
+	text-align: center;
+	text-decoration: none;
+	line-height: 1.2;
+	background-color: #fff;
+	position: absolute;
+	z-index: 91;
+	margin: -10px;
+	-webkit-border-radius: 999999px;
+	border-radius: 999999px;
+	top: 0;
+	left: 0
+}
+
+.tau-shortcut-badge-label {
+	position: relative;
+	display: -webkit-box;
+	display: box;
+	-webkit-box-align: center;
+	box-align: center;
+	-webkit-box-pack: center;
+	box-pack: center;
+	background-color: #e24850;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f4b9bd),
+		color-stop(50%, #e7565d), color-stop(51%, #e24850),
+		color-stop(100%, #cd4d5c) );
+	background-image: -webkit-linear-gradient(#f4b9bd, #e7565d 50%, #e24850 51%, #cd4d5c);
+	background-image: linear-gradient(#f4b9bd, #e7565d 50%, #e24850 51%, #cd4d5c);
+	-webkit-border-radius: inherit;
+	border-radius: inherit;
+	width: auto;
+	max-width: 48px;
+	min-width: 24px;
+	height: 24px;
+	margin: 2px;
+	font-size: .8em
+}
+
+.tau-dock {
+	position: absolute;
+	width: 100%;
+	left: 0;
+	z-index: 99999;
+	background: #c05500 url(../../images/systemdock/drawer-bg.jpg);
+	font-size: 12px
+}
+
+.tau-dock ul {
+	display: block;
+	width: auto
+}
+
+.tau-dock li {
+	display: inline-block;
+	max-width: 57px;
+	max-height: 57px;
+	margin: 20px 10px;
+	text-align: center;
+	font-weight: bold;
+	text-shadow: 0 1px 1px #000
+}
+
+.tau-dock .tau-shortcut {
+	display: inline-block;
+	position: relative;
+	color: #fff
+}
+
+.tau-dock .tau-shortcut-close {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: #fff;
+	text-align: center;
+	text-decoration: none;
+	line-height: 1.2;
+	background-color: #fff;
+	position: absolute;
+	z-index: 91;
+	margin: -10px;
+	-webkit-border-radius: 999999px;
+	border-radius: 999999px;
+	top: 0;
+	left: 0
+}
+
+.tau-dock-handle {
+	position: relative;
+	left: 0;
+	width: 100%;
+	height: 28px;
+	border-top: 1px solid #532500;
+	border-bottom: 1px solid #111;
+	background: url(../../images/systemdock/handle.png) no-repeat 50%,
+		-webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e07b29),
+		color-stop(10%, #b85300), color-stop(80%, #793600) );
+	background: url(../../images/systemdock/handle.png) no-repeat 50%,
+		-webkit-linear-gradient(#e07b29, #b85300 10%, #793600 80%);
+	background: url(../../images/systemdock/handle.png) no-repeat 50%,
+		linear-gradient(#e07b29, #b85300 10%, #793600 80%);
+	-webkit-user-select: none
+}
+
+.tau-sequencenavigator {
+	position: absolute;
+	width: 100%;
+	height: 100%
+}
+
+.tau-navbar-padding {
+	padding-top: 46px
+}
+
+.tau-sequencenavigator-content {
+	position: relative;
+	height: 100%;
+	width: 100%
+}
+
+.tau-navbar {
+	position: absolute;
+	top: 0;
+	height: 46px;
+	width: 100%;
+	background-color: #000;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #676767),
+		color-stop(50%, #1c1c1c), color-stop(51%, #000000),
+		color-stop(100%, #1e1e1e) );
+	background-image: -webkit-linear-gradient(#676767, #1c1c1c 50%, #000000 51%, #1e1e1e);
+	background-image: linear-gradient(#676767, #1c1c1c 50%, #000000 51%, #1e1e1e)
+}
+
+.tau-navigationbar {
+	position: absolute;
+	display: -webkit-box;
+	display: box;
+	-webkit-box-align: center;
+	box-align: center;
+	-webkit-box-pack: justify;
+	box-pack: justify;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	padding: 2px;
+	z-index: 9991;
+	color: #fff
+}
+
+.tau-navigationbar-content {
+	position: relative;
+	display: -webkit-box;
+	display: box;
+	-webkit-box-align: center;
+	box-align: center;
+	-webkit-box-pack: center;
+	box-pack: center;
+	z-index: 0;
+	-webkit-box-flex: 1;
+	box-flex: 1;
+	height: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: #fff;
+	text-align: center;
+	text-decoration: none;
+	line-height: 1.2;
+	overflow: hidden;
+	padding: 5px;
+	font-size: 1.6em
+}
+
+.tau-navigationbar-leftitem {
+	position: relative;
+	max-height: 36px;
+	display: -webkit-box;
+	display: box
+}
+
+.tau-navigationbar-rightitem {
+	position: relative;
+	max-height: 36px;
+	display: -webkit-box;
+	display: box
+}
+
+.tau-navigationbar-hasrightitem .tau-navigationbar-content-lspace,.tau-navigationbar-hasleftitem .tau-navigationbar-content-rspace
+	{
+	-webkit-box-flex: 1;
+	box-flex: 1
+}
+
+.tau-navigationbar-hasrightitem.tau-navigationbar-hasleftitem .tau-navigationbar-content-lspace,.tau-navigationbar-hasrightitem.tau-navigationbar-hasleftitem .tau-navigationbar-content-rspace
+	{
+	display: none
+}
+
+.tau-navigationbar-content-lspace,.tau-navigationbar-content-rspace {
+	position: relative;
+	height: 100%;
+	width: 0;
+	margin: 0;
+	padding: 0
+}
+
+.tau-navigationbar-title {
+	position: relative;
+	display: block;
+	text-overflow: inherit;
+	overflow: hidden;
+	max-width: 100%;
+	font-size: 1em;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	-webkit-box-pack: center;
+	box-pack: center;
+	-webkit-box-align: center;
+	box-align: center;
+	-webkit-box-flex: 1;
+	box-flex: 1;
+	display: block;
+	width: auto
+}
+
+.tau-tabbarnavigator {
+	position: absolute;
+	height: 100%;
+	width: 100%
+}
+
+.tau-hastabbar {
+	padding-bottom: 51px
+}
+
+.tau-tabbarnavigator-content {
+	position: relative;
+	height: 100%;
+	width: 100%
+}
+
+.tau-tabbar {
+	position: absolute;
+	bottom: 0;
+	z-index: 2;
+	width: 100%;
+	height: 51px;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+	text-align: center;
+	border: 1px #000 solid;
+	border-top: 1px #0D0D0D solid;
+	background-color: #151515;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #151515),
+		color-stop(100%, #252525) );
+	background-image: -webkit-linear-gradient(#151515, #252525);
+	background-image: linear-gradient(#151515, #252525)
+}
+
+.tau-tabbar .tau-scrollpanel-content {
+	display: -webkit-box;
+	display: box;
+	-webkit-box-pack: center;
+	box-pack: center;
+	-webkit-box-align: center;
+	box-align: center
+}
+
+.tau-tab {
+	display: block;
+	position: relative !important;
+	height: 44px;
+	min-width: 64px;
+	max-width: 160px;
+	margin: 4px 0 3px 0;
+	padding: 0;
+	background: transparent;
+	-webkit-box-flex: 1;
+	box-flex: 1;
+	border: none;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: #888;
+	text-align: center;
+	text-decoration: none;
+	line-height: 1.2
+}
+
+.tau-tab>.icon {
+	position: absolute;
+	overflow: hidden;
+	top: 0;
+	height: 28px;
+	width: 100%;
+	background-repeat: no-repeat;
+	background-position: top center;
+	background-size: contain;
+	background-color: transparent
+}
+
+.tau-tab-text {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	text-overflow: inherit;
+	overflow: hidden;
+	padding: 0 3px
+}
+
+.tau-tab-selected {
+	background-color: #383838;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #383838),
+		color-stop(100%, #545454) );
+	background-image: -webkit-linear-gradient(#383838, #545454);
+	background-image: linear-gradient(#383838, #545454);
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	color: #fff
+}
+
+.tau-tab:active {
+	background-color: #555;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	color: #fff
+}
+
+.tau-tabbar-scroll {
+	padding-left: 20px;
+	padding-right: 20px;
+	height: 100%
+}
+
+.tau-tabbar-noscroll {
+	padding-left: 0;
+	padding-right: 0
+}
+
+.tau-tab-prev {
+	display: -webkit-box;
+	display: box;
+	-webkit-box-align: center;
+	box-align: center;
+	-webkit-box-pack: center;
+	box-pack: center;
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 20px
+}
+
+.tau-tab-prev:before {
+	display: block;
+	position: relative;
+	border-color: transparent #fff transparent transparent;
+	border-style: solid;
+	border-width: 8px;
+	margin-left: -8px;
+	width: 0;
+	height: 0;
+	content: ""
+}
+
+.tau-tab-prev:active:before {
+	border-color: transparent #636363 transparent transparent
+}
+
+.tau-tab-next {
+	position: absolute;
+	display: -webkit-box;
+	display: box;
+	-webkit-box-align: center;
+	box-align: center;
+	-webkit-box-pack: center;
+	box-pack: center;
+	top: 0;
+	right: 0;
+	height: 100%;
+	width: 20px
+}
+
+.tau-tab-next:before {
+	display: block;
+	position: relative;
+	border-color: transparent transparent transparent #fff;
+	border-style: solid;
+	border-width: 8px;
+	margin-left: 8px;
+	width: 0;
+	height: 0;
+	content: ""
+}
+
+.tau-tab-next:active:before {
+	border-color: transparent transparent transparent #636363
+}
+
+.tau-panel {
+	position: relative;
+	display: inline-block;
+	height: auto;
+	width: auto;
+	overflow: hidden
+}
+
+.tau-activityindicator {
+	position: absolute;
+	display: -webkit-box;
+	display: box;
+	-webkit-box-sizing: content-box;
+	box-sizing: content-box;
+	-webkit-box-orient: vertical;
+	box-orient: vertical;
+	-webkit-box-pack: center;
+	box-pack: center;
+	-webkit-box-align: center;
+	box-align: center;
+	top: 0;
+	left: 0;
+	min-height: 32px;
+	min-width: 32px;
+	height: 100%;
+	width: 100%;
+	background: transparent;
+	overflow: hidden
+}
+
+.tau-activityindicator-icon {
+	display: inline-block;
+	top: 0;
+	width: 40px;
+	height: 40px;
+	background: url(../../images/scrollpanel/pull-icon.png) 0 0 no-repeat;
+	background-size: 40px 80px;
+	background-position: 0 100%;
+	-webkit-animation-name: 'tau-spin';
+	-webkit-animation-duration: 1.5s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-timing-function: linear;
+	animation-name: 'tau-spin';
+	animation-duration: 1.5s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear
+}
+
+.tau-activityindicator-message {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: inherit;
+	text-align: center;
+	text-decoration: none;
+	line-height: 1.2;
+	display: inline-block;
+	margin: 3px;
+	line-height: 32px
+}
+
+.tau-label {
+	display: inline-block;
+	min-height: 18px;
+	width: auto;
+	max-width: 100%;
+	padding: 5px;
+	overflow: hidden;
+	line-height: 18px;
+	text-overflow: ellipsis;
+	font-size: 1em;
+	-webkit-box-sizing: content-box;
+	box-sizing: content-box;
+	white-space: pre;
+	white-space: pre-wrap;
+	white-space: pre-line;
+	white-space: -pre-wrap;
+	white-space: -o-pre-wrap;
+	white-space: -moz-pre-wrap;
+	white-space: -hp-pre-wrap;
+	word-wrap: break-word
+}
+
+.tau-label-text {
+	position: relative;
+	display: block;
+	text-overflow: inherit;
+	overflow: hidden;
+	max-width: 100%;
+	font-size: 1em
+}
+
+.tau-scrollpanel {
+	position: relative;
+	display: -webkit-inline-box;
+	display: -moz-inline-box;
+	display: inline-flexbox;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background: transparent
+}
+
+.tau-scrollpanel_tau-disp-block,.tau-scrollpanel.tau-disp-block {
+	display: -webkit-box;
+	display: box
+}
+
+.tau-scrollpanel-container {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 100%;
+	max-width: 100%;
+	max-height: 100%;
+	overflow: hidden;
+	padding: 0;
+	margin: 0
+}
+
+.tau-scrollpanel-content {
+	position: relative;
+	display: inherit;
+	-webkit-box-orient: inherit;
+	box-orient: inherit;
+	-webkit-box-flex: 1;
+	box-flex: 1;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	overflow: visible
+}
+
+.tau-scroller {
+	position: relative;
+	display: block;
+	-webkit-box-flex: 1;
+	box-flex: 1;
+	max-width: 100%;
+	max-height: 100%;
+	width: 100%;
+	height: 100%;
+	overflow: visible
+}
+
+.tau-scroller.tau-hscroll {
+	display: -webkit-box;
+	display: box;
+	-webkit-box-orient: horizontal;
+	box-orient: horizontal
+}
+
+.tau-scroller.tau-hscroll .tau {
+	display: -webkit-box;
+	display: box
+}
+
+.tau-scroller.tau-vscroll {
+	display: -webkit-box;
+	display: box;
+	-webkit-box-orient: vertical;
+	box-orient: vertical
+}
+
+.tau-scrollbar {
+	position: absolute;
+	z-index: 10;
+	width: 1px;
+	height: 1px;
+	border-width: 3
+}
+
+.tau-scrollbar-horizontal {
+	bottom: 1px;
+	left: 1px
+}
+
+.tau-scrollbar-vertical {
+	top: 1px;
+	right: 1px
+}
+
+.tau-pulldown {
+	position: relative;
+	padding: 10px;
+	color: #888;
+	font-weight: bold
+}
+
+.tau-pullup {
+	position: relative;
+	display: -webkit-box;
+	display: box;
+	padding: 10px;
+	vertical-align: middle;
+	border-bottom: 0;
+	color: #888;
+	font-weight: bold
+}
+
+.tau-pulldown-vertical {
+	display: -webkit-box;
+	display: box;
+	-webkit-box-orient: horizontal;
+	box-orient: horizontal;
+	-webkit-box-align: center;
+	box-align: center;
+	-webkit-box-pack: start;
+	box-pack: start;
+	margin-top: -60px;
+	width: 100%;
+	font-size: 14px
+}
+
+.tau-pulldown-vertical>.tau-pulldown-icon {
+	display: block;
+	margin-right: 4px;
+	background: url(../../images/scrollpanel/pull-icon.png) 0 0 no-repeat
+}
+
+.tau-pulldown-vertical>.tau-pulldown-label {
+	display: block
+}
+
+.tau-pulldown-horizontal {
+	display: -webkit-box;
+	display: box;
+	-webkit-box-orient: vertical;
+	box-orient: vertical;
+	-webkit-box-align: center;
+	box-align: center;
+	-webkit-box-pack: center;
+	box-pack: center;
+	width: 40px;
+	margin-left: -60px;
+	height: 100%;
+	font-size: 10px
+}
+
+.tau-pulldown-horizontal>.tau-pulldown-icon {
+	margin-bottom: 4px;
+	background: url(../../images/scrollpanel/pull-icon-horizontal.png) 0 0
+		no-repeat
+}
+
+.tau-pulldown-icon {
+	display: block;
+	width: 40px;
+	height: 40px;
+	-webkit-transition-property: transform;
+	transition-property: transform;
+	-webkit-transition-duration: 250ms;
+	transition-duration: 250ms;
+	-webkit-transform: rotate(0);
+	transform: rotate(0);
+	background-size: 40px 80px
+}
+
+.tau-pulldown-release>.tau-pulldown-icon {
+	-webkit-transform: rotate(-180deg);
+	transform: rotate(-180deg)
+}
+
+.tau-pulldown-loading>.tau-pulldown-icon {
+	background-position: 0 100%;
+	-webkit-transform: rotate(0deg);
+	-webkit-transition-duration: 0ms;
+	-webkit-animation-name: 'tau-spin';
+	-webkit-animation-duration: 2s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-timing-function: linear
+}
+
+.tau-pullup-vertical {
+	display: -webkit-box;
+	display: box;
+	-webkit-box-orient: horizontal;
+	box-orient: horizontal;
+	-webkit-box-align: center;
+	box-align: center;
+	-webkit-box-pack: start;
+	box-pack: start;
+	bottom: 0;
+	left: 0;
+	height: 0;
+	margin-top: 10px;
+	width: 100%;
+	font-size: 14px
+}
+
+.tau-pullup-vertical>.tau-pullup-icon {
+	display: inline-block;
+	margin-right: 4px;
+	background: url(../../images/scrollpanel/pull-icon.png) 0 0 no-repeat
+}
+
+.tau-pullup-vertical>.tau-pullup-label {
+	display: inline-block
+}
+
+.tau-pullup-horizontal {
+	display: -webkit-box;
+	display: box;
+	-webkit-box-orient: vertical;
+	box-orient: vertical;
+	-webkit-box-align: center;
+	box-align: center;
+	-webkit-box-pack: center;
+	box-pack: center;
+	margin-left: 10px;
+	width: 0;
+	height: 100%;
+	font-size: 10px
+}
+
+.tau-pullup-horizontal>.tau-pullup-icon {
+	margin-bottom: 4px;
+	background: url(../../images/scrollpanel/pull-icon-horizontal.png) 0 0
+		no-repeat
+}
+
+.tau-pullup-icon {
+	display: block;
+	width: 40px;
+	height: 40px;
+	-webkit-transition-property: transform;
+	transition-property: transform;
+	-webkit-transition-duration: 250ms;
+	transition-duration: 250ms;
+	-webkit-transform: rotate(-180deg);
+	transform: rotate(-180deg);
+	background-size: 40px 80px
+}
+
+.tau-pullup-release>.tau-pullup-icon {
+	-webkit-transform: rotate(0);
+	transform: rotate(0)
+}
+
+.tau-pullup-loading>.tau-pullup-icon {
+	background-position: 0 100%;
+	-webkit-transform: rotate(0deg);
+	-webkit-transition-duration: 0ms;
+	-webkit-animation-name: 'tau-spin';
+	-webkit-animation-duration: 2s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-timing-function: linear
+}
+
+.tau-toolbar {
+	position: relative;
+	display: -webkit-inline-box;
+	display: -moz-inline-box;
+	display: inline-flexbox;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background: #4f4f4f
+}
+
+.tau-toolbar_tau-disp-block,.tau-toolbar.tau-disp-block {
+	display: -webkit-box;
+	display: box
+}
+
+.tau-toolbar-container {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 100%;
+	max-width: 100%;
+	max-height: 100%;
+	overflow: hidden;
+	padding: 0;
+	margin: 0
+}
+
+.tau-toolbar-content {
+	position: relative;
+	display: inherit;
+	-webkit-box-orient: inherit;
+	box-orient: inherit;
+	-webkit-box-flex: 1;
+	box-flex: 1;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	overflow: visible
+}
+
+.tau-toolbar {
+	position: absolute;
+	left: 0;
+	height: 51px;
+	border-top: 1px solid #fff;
+	background-color: #4f4f4f;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #545454),
+		color-stop(50%, #505050), color-stop(51%, #4f4f4f),
+		color-stop(100%, #464646) );
+	background-image: -webkit-linear-gradient(#545454, #505050 50%, #4f4f4f 51%, #464646);
+	background-image: linear-gradient(#545454, #505050 50%, #4f4f4f 51%, #464646);
+	-webkit-box-pack: justify;
+	box-pack: justify;
+	-webkit-box-align: center;
+	box-align: center
+}
+
+.tau-toolbar-container {
+	-webkit-box-pack: inherit;
+	box-pack: inherit;
+	-webkit-box-align: inherit;
+	box-align: inherit
+}
+
+.tau-toolbar-container>.tau-scroller {
+	-webkit-box-pack: inherit;
+	box-pack: inherit;
+	-webkit-box-align: inherit;
+	box-align: inherit
+}
+
+.tau-toolbar-content {
+	display: -webkit-box;
+	display: box;
+	-webkit-box-orient: horizontal;
+	box-orient: horizontal;
+	-webkit-box-pack: inherit;
+	box-pack: inherit;
+	-webkit-box-align: inherit;
+	box-align: inherit;
+	height: 100%
+}
+
+.tau-toolbar-content>* {
+	max-height: 48px
+}
+
+.tau-toolbar-content>.tau-button {
+	position: relative !important;
+	display: -webkit-box;
+	display: box;
+	width: 72px;
+	height: 31px;
+	margin-right: 2px
+}
+
+.tau-toolbar-bottom {
+	display: block;
+	bottom: 0
+}
+
+.tau-toolbar-top {
+	display: block;
+	top: 0
+}
+
+.tau-space {
+	display: block;
+	height: 80%
+}
+
+.tau-space-flex {
+	-webkit-box-flex: 1;
+	box-flex: 1
+}
+
+.tau-space-sep {
+	width: 0;
+	border-left: 1px dotted #767676;
+	border-right: 1px dotted #1C1C1C;
+	margin: 0 2px
+}
+
+.tau-space-fixed {
+	width: 50px
+}
+
+.tau-table {
+	position: relative;
+	display: -webkit-inline-box;
+	display: -moz-inline-box;
+	display: inline-flexbox;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background: #e4e4e2
+}
+
+.tau-table_tau-disp-block,.tau-table.tau-disp-block {
+	display: -webkit-box;
+	display: box
+}
+
+.tau-table-container {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 100%;
+	max-width: 100%;
+	max-height: 100%;
+	overflow: hidden;
+	padding: 0;
+	margin: 0
+}
+
+.tau-table-content {
+	position: relative;
+	display: inherit;
+	-webkit-box-orient: inherit;
+	box-orient: inherit;
+	-webkit-box-flex: 1;
+	box-flex: 1;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	overflow: visible
+}
+
+.tau-table-auto .tau-tablecell {
+	height: auto
+}
+
+.tau-table-auto .tau-tablecell-contentitem>* {
+	white-space: normal
+}
+
+.tau-table-titleleft .tau-tablecell-contentitem {
+	display: -webkit-box;
+	display: box;
+	-webkit-box-orient: horizontal;
+	box-orient: horizontal;
+	-webkit-box-pack: justify;
+	box-pack: justify;
+	-webkit-box-align: start;
+	box-align: start
+}
+
+.tau-table-titleleft .tau-tablecell-title {
+	-webkit-box-pack: start;
+	box-pack: start
+}
+
+.tau-table-titleleft .tau-tablecell-subtitle {
+	-webkit-box-pack: end;
+	box-pack: end
+}
+
+.tau-table-titleright .tau-tablecell-contentitem {
+	display: -webkit-box;
+	display: box;
+	-webkit-box-orient: horizontal;
+	box-orient: horizontal;
+	-webkit-box-pack: justify;
+	box-pack: justify;
+	-webkit-box-align: start;
+	box-align: start;
+	-webkit-box-direction: reverse;
+	box-direction: reverse
+}
+
+.tau-table-titleright .tau-tablecell-contentitem .tau-tablecell-title {
+	-webkit-box-pack: end;
+	box-pack: end
+}
+
+.tau-table-titleright .tau-tablecell-contentitem .tau-tablecell-subtitle
+	{
+	-webkit-box-pack: start;
+	box-pack: start
+}
+
+.tau-table {
+	display: -webkit-box;
+	display: box;
+	width: 100%;
+	height: 100%;
+	-webkit-box-flex: 1;
+	box-flex: 1;
+	-webkit-box-orient: vertical;
+	box-orient: vertical
+}
+
+.tau-table-container {
+	-webkit-box-flex: 1;
+	box-flex: 1
+}
+
+.tau-table-container>.tau-scroller {
+	-webkit-box-flex: 1;
+	box-flex: 1;
+	max-width: 100%;
+	max-height: 100%;
+	width: auto;
+	height: auto
+}
+
+.tau-table-header {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: auto;
+	min-height: 45px;
+	padding: 2px;
+	margin: 0;
+	border: 1px #000 solid;
+	background-color: #545454;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #545454),
+		color-stop(100%, #363636) );
+	background-image: -webkit-linear-gradient(#545454, #363636);
+	background-image: linear-gradient(#545454, #363636);
+	font-size: 1em;
+	color: #fff;
+	-webkit-box-align: center;
+	box-align: center;
+	overflow: hidden
+}
+
+.tau-table-footer {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 45px;
+	min-height: 45px;
+	padding: 2px;
+	margin: 0;
+	border: 1px #000 solid;
+	border-top: 1px 2E2E2C solid;
+	background-color: #545454;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(1px, #434343),
+		color-stop(1px, #545454), color-stop(100%, #363636) );
+	background-image: -webkit-linear-gradient(#434343 1px, #545454 1px, #363636);
+	background-image: linear-gradient(#434343 1px, #545454 1px, #363636);
+	font-size: 1em;
+	color: #fff;
+	-webkit-box-align: center;
+	box-align: center
+}
+
+.tau-tablesection {
+	display: block;
+	position: relative;
+	width: 100%;
+	color: #000;
+	border-top: none;
+	border-bottom: none
+}
+
+.tau-tablesection-container {
+	display: -webkit-box;
+	display: box;
+	-webkit-box-pack: justify;
+	box-pack: justify;
+	-webkit-box-align: center;
+	box-align: center;
+	width: 100%;
+	height: 25px;
+	background-color: transparent
+}
+
+.tau-tablesection-header {
+	display: -webkit-box;
+	display: box;
+	-webkit-box-align: center;
+	box-align: center;
+	-webkit-box-pack: end;
+	box-pack: end;
+	height: 20px;
+	width: 20%;
+	min-width: 120px;
+	padding: 0 15px 0 5px;
+	margin: 0 -4px 0 0;
+	overflow: hidden;
+	font-size: .8em;
+	color: #fff;
+	text-align: right;
+	text-overflow: ellipsis;
+	background-color: #32bbe7;
+	-webkit-box-shadow: inset rgba(0, 0, 0, 0.3) -1px 2px 3px;
+	box-shadow: inset rgba(0, 0, 0, 0.3) -1px 2px 3px
+}
+
+.tau-tablesection-bar {
+	display: block;
+	-webkit-box-flex: 1;
+	box-flex: 1;
+	height: 6px;
+	margin-left: -1px;
+	background-color: #32bbe7;
+	-webkit-box-shadow: inset rgba(0, 0, 0, 0.3) -1px 2px 3px;
+	box-shadow: inset rgba(0, 0, 0, 0.3) -1px 2px 3px
+}
+
+.tau-tablesection-arrow {
+	display: block;
+	background-image: url(../../images/table/section.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	width: 22px;
+	height: 20px
+}
+
+.tau-table-sectionGroup .tau-tablesection {
+	margin-bottom: 10px
+}
+
+.tau-table-sectionGroup .tau-tablesection-header {
+	background-color: transparent;
+	color: #888;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	-webkit-border-top-right-radius: none;
+	border-top-right-radius: none;
+	-webkit-border-bottom-right-radius: none;
+	border-bottom-right-radius: none;
+	-webkit-box-pack: start;
+	box-pack: start;
+	width: 100%;
+	min-width: 100%
+}
+
+.tau-table-sectionGroup .tau-tablesection-bar {
+	display: none
+}
+
+.tau-table-sectionGroup .tau-tablesection-arrow {
+	display: none
+}
+
+.tau-table-sectionGroup .tau-tablesection-content {
+	border: 2px #888 solid;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	margin: 4px;
+	background-color: #fff
+}
+
+.tau-tablesection-sectionGroup {
+	margin-bottom: 10px
+}
+
+.tau-tablesection-sectionGroup .tau-tablesection-header {
+	background-color: transparent;
+	color: #888;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	-webkit-border-top-right-radius: none;
+	border-top-right-radius: none;
+	-webkit-border-bottom-right-radius: none;
+	border-bottom-right-radius: none;
+	-webkit-box-pack: start;
+	box-pack: start
+}
+
+.tau-tablesection-sectionGroup .tau-tablesection-bar {
+	display: none
+}
+
+.tau-tablesection-sectionGroup .tau-tablesection-arrow {
+	display: none
+}
+
+.tau-tablesection-sectionGroup .tau-tablesection-content {
+	border: 2px #888 solid;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	margin: 4px 6px 4px 4px;
+	background-color: #fff
+}
+
+.tau-tablesection-fold {
+	position: absolute;
+	display: block;
+	left: 6px;
+	top: 8px;
+	height: 0;
+	width: 0;
+	border-color: #07516c transparent transparent transparent;
+	border-style: solid;
+	border-width: 5px
+}
+
+.tau-tablesection-accordion>.tau-tablesection-content {
+	overflow: hidden;
+	height: 0
+}
+
+.tau-tablesection-content>.tau-tablecell:FIRST-CHILD {
+	border-top: none
+}
+
+.tau-indexbar {
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 100;
+	height: 100%;
+	width: 30px;
+	margin: 0 5px;
+	text-align: center
+}
+
+.tau-indexbar-content {
+	height: 100%;
+	width: 100%;
+	display: -webkit-box;
+	display: box;
+	-webkit-box-pack: justify;
+	box-pack: justify;
+	-webkit-box-align: center;
+	box-align: center;
+	-webkit-box-orient: vertical;
+	box-orient: vertical;
+	padding: 18px 0;
+	color: #737373
+}
+
+.tau-indexbar-highlighted .tau-indexbar-content {
+	color: #fff;
+	background-color: #4a4a4a;
+	background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #4a4a4a),
+		color-stop(100%, #717171) );
+	background-image: -webkit-linear-gradient(left, #4a4a4a, #717171);
+	background-image: linear-gradient(left, #4a4a4a, #717171)
+}
+
+.tau-indexbar-index {
+	display: block;
+	width: 100%;
+	-webkit-box-flex: 1;
+	box-flex: 1;
+	font-size: 0.6em
+}
+
+.tau-paginationbar {
+	position: absolute;
+	display: -webkit-box;
+	display: box;
+	-webkit-box-pack: center;
+	box-pack: center;
+	-webkit-box-align: center;
+	box-align: center;
+	background-color: #777776;
+	opacity: .5;
+	text-align: center;
+	z-index: 1
+}
+
+.tau-table-content-top>.tau-table-page {
+	margin-top: 35px
+}
+
+.tau-paginationbar-top {
+	-webkit-box-orient: horizontal;
+	box-orient: horizontal;
+	width: 100%;
+	height: 35px;
+	top: 0;
+	left: 0
+}
+
+.tau-paginationbar-top .tau-paginationbar-pageinfo {
+	dock: 35px
+}
+
+.tau-paginationbar-top .tau-paginationbar-pager {
+	-webkit-box-orient: horizontal;
+	box-orient: horizontal;
+	height: 100%;
+	width: 100%
+}
+
+.tau-paginationbar-top .tau-paginationbar-pager>.tau-slider {
+	-webkit-box-flex: 1;
+	box-flex: 1;
+	max-width: 100%
+}
+
+.tau-table-content-bottom>.tau-table-page {
+	margin-bottom: 35px
+}
+
+.tau-paginationbar-bottom {
+	-webkit-box-orient: horizontal;
+	box-orient: horizontal;
+	width: 100%;
+	height: 35px;
+	bottom: 0;
+	left: 0
+}
+
+.tau-paginationbar-bottom .tau-paginationbar-pageinfo {
+	margin-top: -20px
+}
+
+.tau-paginationbar-bottom .tau-paginationbar-pager {
+	-webkit-box-orient: horizontal;
+	box-orient: horizontal;
+	height: 100%;
+	width: 100%
+}
+
+.tau-paginationbar-bottom .tau-paginationbar-pager>.tau-slider {
+	-webkit-box-flex: 1;
+	box-flex: 1;
+	max-width: 100%
+}
+
+.tau-table-content-left>.tau-table-page {
+	margin-left: 35px
+}
+
+.tau-paginationbar-left {
+	-webkit-box-orient: vertical;
+	box-orient: vertical;
+	height: 100%;
+	width: 35px;
+	left: 0;
+	top: 0
+}
+
+.tau-paginationbar-left .tau-paginationbar-pageinfo {
+	dock: 35px
+}
+
+.tau-paginationbar-left .tau-paginationbar-pager {
+	-webkit-box-orient: vertical;
+	box-orient: vertical;
+	height: 100%;
+	width: 100%
+}
+
+.tau-paginationbar-left .tau-paginationbar-pager>.tau-slider {
+	-webkit-box-flex: 1;
+	box-flex: 1;
+	max-height: 100%
+}
+
+.tau-table-content-right>.tau-table-page {
+	margin-right: 35px
+}
+
+.tau-paginationbar-right {
+	-webkit-box-orient: vertical;
+	box-orient: vertical;
+	height: 100%;
+	width: 35px;
+	right: 0;
+	top: 0
+}
+
+.tau-paginationbar-right .tau-paginationbar-pageinfo {
+	dock: 35px
+}
+
+.tau-paginationbar-right .tau-paginationbar-pager {
+	-webkit-box-orient: vertical;
+	box-orient: vertical;
+	height: 100%;
+	width: 100%
+}
+
+.tau-paginationbar-right .tau-paginationbar-pager>.tau-slider {
+	-webkit-box-flex: 1;
+	box-flex: 1;
+	max-height: 100%
+}
+
+.tau-paginationbar-pager {
+	display: -webkit-box;
+	display: box;
+	-webkit-box-pack: center;
+	box-pack: center;
+	-webkit-box-align: center;
+	box-align: center;
+	-webkit-box-flex: 1;
+	box-flex: 1;
+	overflow: hidden
+}
+
+.tau-paginationbar-pager>.tau-slider {
+	position: relative;
+	display: block
+}
+
+.tau-paginationbar-pager .tau-slider-container {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0
+}
+
+.tau-paginationbar-pageinfo {
+	position: absolute;
+	background-color: green;
+	opacity: 0;
+	overflow-x: visible;
+	height: 20px;
+	width: 60px
+}
+
+.tau-table-page {
+	display: none;
+	width: 100%;
+	height: 100%
+}
+
+.tau-table-page-selected {
+	display: block
+}
+
+.tau-paginationbar-index {
+	text-align: center;
+	width: 25px;
+	height: 25px;
+	color: #000;
+	overflow: hidden;
+	text-overflow: ellipsis
+}
+
+.tau-paginationbar-index-selected {
+	-webkit-border-radius: 999999px;
+	border-radius: 999999px;
+	border: 1px solid #000;
+	background-color: #323232;
+	color: #fff;
+	min-width: 25px;
+	max-width: 100px;
+	width: auto
+}
+
+.tau-paginationbar-first {
+	-webkit-border-radius: 999999px;
+	border-radius: 999999px;
+	background-color: #000;
+	width: 35px;
+	height: 35px;
+	background-image: url(../../images/paginationbar/page-first.gif);
+	background-position: center;
+	background-repeat: no-repeat
+}
+
+.tau-paginationbar-first:active {
+	background-color: #fff
+}
+
+.tau-paginationbar-last {
+	-webkit-border-radius: 999999px;
+	border-radius: 999999px;
+	background-color: #000;
+	width: 35px;
+	height: 35px;
+	background-image: url(../../images/paginationbar/page-last.gif);
+	background-position: center;
+	background-repeat: no-repeat
+}
+
+.tau-paginationbar-last:active {
+	background-color: #fff
+}
+
+.tau-paginationbar-prev {
+	-webkit-border-radius: 999999px;
+	border-radius: 999999px;
+	background-color: #000;
+	width: 35px;
+	height: 35px;
+	background-image: url(../../images/paginationbar/page-prev.gif);
+	background-position: center;
+	background-repeat: no-repeat
+}
+
+.tau-paginationbar-prev:active {
+	background-color: #fff
+}
+
+.tau-paginationbar-next {
+	-webkit-border-radius: 999999px;
+	border-radius: 999999px;
+	background-color: #000;
+	width: 35px;
+	height: 35px;
+	background-image: url(../../images/paginationbar/page-next.gif);
+	background-position: center;
+	background-repeat: no-repeat
+}
+
+.tau-paginationbar-next:active {
+	background-color: #fff
+}
+
+.tau-paginationbar-left .tau-paginationbar-first,.tau-paginationbar-left .tau-paginationbar-prev,.tau-paginationbar-left .tau-paginationbar-next,.tau-paginationbar-left .tau-paginationbar-last,.tau-paginationbar-right .tau-paginationbar-first,.tau-paginationbar-right .tau-paginationbar-prev,.tau-paginationbar-right .tau-paginationbar-next,.tau-paginationbar-right .tau-paginationbar-last
+	{
+	-webkit-transform: rotate(90deg);
+	transform: rotate(90deg)
+}
+
+.tau-tablecell {
+	position: relative;
+	display: -webkit-box;
+	display: box;
+	width: 100%;
+	height: 54px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: inherit;
+	text-align: center;
+	text-decoration: none;
+	line-height: 1.2;
+	text-align: left;
+	overflow: hidden;
+	padding: 1px 4px 4px 1px;
+	border-top: 1px solid #f2f2f0;
+	border-bottom: 1px solid #bfbfbd
+}
+
+.tau-tablecell-contentitem {
+	height: 100%;
+	-webkit-box-flex: 1;
+	box-flex: 1;
+	padding: 0 4px;
+	text-overflow: inherit;
+	display: -webkit-box;
+	display: box;
+	-webkit-box-orient: vertical;
+	box-orient: vertical;
+	-webkit-box-pack: center;
+	box-pack: center;
+	-webkit-box-align: start;
+	box-align: start
+}
+
+.tau-tablecell-title {
+	position: relative;
+	display: block;
+	text-overflow: inherit;
+	overflow: hidden;
+	max-width: 100%;
+	font-size: 1em;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	height: auto;
+	-webkit-box-align: center;
+	box-align: center;
+	text-overflow: inherit
+}
+
+.tau-tablecell-subtitle {
+	position: relative;
+	display: block;
+	text-overflow: inherit;
+	overflow: hidden;
+	max-width: 100%;
+	font-size: 0.8em;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	-webkit-box-align: center;
+	box-align: center;
+	text-overflow: inherit;
+	height: auto;
+	color: #888
+}
+
+.tau-tablecell-leftitem {
+	position: relative;
+	display: block;
+	width: 40px;
+	height: 50px;
+	background-color: transparent
+}
+
+.tau-tablecell-leftitem>.tau {
+	height: 100%;
+	width: 100%
+}
+
+.tau-tablecell-rightitem {
+	position: relative;
+	display: block;
+	width: 40px;
+	height: 50px;
+	background-color: transparent
+}
+
+.tau-tablecell-rightitem>.tau {
+	height: 100%;
+	width: 100%
+}
+
+.tau-tablecell-highlighted {
+	background-color: #3c3c3a;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #3c3c3a),
+		color-stop(100%, #747472) );
+	background-image: -webkit-linear-gradient(#3c3c3a, #747472);
+	background-image: linear-gradient(#3c3c3a, #747472);
+	color: #fff
+}
+
+.tau-tablecell-selected {
+	background-color: #3c3c3a;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #3c3c3a),
+		color-stop(100%, #747472) );
+	background-image: -webkit-linear-gradient(#3c3c3a, #747472);
+	background-image: linear-gradient(#3c3c3a, #747472);
+	color: #fff
+}
+
+.tau-tablecell-auto {
+	height: auto
+}
+
+.tau-tablecell-auto .tau-tablecell-contentitem>* {
+	white-space: normal
+}
+
+.tau-tablecell-titleleft .tau-tablecell-contentitem {
+	display: -webkit-box;
+	display: box;
+	-webkit-box-orient: horizontal;
+	box-orient: horizontal;
+	-webkit-box-pack: justify;
+	box-pack: justify;
+	-webkit-box-align: start;
+	box-align: start
+}
+
+.tau-tablecell-titleleft .tau-tablecell-title {
+	-webkit-box-pack: start;
+	box-pack: start
+}
+
+.tau-tablecell-titleleft .tau-tablecell-subtitle {
+	-webkit-box-pack: end;
+	box-pack: end
+}
+
+.tau-tablecell-titleright .tau-tablecell-contentitem {
+	display: -webkit-box;
+	display: box;
+	-webkit-box-orient: horizontal;
+	box-orient: horizontal;
+	-webkit-box-pack: justify;
+	box-pack: justify;
+	-webkit-box-align: start;
+	box-align: start;
+	-webkit-box-direction: reverse;
+	box-direction: reverse
+}
+
+.tau-tablecell-titleright .tau-tablecell-contentitem .tau-tablecell-title
+	{
+	-webkit-box-pack: end;
+	box-pack: end
+}
+
+.tau-tablecell-titleright .tau-tablecell-contentitem .tau-tablecell-subtitle
+	{
+	-webkit-box-pack: start;
+	box-pack: start
+}
+
+.tau-linkurl {
+	width: 100%;
+	min-height: 44px;
+	z-index: 10;
+	background: url(../../images/table/arrow_gray.png) no-repeat right
+		#c1c8d4;
+	font-size: 1.2em
+}
+
+.tau-linkurl-title {
+	position: relative;
+	display: block;
+	text-overflow: inherit;
+	overflow: hidden;
+	max-width: 100%;
+	font-size: 1em;
+	width: 100%;
+	padding: 0;
+	margin: 0
+}
+
+.tau-linkurl-subtitle {
+	position: relative;
+	display: block;
+	text-overflow: inherit;
+	overflow: hidden;
+	max-width: 100%;
+	font-size: 0.8em;
+	width: 100%;
+	padding: 0;
+	margin: 0
+}
+
+.tau-textview {
+	position: relative;
+	display: -webkit-inline-box;
+	display: -moz-inline-box;
+	display: inline-flexbox;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background: #e4e4e2
+}
+
+.tau-textview_tau-disp-block,.tau-textview.tau-disp-block {
+	display: -webkit-box;
+	display: box
+}
+
+.tau-textview-container {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 100%;
+	max-width: 100%;
+	max-height: 100%;
+	overflow: hidden;
+	padding: 0;
+	margin: 0
+}
+
+.tau-textview-content {
+	position: relative;
+	display: inherit;
+	-webkit-box-orient: inherit;
+	box-orient: inherit;
+	-webkit-box-flex: 1;
+	box-flex: 1;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	overflow: visible
+}
+
+.tau-textview-content {
+	padding: 12px
+}
+
+.tau-textarea {
+	position: relative;
+	display: -webkit-inline-box;
+	display: -moz-inline-box;
+	display: inline-flexbox;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background: #fff
+}
+
+.tau-textarea_tau-disp-block,.tau-textarea.tau-disp-block {
+	display: -webkit-box;
+	display: box
+}
+
+.tau-textarea-container {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 100%;
+	max-width: 100%;
+	max-height: 100%;
+	overflow: hidden;
+	padding: 0;
+	margin: 0
+}
+
+.tau-textarea-content {
+	position: relative;
+	display: inherit;
+	-webkit-box-orient: inherit;
+	box-orient: inherit;
+	-webkit-box-flex: 1;
+	box-flex: 1;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	overflow: visible
+}
+
+.tau-textarea {
+	border: 1px solid #959595;
+	font-size: 14pt;
+	color: #888;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #eef0f1),
+		color-stop(25%, #fefefe), color-stop(25%, #ffffff),
+		color-stop(100%, #ffffff) );
+	background-image: -webkit-linear-gradient(#eef0f1, #fefefe 25%, #ffffff 25%, #ffffff);
+	background-image: linear-gradient(#eef0f1, #fefefe 25%, #ffffff 25%, #ffffff);
+	outline: none
+}
+
+.tau-textarea-control {
+	position: absolute;
+	display: block;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	resize: none;
+	outline: none;
+	border: 0 none !important;
+	padding: 0;
+	overflow: hidden;
+	-webkit-appearance: none;
+	font-size: inherit;
+	font-family: inherit;
+	color: inherit;
+	background: none
+}
+
+.tau-textarea-highlighted {
+	border: 1px solid #32bbe7
+}
+
+.tau-carousel {
+	position: relative;
+	display: -webkit-inline-box;
+	display: -moz-inline-box;
+	display: inline-flexbox;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background: transparent
+}
+
+.tau-carousel_tau-disp-block,.tau-carousel.tau-disp-block {
+	display: -webkit-box;
+	display: box
+}
+
+.tau-carousel-container {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 100%;
+	max-width: 100%;
+	max-height: 100%;
+	overflow: hidden;
+	padding: 0;
+	margin: 0
+}
+
+.tau-carousel-content {
+	position: relative;
+	display: inherit;
+	-webkit-box-orient: inherit;
+	box-orient: inherit;
+	-webkit-box-flex: 1;
+	box-flex: 1;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	overflow: visible
+}
+
+.tau-carousel-content {
+	-webkit-box-orient: inherit;
+	box-orient: inherit
+}
+
+.tau-carousel-content>* {
+	position: relative;
+	display: block
+}
+
+.tau-carousel-vertical {
+	-webkit-box-orient: vertical;
+	box-orient: vertical
+}
+
+.tau-carousel-vertical>.tau-carousel-indicator {
+	right: 0;
+	top: 0;
+	height: 100%;
+	width: 30px
+}
+
+.tau-carousel-vertical .tau-carousel-content {
+	width: 100%
+}
+
+.tau-carousel-vertical .tau-carousel-content>* {
+	width: 100%
+}
+
+.tau-carousel-horizontal {
+	-webkit-box-orient: horizontal;
+	box-orient: horizontal
+}
+
+.tau-carousel-horizontal>.tau-carousel-indicator {
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 30px
+}
+
+.tau-carousel-horizontal .tau-carousel-content {
+	height: 100%;
+	display: -webkit-box;
+	display: box
+}
+
+.tau-carousel-horizontal .tau-carousel-content>* {
+	height: 100%
+}
+
+.tau-carousel-indicator {
+	position: absolute;
+	z-index: 100;
+	display: -webkit-box;
+	display: box;
+	-webkit-box-pack: center;
+	box-pack: center;
+	-webkit-box-align: center;
+	box-align: center;
+	-webkit-box-orient: inherit;
+	box-orient: inherit;
+	color: #fff
+}
+
+.tau-carousel-indicator-indexvisible .tau-carousel-indicator-button {
+	width: auto;
+	min-width: 14px;
+	min-height: 14px;
+	font-size: .8em;
+	-webkit-box-align: center;
+	box-align: center;
+	-webkit-box-pack: center;
+	box-pack: center
+}
+
+.tau-carousel-indicator-indexvisible .tau-carousel-indicator-button-text
+	{
+	display: -webkit-box;
+	display: box;
+	-webkit-box-pack: center;
+	box-pack: center;
+	-webkit-box-align: center;
+	box-align: center
+}
+
+.tau-carousel-indicator-button {
+	width: 8px;
+	height: 8px;
+	margin: 2px;
+	padding: 0;
+	border: none;
+	-webkit-border-radius: 999999px;
+	border-radius: 999999px;
+	-webkit-box-shadow: none !important;
+	box-shadow: none !important;
+	background-image: none !important;
+	background-color: #686868
+}
+
+.tau-carousel-indicator-button-text {
+	display: none
+}
+
+.tau-carousel-vertical>.tau-carousel-indicator>.tau-carousel-indicator-button
+	{
+	display: -webkit-box;
+	display: box
+}
+
+.tau-carousel-indicator-button-selected {
+	background-color: #fff;
+	color: #000
+}
+
+.tau-button {
+	position: relative;
+	display: -webkit-inline-box;
+	display: -moz-inline-box;
+	display: inline-flexbox;
+	-webkit-box-orient: horizontal;
+	box-orient: horizontal;
+	-webkit-box-align: center;
+	box-align: center;
+	-webkit-box-pack: center;
+	box-pack: center;
+	height: 44px;
+	width: auto;
+	padding: 0;
+	margin: 0;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: #fff;
+	text-align: center;
+	text-decoration: none;
+	line-height: 1.2;
+	overflow: visible;
+	font-size: 1em;
+	border: 1px solid #000;
+	background-color: #555;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #999b9a),
+		color-stop(50%, #6a6b6d), color-stop(51%, #555555),
+		color-stop(100%, #7e7e7e) );
+	background-image: -webkit-linear-gradient(#999b9a, #6a6b6d 50%, #555555 51%, #7e7e7e);
+	background-image: linear-gradient(#999b9a, #6a6b6d 50%, #555555 51%, #7e7e7e)
+}
+
+.tau-button.tau-button-rectangle {
+	-webkit-border-radius: 0;
+	border-radius: 0;
+	color: #fff
+}
+
+.tau-button.tau-button-round {
+	-webkit-border-radius: 999999px;
+	border-radius: 999999px
+}
+
+.tau-button {
+	-webkit-border-radius: 5px;
+	border-radius: 5px
+}
+
+.tau-button.tau-button-back {
+	padding: 0 2px 0 0;
+	text-align: left;
+	max-width: 33%;
+	display: -webkit-box;
+	display: box
+}
+
+.tau-button.tau-button-back:before {
+	content: url(../../images/navigationbar/back_ar.png);
+	padding: 0 4px
+}
+
+.tau-button-text {
+	position: relative;
+	display: block;
+	text-overflow: inherit;
+	overflow: hidden;
+	max-width: 100%;
+	font-size: 1em;
+	-webkit-box-flex: 1;
+	box-flex: 1;
+	padding: 2px
+}
+
+.tau-button-badge {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: #fff;
+	text-align: center;
+	text-decoration: none;
+	line-height: 1.2;
+	background-color: #fff;
+	position: absolute;
+	z-index: 91;
+	margin: -10px;
+	-webkit-border-radius: 999999px;
+	border-radius: 999999px
+}
+
+.tau-button-badge-text {
+	position: relative;
+	display: -webkit-box;
+	display: box;
+	-webkit-box-align: center;
+	box-align: center;
+	-webkit-box-pack: center;
+	box-pack: center;
+	background-color: #e24850;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f4b9bd),
+		color-stop(50%, #e7565d), color-stop(51%, #e24850),
+		color-stop(100%, #cd4d5c) );
+	background-image: -webkit-linear-gradient(#f4b9bd, #e7565d 50%, #e24850 51%, #cd4d5c);
+	background-image: linear-gradient(#f4b9bd, #e7565d 50%, #e24850 51%, #cd4d5c);
+	-webkit-border-radius: inherit;
+	border-radius: inherit;
+	width: auto;
+	max-width: 48px;
+	min-width: 24px;
+	height: 24px;
+	margin: 2px;
+	font-size: .8em
+}
+
+.tau-button-normal {
+	-webkit-box-shadow: none !important;
+	box-shadow: none !important;
+	background-image: none !important
+}
+
+.tau-button-small,.tau-navigationbar .tau-button,.tau-toolbar .tau-button
+	{
+	max-height: 32px;
+	font-size: .75em
+}
+
+.tau-button._tau-disp-block,.tau-button.tau-disp-block {
+	display: -webkit-box;
+	display: box
+}
+
+.tau-button.tau-button-selected {
+	background-color: #005ca7;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #008cff),
+		color-stop(50%, #0074d3), color-stop(51%, #005ca7),
+		color-stop(100%, #015eab) );
+	background-image: -webkit-linear-gradient(#008cff, #0074d3 50%, #005ca7 51%, #015eab);
+	background-image: linear-gradient(#008cff, #0074d3 50%, #005ca7 51%, #015eab);
+	color: #fff
+}
+
+.tau-button.tau-button-highlighted,.tau-button:active {
+	background-color: #6a6c6b;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #c2c4c3),
+		color-stop(50%, #868789), color-stop(51%, #6a6c6b),
+		color-stop(100%, #9e9fa1) );
+	background-image: -webkit-linear-gradient(#c2c4c3, #868789 50%, #6a6c6b 51%, #9e9fa1);
+	background-image: linear-gradient(#c2c4c3, #868789 50%, #6a6c6b 51%, #9e9fa1);
+	color: #fff
+}
+
+.tau-button.tau-button-disabled {
+	background-color: #606261;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #919392),
+		color-stop(50%, #717173), color-stop(51%, #606261),
+		color-stop(100%, #7e7e7e) );
+	background-image: -webkit-linear-gradient(#919392, #717173 50%, #606261 51%, #7e7e7e);
+	background-image: linear-gradient(#919392, #717173 50%, #606261 51%, #7e7e7e);
+	color: #a5a5a5
+}
+
+.tau-button-back {
+	background-color: #343434;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #6c6c6c),
+		color-stop(50%, #454545), color-stop(51%, #343434),
+		color-stop(100%, #414141) );
+	background-image: -webkit-linear-gradient(#6c6c6c, #454545 50%, #343434 51%, #414141);
+	background-image: linear-gradient(#6c6c6c, #454545 50%, #343434 51%, #414141)
+}
+
+.tau-button-back.tau-button-selected {
+	background-color: #01203c;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #005ca9),
+		color-stop(50%, #013765), color-stop(51%, #01203c),
+		color-stop(100%, #012440) );
+	background-image: -webkit-linear-gradient(#005ca9, #013765 50%, #01203c 51%, #012440);
+	background-image: linear-gradient(#005ca9, #013765 50%, #01203c 51%, #012440);
+	color: #fff
+}
+
+.tau-button-back.tau-button-highlighted,.tau-button-back:active {
+	background-color: #1c1c1c;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #5c5c5a),
+		color-stop(50%, #313131), color-stop(51%, #1c1c1c),
+		color-stop(100%, #2c2c2c) );
+	background-image: -webkit-linear-gradient(#5c5c5a, #313131 50%, #1c1c1c 51%, #2c2c2c);
+	background-image: linear-gradient(#5c5c5a, #313131 50%, #1c1c1c 51%, #2c2c2c);
+	color: #fff
+}
+
+.tau-button-back.tau-button-disabled {
+	background-color: #383838;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #60605e),
+		color-stop(50%, #454545), color-stop(51%, #383838),
+		color-stop(100%, #414141) );
+	background-image: -webkit-linear-gradient(#60605e, #454545 50%, #383838 51%, #414141);
+	background-image: linear-gradient(#60605e, #454545 50%, #383838 51%, #414141);
+	color: #a5a5a5
+}
+
+.tau-button-dark {
+	background-color: #191919;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #525250),
+		color-stop(50%, #2c2c2c), color-stop(51%, #191919),
+		color-stop(100%, #272727) );
+	background-image: -webkit-linear-gradient(#525250, #2c2c2c 50%, #191919 51%, #272727);
+	background-image: linear-gradient(#525250, #2c2c2c 50%, #191919 51%, #272727)
+}
+
+.tau-button-dark.tau-button-selected {
+	background-color: #01203c;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #005ca9),
+		color-stop(50%, #013765), color-stop(51%, #01203c),
+		color-stop(100%, #012440) );
+	background-image: -webkit-linear-gradient(#005ca9, #013765 50%, #01203c 51%, #012440);
+	background-image: linear-gradient(#005ca9, #013765 50%, #01203c 51%, #012440);
+	color: #fff
+}
+
+.tau-button-dark.tau-button-highlighted,.tau-button-dark:active {
+	background-color: #1c1c1c;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #5c5c5a),
+		color-stop(50%, #313131), color-stop(51%, #1c1c1c),
+		color-stop(100%, #2c2c2c) );
+	background-image: -webkit-linear-gradient(#5c5c5a, #313131 50%, #1c1c1c 51%, #2c2c2c);
+	background-image: linear-gradient(#5c5c5a, #313131 50%, #1c1c1c 51%, #2c2c2c);
+	color: #fff
+}
+
+.tau-button-dark.tau-button-disabled {
+	background-color: #383838;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #60605e),
+		color-stop(50%, #454545), color-stop(51%, #383838),
+		color-stop(100%, #414141) );
+	background-image: -webkit-linear-gradient(#60605e, #454545 50%, #383838 51%, #414141);
+	background-image: linear-gradient(#60605e, #454545 50%, #383838 51%, #414141);
+	color: #a5a5a5
+}
+
+.tau-button-red {
+	background-color: #800;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #fc2020),
+		color-stop(50%, #a00000), color-stop(51%, #880000),
+		color-stop(100%, #ac0000) );
+	background-image: -webkit-linear-gradient(#fc2020, #a00000 50%, #880000 51%, #ac0000);
+	background-image: linear-gradient(#fc2020, #a00000 50%, #880000 51%, #ac0000)
+}
+
+.tau-button-red.tau-button-selected {
+	background-color: #500000;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #fc0001),
+		color-stop(50%, #710100), color-stop(51%, #500000),
+		color-stop(100%, #860001) );
+	background-image: -webkit-linear-gradient(#fc0001, #710100 50%, #500000 51%, #860001);
+	background-image: linear-gradient(#fc0001, #710100 50%, #500000 51%, #860001);
+	color: #fff
+}
+
+.tau-button-red.tau-button-highlighted,.tau-button-red:active {
+	background-color: #ce0000;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ff2021),
+		color-stop(50%, #f20001), color-stop(51%, #ce0000),
+		color-stop(100%, #fe0000) );
+	background-image: -webkit-linear-gradient(#ff2021, #f20001 50%, #ce0000 51%, #fe0000);
+	background-image: linear-gradient(#ff2021, #f20001 50%, #ce0000 51%, #fe0000);
+	color: #fff
+}
+
+.tau-button-red.tau-button-disabled {
+	background-color: #854140;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #be504f),
+		color-stop(50%, #904041), color-stop(51%, #854140),
+		color-stop(100%, #96403f) );
+	background-image: -webkit-linear-gradient(#be504f, #904041 50%, #854140 51%, #96403f);
+	background-image: linear-gradient(#be504f, #904041 50%, #854140 51%, #96403f);
+	color: #a5a5a5
+}
+
+.tau-button-khaki {
+	background-color: #ad8c00;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #fecc00),
+		color-stop(50%, #c59f00), color-stop(51%, #ad8c00),
+		color-stop(100%, #b69200) );
+	background-image: -webkit-linear-gradient(#fecc00, #c59f00 50%, #ad8c00 51%, #b69200);
+	background-image: linear-gradient(#fecc00, #c59f00 50%, #ad8c00 51%, #b69200)
+}
+
+.tau-button-khaki.tau-button-selected {
+	background-color: #834e00;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #fcaf01),
+		color-stop(50%, #a66c00), color-stop(51%, #834e00),
+		color-stop(100%, #855700) );
+	background-image: -webkit-linear-gradient(#fcaf01, #a66c00 50%, #834e00 51%, #855700);
+	background-image: linear-gradient(#fcaf01, #a66c00 50%, #834e00 51%, #855700);
+	color: #fff
+}
+
+.tau-button-khaki.tau-button-highlighted,.tau-button-khaki:active {
+	background-color: #dfa900;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #fff500),
+		color-stop(50%, #fcc000), color-stop(51%, #dfa900),
+		color-stop(100%, #e8b001) );
+	background-image: -webkit-linear-gradient(#fff500, #fcc000 50%, #dfa900 51%, #e8b001);
+	background-image: linear-gradient(#fff500, #fcc000 50%, #dfa900 51%, #e8b001);
+	color: #fff
+}
+
+.tau-button-khaki.tau-button-disabled {
+	background-color: #978640;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #bda640),
+		color-stop(50%, #a28f40), color-stop(51%, #978640),
+		color-stop(100%, #9b893f) );
+	background-image: -webkit-linear-gradient(#bda640, #a28f40 50%, #978640 51%, #9b893f);
+	background-image: linear-gradient(#bda640, #a28f40 50%, #978640 51%, #9b893f);
+	color: #a5a5a5
+}
+
+.tau-button-green {
+	background-color: #009203;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #00ff08),
+		color-stop(50%, #00ab04), color-stop(51%, #009203),
+		color-stop(100%, #00a604) );
+	background-image: -webkit-linear-gradient(#00ff08, #00ab04 50%, #009203 51%, #00a604);
+	background-image: linear-gradient(#00ff08, #00ab04 50%, #009203 51%, #00a604)
+}
+
+.tau-button-green.tau-button-selected {
+	background-color: #013800;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #01a300),
+		color-stop(50%, #005200), color-stop(51%, #013800),
+		color-stop(100%, #004d00) );
+	background-image: -webkit-linear-gradient(#01a300, #005200 50%, #013800 51%, #004d00);
+	background-image: linear-gradient(#01a300, #005200 50%, #013800 51%, #004d00);
+	color: #fff
+}
+
+.tau-button-green.tau-button-highlighted,.tau-button-green:active {
+	background-color: #00e003;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #00fe06),
+		color-stop(50%, #01fe03), color-stop(51%, #00e003),
+		color-stop(100%, #00ff03) );
+	background-image: -webkit-linear-gradient(#00fe06, #01fe03 50%, #00e003 51%, #00ff03);
+	background-image: linear-gradient(#00fe06, #01fe03 50%, #00e003 51%, #00ff03);
+	color: #fff
+}
+
+.tau-button-green.tau-button-disabled {
+	background-color: #408940;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #40be41),
+		color-stop(50%, #409540), color-stop(51%, #408940),
+		color-stop(100%, #409343) );
+	background-image: -webkit-linear-gradient(#40be41, #409540 50%, #408940 51%, #409343);
+	background-image: linear-gradient(#40be41, #409540 50%, #408940 51%, #409343);
+	color: #a5a5a5
+}
+
+.tau-textfield {
+	position: relative;
+	display: -webkit-inline-box;
+	display: -moz-inline-box;
+	display: inline-flexbox;
+	-webkit-box-orient: horizontal;
+	box-orient: horizontal;
+	-webkit-box-align: center;
+	box-align: center;
+	min-height: 32px;
+	min-width: 40px;
+	border: 1px solid #959595;
+	background-color: #fff;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #eef0f1),
+		color-stop(25%, #fefefe), color-stop(25%, #ffffff),
+		color-stop(100%, #ffffff) );
+	background-image: -webkit-linear-gradient(#eef0f1, #fefefe 25%, #ffffff 25%, #ffffff);
+	background-image: linear-gradient(#eef0f1, #fefefe 25%, #ffffff 25%, #ffffff);
+	font-size: 14pt
+}
+
+.tau-textfield._tau-disp-block {
+	display: -webkit-box;
+	display: box
+}
+
+.tau-textfield-placeholderimage {
+	position: relative;
+	display: block;
+	max-height: 28px;
+	max-width: 30px;
+	height: auto;
+	width: auto;
+	padding: 2px
+}
+
+.tau-textfield-control {
+	position: relative;
+	display: block;
+	-webkit-box-flex: 1;
+	box-flex: 1;
+	background: none;
+	border: 0 none !important;
+	-webkit-appearance: none;
+	font-size: inherit;
+	font-family: inherit;
+	text-overflow: ellipsis;
+	text-align: inherit;
+	outline: none;
+	background: transparent
+}
+
+.tau-textfield-clearbutton {
+	position: reletive;
+	display: block;
+	width: 26px;
+	height: 26px;
+	border-style: none;
+	background: url(../../images/textfield/clear.png) no-repeat right
+}
+
+.tau-textfield-highlighted,.tau-textfield-selected {
+	border: 1px solid #32bbe7
+}
+
+.tau-textfield-clearbutton:active {
+	background: url(../../images/textfield/clearSel.png) no-repeat right
+}
+
+.tau-slider {
+	background: transparent;
+	display: inline-block;
+	-webkit-box-sizing: content-box;
+	box-sizing: content-box
+}
+
+.tau-slider-container {
+	position: relative;
+	display: -webkit-box;
+	display: box;
+	-webkit-box-align: center;
+	box-align: center;
+	-webkit-box-pack: center;
+	box-pack: center;
+	-webkit-box-orient: inherit;
+	box-orient: inherit;
+	width: 100%;
+	height: 100%
+}
+
+.tau-slider-thumb {
+	position: absolute;
+	height: 25px;
+	width: 25px;
+	z-index: 3;
+	padding: 0;
+	margin: 0;
+	border: 1px solid #838383;
+	-webkit-border-radius: 999999px;
+	border-radius: 999999px;
+	background-color: #d2d2d2;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f2f0f1),
+		color-stop(50%, #e7e7e7), color-stop(51%, #d2d2d2),
+		color-stop(100%, #c4c4c4) );
+	background-image: -webkit-linear-gradient(#f2f0f1, #e7e7e7 50%, #d2d2d2 51%, #c4c4c4);
+	background-image: linear-gradient(#f2f0f1, #e7e7e7 50%, #d2d2d2 51%, #c4c4c4);
+	-webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 0 2px rgba(0, 0, 0, 0.5)
+}
+
+.tau-slider-vertical {
+	width: 25px !important;
+	height: 300px;
+	padding: 10px 0;
+	-webkit-box-orient: vertical;
+	box-orient: vertical
+}
+
+.tau-slider-vertical .tau-slider-beforebar {
+	position: absolute;
+	left: 0;
+	right: 0;
+	width: 9px;
+	height: 15px;
+	z-index: 2;
+	padding: 0;
+	margin: auto;
+	background: #31b6e1;
+	background-image: -webkit-gradient(linear, 100% 50%, 0% 50%, color-stop(0%, #258cad),
+		color-stop(33.333%, #2eacd4), color-stop(66.667%, #31b6e1),
+		color-stop(100%, #32bbe7) );
+	background-image: -webkit-linear-gradient(right, #258cad, #2eacd4, #31b6e1, #32bbe7);
+	background-image: linear-gradient(right, #258cad, #2eacd4, #31b6e1, #32bbe7);
+	-webkit-border-radius: 999999px;
+	border-radius: 999999px
+}
+
+.tau-slider-vertical .tau-slider-afterbar {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	width: 9px;
+	z-index: 1;
+	border-color: #969696 #b8b8b8 #cdcdcd transparent;
+	border-style: solid;
+	border-width: 1px;
+	background: #dfdfdd;
+	background-image: -webkit-gradient(linear, 100% 50%, 0% 50%, color-stop(0%, #c1c1c1),
+		color-stop(50%, #d6d6d6), color-stop(51%, #dfdfdd),
+		color-stop(100%, #e4e4e2) );
+	background-image: -webkit-linear-gradient(right, #c1c1c1, #d6d6d6 50%, #dfdfdd 51%,
+		#e4e4e2);
+	background-image: linear-gradient(right, #c1c1c1, #d6d6d6 50%, #dfdfdd 51%, #e4e4e2);
+	-webkit-border-radius: 999999px;
+	border-radius: 999999px
+}
+
+.tau-slider-vertical .tau-slider-thumb {
+	left: 0
+}
+
+.tau-slider-horizontal {
+	height: 25px !important;
+	width: 300px;
+	padding: 0 10px;
+	-webkit-box-orient: horizontal;
+	box-orient: horizontal
+}
+
+.tau-slider-horizontal .tau-slider-beforebar {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	height: 9px;
+	width: 15px;
+	z-index: 2;
+	padding: 0;
+	margin: auto;
+	background: #31b6e1;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #258cad),
+		color-stop(33.333%, #2eacd4), color-stop(66.667%, #31b6e1),
+		color-stop(100%, #32bbe7) );
+	background-image: -webkit-linear-gradient(top, #258cad, #2eacd4, #31b6e1, #32bbe7);
+	background-image: linear-gradient(top, #258cad, #2eacd4, #31b6e1, #32bbe7);
+	-webkit-border-radius: 999999px;
+	border-radius: 999999px
+}
+
+.tau-slider-horizontal .tau-slider-afterbar {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	height: 9px;
+	z-index: 1;
+	border-color: #969696 #b8b8b8 #cdcdcd transparent;
+	border-style: solid;
+	border-width: 1px;
+	background: #dfdfdd;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #c1c1c1),
+		color-stop(50%, #d6d6d6), color-stop(51%, #dfdfdd),
+		color-stop(100%, #e4e4e2) );
+	background-image: -webkit-linear-gradient(top, #c1c1c1, #d6d6d6 50%, #dfdfdd 51%, #e4e4e2);
+	background-image: linear-gradient(top, #c1c1c1, #d6d6d6 50%, #dfdfdd 51%, #e4e4e2);
+	-webkit-border-radius: 999999px;
+	border-radius: 999999px
+}
+
+.tau-slider-horizontal .tau-slider-thumb {
+	top: 0
+}
+
+.tau-switch {
+	display: inline-block;
+	background: transparent;
+	color: #fff
+}
+
+.tau-switch-container {
+	position: relative;
+	-webkit-border-radius: 999999px;
+	border-radius: 999999px
+}
+
+.tau-switch-beforebar,.tau-switch-afterbar {
+	display: -webkit-box;
+	display: box;
+	-webkit-box-pack: center;
+	box-pack: center;
+	-webkit-box-align: center;
+	box-align: center;
+	overflow: hidden;
+	text-align: center
+}
+
+.tau-switch-thumb {
+	position: absolute;
+	height: 30px;
+	width: 30px;
+	z-index: 3;
+	border: 1px solid #919191;
+	-webkit-border-radius: 999999px;
+	border-radius: 999999px;
+	background-color: #d9d9d9
+}
+
+.tau-switch-vertical {
+	height: 100px
+}
+
+.tau-switch-vertical>.tau-switch-container {
+	width: 30px;
+	height: 100%
+}
+
+.tau-switch-vertical .tau-switch-beforebar {
+	top: 0;
+	width: 30px;
+	z-index: 2;
+	border-top: 1px solid #278bab;
+	-webkit-box-shadow: #278bab 0 2px 2px inset;
+	box-shadow: #278bab 0 2px 2px inset;
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	top: 0;
+	bottom: 0;
+	border-left: 1px solid #36a2c6;
+	background-color: #32bbe7;
+	background-image: -webkit-gradient(linear, 100% 50%, 0% 50%, color-stop(1px, #2991b4),
+		color-stop(2px, #2a9ac0), color-stop(3px, #2eacd4),
+		color-stop(4px, #32b7e2), color-stop(100%, #32bbe7) );
+	background-image: -webkit-linear-gradient(right, #2991b4 1px, #2a9ac0 2px, #2eacd4 3px,
+		#32b7e2 4px, #32bbe7);
+	background-image: linear-gradient(right, #2991b4 1px, #2a9ac0 2px, #2eacd4 3px, #32b7e2
+		4px, #32bbe7);
+	-webkit-border-radius: 999999px;
+	border-radius: 999999px
+}
+
+.tau-switch-vertical .tau-switch-afterbar {
+	width: 30px;
+	z-index: 1;
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	top: 0;
+	bottom: 0;
+	border-left: 1px solid #6a6a6a;
+	background-color: #727272;
+	background-image: -webkit-gradient(linear, 100% 50%, 0% 50%, color-stop(1px, #3c3c3c),
+		color-stop(2px, #3f3f3f), color-stop(3px, #454545),
+		color-stop(4px, #4c4c4c), color-stop(100%, #727272) );
+	background-image: -webkit-linear-gradient(right, #3c3c3c 1px, #3f3f3f 2px, #454545 3px,
+		#4c4c4c 4px, #727272);
+	background-image: linear-gradient(right, #3c3c3c 1px, #3f3f3f 2px, #454545 3px, #4c4c4c
+		4px, #727272);
+	-webkit-border-radius: 999999px;
+	border-radius: 999999px
+}
+
+.tau-switch-vertical .tau-switch-thumb {
+	background-image: -webkit-gradient(linear, 100% 50%, 0% 50%, color-stop(0%, #d9d9d9),
+		color-stop(100%, #f9f9f9) );
+	background-image: -webkit-linear-gradient(right, #d9d9d9, #f9f9f9);
+	background-image: linear-gradient(right, #d9d9d9, #f9f9f9)
+}
+
+.tau-switch-horizontal {
+	width: 100px
+}
+
+.tau-switch-horizontal>.tau-switch-container {
+	height: 30px;
+	width: 100%
+}
+
+.tau-switch-horizontal .tau-switch-beforebar {
+	left: 0;
+	height: 30px;
+	z-index: 2;
+	border-top: 1px solid #278bab;
+	-webkit-box-shadow: #278bab 0 2px 2px inset;
+	box-shadow: #278bab 0 2px 2px inset;
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	left: 0;
+	right: 0;
+	border-bottom: 1px solid #36a2c6;
+	background-color: #32bbe7;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(1px, #2991b4),
+		color-stop(2px, #2a9ac0), color-stop(3px, #2eacd4),
+		color-stop(4px, #32b7e2), color-stop(100%, #32bbe7) );
+	background-image: -webkit-linear-gradient(top, #2991b4 1px, #2a9ac0 2px, #2eacd4 3px,
+		#32b7e2 4px, #32bbe7);
+	background-image: linear-gradient(top, #2991b4 1px, #2a9ac0 2px, #2eacd4 3px, #32b7e2 4px,
+		#32bbe7);
+	-webkit-border-radius: 999999px;
+	border-radius: 999999px
+}
+
+.tau-switch-horizontal .tau-switch-afterbar {
+	height: 30px;
+	z-index: 1;
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	left: 0;
+	right: 0;
+	border-bottom: 1px solid #6a6a6a;
+	background-color: #727272;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(1px, #3c3c3c),
+		color-stop(2px, #3f3f3f), color-stop(3px, #454545),
+		color-stop(4px, #4c4c4c), color-stop(100%, #727272) );
+	background-image: -webkit-linear-gradient(top, #3c3c3c 1px, #3f3f3f 2px, #454545 3px,
+		#4c4c4c 4px, #727272);
+	background-image: linear-gradient(top, #3c3c3c 1px, #3f3f3f 2px, #454545 3px, #4c4c4c 4px,
+		#727272);
+	-webkit-border-radius: 999999px;
+	border-radius: 999999px
+}
+
+.tau-switch-horizontal .tau-switch-thumb {
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #d9d9d9),
+		color-stop(100%, #f9f9f9) );
+	background-image: -webkit-linear-gradient(top, #d9d9d9, #f9f9f9);
+	background-image: linear-gradient(top, #d9d9d9, #f9f9f9)
+}
+
+.tau-checkbox {
+	position: relative;
+	display: inline-block;
+	text-decoration: none;
+	color: inherit;
+	height: 18px;
+	width: 18px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	border: 1px solid #4d4e50;
+	background: #c3c3c3;
+	-webkit-box-shadow: inset #b9b9b9 0 -2px, inset #d7d7d7 0 2px;
+	box-shadow: inset #b9b9b9 0 -2px, inset #d7d7d7 0 2px;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #c3c3c3),
+		color-stop(100%, #c6c6c6) );
+	background-image: -webkit-linear-gradient(#c3c3c3, #c6c6c6);
+	background-image: linear-gradient(#c3c3c3, #c6c6c6)
+}
+
+.tau-checkbox-selected {
+	background: #070708;
+	-webkit-box-shadow: rgba(0, 0, 0, 0.5) 0 3px 3px 0;
+	box-shadow: rgba(0, 0, 0, 0.5) 0 3px 3px 0;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #070708),
+		color-stop(100%, #8d8d8d) );
+	background-image: -webkit-linear-gradient(#070708, #8d8d8d);
+	background-image: linear-gradient(#070708, #8d8d8d)
+}
+
+.tau-checkbox-selected::before {
+	position: absolute;
+	top: 4px;
+	bottom: 4px;
+	left: 3px;
+	right: 3px;
+	content: "";
+	background-image: url(../../images/checkbox/selected.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: contain;
+	background-color: transparent
+}
+
+.tau-checkbox-disable {
+	border: 1px solid #9fa0a0;
+	background: #ccc;
+	-webkit-box-shadow: inset #cacaca 0 -2px, inset #dedede 0 2px;
+	box-shadow: inset #cacaca 0 -2px, inset #dedede 0 2px;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #cccccc),
+		color-stop(100%, #d0d0d0) );
+	background-image: -webkit-linear-gradient(#cccccc, #d0d0d0);
+	background-image: linear-gradient(#cccccc, #d0d0d0)
+}
+
+.tau-radio {
+	position: relative;
+	display: inline-block;
+	text-decoration: none;
+	color: inherit;
+	height: 18px;
+	width: 18px;
+	-webkit-border-radius: 999999px;
+	border-radius: 999999px;
+	border: 1px solid #4d4e50;
+	background: #c3c3c3;
+	-webkit-box-shadow: inset #b9b9b9 0 -2px, inset #d7d7d7 0 2px;
+	box-shadow: inset #b9b9b9 0 -2px, inset #d7d7d7 0 2px;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #c3c3c3),
+		color-stop(100%, #c6c6c6) );
+	background-image: -webkit-linear-gradient(#c3c3c3, #c6c6c6);
+	background-image: linear-gradient(#c3c3c3, #c6c6c6)
+}
+
+.tau-radio-selected {
+	background: #070708;
+	-webkit-box-shadow: rgba(0, 0, 0, 0.5) 0 3px 3px 0;
+	box-shadow: rgba(0, 0, 0, 0.5) 0 3px 3px 0;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #070708),
+		color-stop(100%, #8d8d8d) );
+	background-image: -webkit-linear-gradient(#070708, #8d8d8d);
+	background-image: linear-gradient(#070708, #8d8d8d)
+}
+
+.tau-radio-selected::before {
+	position: absolute;
+	top: 2px;
+	bottom: 2px;
+	left: 2px;
+	right: 2px;
+	content: "";
+	background-image: url(../../images/radio/selected.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: contain;
+	background-color: transparent
+}
+
+.tau-radio-disable {
+	border: 1px solid #9fa0a0;
+	background: #ccc;
+	-webkit-box-shadow: inset #cacaca 0 -2px, inset #dedede 0 2px;
+	box-shadow: inset #cacaca 0 -2px, inset #dedede 0 2px;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #cccccc),
+		color-stop(100%, #d0d0d0) );
+	background-image: -webkit-linear-gradient(#cccccc, #d0d0d0);
+	background-image: linear-gradient(#cccccc, #d0d0d0)
+}
+
+.tau-imageview {
+	display: inline-block;
+	height: auto;
+	width: auto;
+	-webkit-background-size: contain;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: top center;
+	background-color: transparent
+}
+
+.tau-segmentedbutton {
+	display: inline-block;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	overflow: hidden
+}
+
+.tau-segmentedbutton-horizontal {
+	display: -webkit-inline-box;
+	display: -moz-inline-box;
+	display: inline-flexbox;
+	-webkit-box-orient: horizontal;
+	box-orient: horizontal;
+	-webkit-box-pack: center;
+	box-pack: center;
+	-webkit-box-align: center;
+	box-align: center;
+	color: #afafaf;
+	height: 46px;
+	text-align: center
+}
+
+.tau-segmentedbutton-horizontal>.tau-segmentedbutton-item {
+	-webkit-box-align: center;
+	box-align: center;
+	-webkit-box-pack: center;
+	box-pack: center;
+	-webkit-box-flex: 1;
+	box-flex: 1;
+	position: relative;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #3c3c3c),
+		color-stop(10%, #3e3e3e), color-stop(11%, #4d4d4d),
+		color-stop(100%, #727272) );
+	background-image: -webkit-linear-gradient(#3c3c3c, #3e3e3e 10%, #4d4d4d 11%, #727272);
+	background-image: linear-gradient(#3c3c3c, #3e3e3e 10%, #4d4d4d 11%, #727272);
+	-webkit-box-shadow: -2px 0 2px rgba(98, 98, 98, 0.5), -1px -1px 1px
+		rgba(98, 98, 98, 0.5) inset;
+	box-shadow: -2px 0 2px rgba(98, 98, 98, 0.5), -1px -1px 1px
+		rgba(98, 98, 98, 0.5) inset;
+	border-left: 1px solid transparent;
+	border-right: 1px solid transparent;
+	border-top: 1px solid #2b2b2b;
+	border-bottom: 1px solid #252525
+}
+
+.tau-segmentedbutton-horizontal>.tau-segmentedbutton-item:FIRST-CHILD {
+	-webkit-border-top-left-radius: 8px;
+	border-top-left-radius: 8px;
+	-webkit-border-bottom-left-radius: 8px;
+	border-bottom-left-radius: 8px;
+	-webkit-box-shadow: -1px -1px 1px rgba(98, 98, 98, 0.5) inset;
+	box-shadow: -1px -1px 1px rgba(98, 98, 98, 0.5) inset;
+	border-left: 1px solid #000
+}
+
+.tau-segmentedbutton-horizontal>.tau-segmentedbutton-item:LAST-CHILD {
+	-webkit-border-top-right-radius: 8px;
+	border-top-right-radius: 8px;
+	-webkit-border-bottom-right-radius: 8px;
+	border-bottom-right-radius: 8px;
+	-webkit-box-shadow: -2px 0 2px rgba(98, 98, 98, 0.5);
+	box-shadow: -2px 0 2px rgba(98, 98, 98, 0.5);
+	border-right: 1px solid #000
+}
+
+.tau-segmentedbutton-horizontal>.tau-segmentedbutton-item-selected {
+	color: #fff;
+	background-color: #535456;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #989a99),
+		color-stop(50%, #6b6b6d), color-stop(51%, #535456),
+		color-stop(100%, #7d7d7d) );
+	background-image: -webkit-linear-gradient(#989a99, #6b6b6d 50%, #535456 51%, #7d7d7d);
+	background-image: linear-gradient(#989a99, #6b6b6d 50%, #535456 51%, #7d7d7d);
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	border: 1px solid #000
+}
+
+.tau-segmentedbutton-horizontal>.tau-segmentedbutton-item-selected+.tau-segmentedbutton-item-selected
+	{
+	border-left: 1px solid transparent
+}
+
+.tau-segmentedbutton-vertical {
+	color: #000;
+	background-color: #fff;
+	border: 1px solid #000;
+	text-align: left
+}
+
+.tau-segmentedbutton-vertical>.tau-segmentedbutton-item {
+	border: 1px solid #000
+}
+
+.tau-segmentedbutton-vertical>.tau-segmentedbutton-item:before {
+	position: relative;
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+	content: "";
+	margin: 2px;
+	border: 1px solid #000;
+	-webkit-border-radius: 999999px;
+	border-radius: 999999px;
+	-webkit-box-sizing: content-box;
+	box-sizing: content-box
+}
+
+.tau-segmentedbutton-vertical.tau-segmentedbutton-muliple>.tau-segmentedbutton-item:before
+	{
+	-webkit-border-radius: 0 !important;
+	border-radius: 0 !important
+}
+
+.tau-segmentedbutton-vertical>.tau-segmentedbutton-item-selected:before
+	{
+	background-color: #000
+}
+
+.tau-segmentedbutton-vertical>.tau-segmentedbutton-item-selected:FIRST-CHILD
+	{
+	-webkit-border-top-left-radius: 8px;
+	border-top-left-radius: 8px;
+	-webkit-border-top-right-radius: 8px;
+	border-top-right-radius: 8px
+}
+
+.tau-segmentedbutton-vertical>.tau-segmentedbutton-item-selected:LAST-CHILD
+	{
+	-webkit-border-bottom-left-radius: 8px;
+	border-bottom-left-radius: 8px;
+	-webkit-border-bottom-right-radius: 8px;
+	border-bottom-right-radius: 8px
+}
+
+.tau-segmentedbutton-vertical.tau-segmentedbutton-muliple>.tau-segmentedbutton-item-selected:before
+	{
+	content: url(../../images/checkbox/selected.png)
+}
+
+.tau-segmentedbutton-item {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: inherit;
+	text-align: center;
+	text-decoration: none;
+	line-height: 1.2;
+	display: -webkit-box;
+	display: box;
+	height: 100%;
+	padding: 10px;
+	text-align: inherit
+}
+
+.tau-segmentedbutton-item-selected {
+	background-color: gray
+}
+
+.tau-segmentedbutton-item-text {
+	position: relative;
+	display: block;
+	text-overflow: inherit;
+	overflow: hidden;
+	max-width: 100%;
+	font-size: 1em;
+	-webkit-box-flex: 1;
+	box-flex: 1
+}
+
+.tau-select {
+	position: relative;
+	display: inline-block;
+	height: 32px;
+	width: 50%;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	border: 2px solid #232323
+}
+
+.tau-select-control {
+	display: -webkit-box;
+	display: box;
+	-webkit-box-orient: horizontal;
+	box-orient: horizontal;
+	-webkit-box-pack: center;
+	box-pack: center;
+	-webkit-box-align: center;
+	box-align: center;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: #000;
+	text-align: center;
+	text-decoration: none;
+	line-height: 1.2;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	padding: 0 25px 0 5px;
+	background-image: url(../../images/select/select.png);
+	background-position: center right;
+	background-repeat: no-repeat
+}
+
+.tau-select-control-title {
+	position: relative;
+	display: block;
+	text-overflow: inherit;
+	overflow: hidden;
+	max-width: 100%;
+	font-size: 1em;
+	-webkit-box-flex: 1;
+	box-flex: 1
+}
+
+.tau-select-badge {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: #fff;
+	text-align: center;
+	text-decoration: none;
+	line-height: 1.2;
+	background-color: #fff;
+	position: absolute;
+	z-index: 91;
+	margin: -10px;
+	-webkit-border-radius: 999999px;
+	border-radius: 999999px;
+	position: relative;
+	margin: 0
+}
+
+.tau-select-badge-label {
+	position: relative;
+	display: -webkit-box;
+	display: box;
+	-webkit-box-align: center;
+	box-align: center;
+	-webkit-box-pack: center;
+	box-pack: center;
+	background-color: #e24850;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f4b9bd),
+		color-stop(50%, #e7565d), color-stop(51%, #e24850),
+		color-stop(100%, #cd4d5c) );
+	background-image: -webkit-linear-gradient(#f4b9bd, #e7565d 50%, #e24850 51%, #cd4d5c);
+	background-image: linear-gradient(#f4b9bd, #e7565d 50%, #e24850 51%, #cd4d5c);
+	-webkit-border-radius: inherit;
+	border-radius: inherit;
+	width: auto;
+	max-width: 48px;
+	min-width: 24px;
+	height: 24px;
+	margin: 2px;
+	font-size: .8em
+}
+
+.tau-select-mask {
+	position: fixed;
+	opacity: .8;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 999981;
+	background-color: #e4e4e2
+}
+
+.tau-select-popup {
+	position: absolute;
+	z-index: 999982;
+	overflow: hidden;
+	left: 0;
+	width: auto;
+	height: auto;
+	max-width: 50%;
+	max-height: 50%;
+	margin: 8px 2px;
+	border: 4px solid #000;
+	background-color: #fff
+}
+
+.tau-select-popup-full {
+	position: fixed;
+	top: 0 !important;
+	left: 0 !important;
+	overflow: hidden;
+	margin: 4px !important
+}
+
+.tau-select-popup-full>.tau-scrollpanel {
+	display: block
+}
+
+.tau-select-popup-title {
+	position: relative;
+	display: block;
+	height: 30px;
+	width: 100%;
+	background-color: #000
+}
+
+.tau-select-popup-close {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 26px;
+	height: 27px;
+	margin-bottom: 50px;
+	background: url(../../images/textfield/clear.png) no-repeat
+}
+
+.tau-select-popup-close:active {
+	background: url(../../images/textfield/clearSel.png) no-repeat
+}
+
+.tau-select-item {
+	display: -webkit-box;
+	display: box;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: #000;
+	text-align: center;
+	text-decoration: none;
+	line-height: 1.2;
+	text-align: left;
+	height: 30px;
+	padding: 2px;
+	overflow: hidden;
+	border-bottom: 1px solid #000
+}
+
+.tau-select-item:before {
+	position: relative;
+	display: block;
+	width: 14px;
+	height: 14px;
+	margin: 2px;
+	content: "";
+	-webkit-border-radius: 999999px;
+	border-radius: 999999px;
+	-webkit-box-sizing: content-box;
+	box-sizing: content-box;
+	border: 2px solid #000
+}
+
+.tau-select-item-text {
+	position: relative;
+	display: block;
+	text-overflow: inherit;
+	overflow: hidden;
+	max-width: 100%;
+	font-size: 1em;
+	display: -webkit-box;
+	display: box;
+	-webkit-box-flex: 1;
+	box-flex: 1;
+	-webkit-box-align: center;
+	box-align: center
+}
+
+.tau-select-item-selected {
+	background-color: gray
+}
+
+.tau-select-item-selected:before {
+	background-color: #000
+}
+
+.tau-select-multiple .tau-select-item:before {
+	-webkit-border-radius: 0 !important;
+	border-radius: 0 !important
+}
+
+.tau-select-multiple .tau-select-item-selected:before {
+	content: url(../../images/checkbox/selected.png)
+}
+
+.tau-select-popup-arrow {
+	position: absolute;
+	height: 0;
+	width: 0;
+	border-style: solid;
+	border-width: .63em;
+	border-color: transparent;
+	-webkit-box-sizing: content-box;
+	box-sizing: content-box
+}
+
+.tau-dialog {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	padding: 10px;
+	overflow: hidden
+}
+
+.tau-dialog-mask {
+	position: fixed;
+	opacity: .8;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 999981;
+	background-color: #e4e4e2
+}
+
+.tau-dialog-popup {
+	position: absolute;
+	z-index: 999982;
+	overflow: hidden;
+	position: fixed !important;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: auto;
+	border: 4px solid #000;
+	margin: 4px !important;
+	background-color: #fff
+}
+
+.tau-dialog-popup .tau-dialog-content {
+	position: relative;
+	display: -webkit-inline-box;
+	display: -moz-inline-box;
+	display: inline-flexbox;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background: transparent
+}
+
+.tau-dialog-popup .tau-dialog-content_tau-disp-block,.tau-dialog-popup .tau-dialog-content.tau-disp-block
+	{
+	display: -webkit-box;
+	display: box
+}
+
+.tau-dialog-popup .tau-dialog-content-container {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 100%;
+	max-width: 100%;
+	max-height: 100%;
+	overflow: hidden;
+	padding: 0;
+	margin: 0
+}
+
+.tau-dialog-popup .tau-dialog-content-content {
+	position: relative;
+	display: inherit;
+	-webkit-box-orient: inherit;
+	box-orient: inherit;
+	-webkit-box-flex: 1;
+	box-flex: 1;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	overflow: visible
+}
+
+.tau-dialog-popup-full>.tau-scrollpanel {
+	display: block
+}
+
+.tau-dialog-popup-title {
+	position: relative;
+	display: block;
+	height: 30px;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	background-color: #000
+}
+
+.tau-dialog-popup-close {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 26px;
+	height: 27px;
+	margin-bottom: 50px;
+	background: url(../../images/textfield/clear.png) no-repeat
+}
+
+.tau-dialog-popup-close:active {
+	background: url(../../images/textfield/clearSel.png) no-repeat
+}
+
+.tau-actionsheet {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	padding: 10px;
+	overflow: hidden;
+	color: #fff
+}
+
+.tau-actionsheet-mask {
+	position: fixed;
+	opacity: .8;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 999981;
+	background-color: #e4e4e2
+}
+
+.tau-actionsheet-popup {
+	display: -webkit-box;
+	display: box;
+	-webkit-box-orient: vertical;
+	box-orient: vertical;
+	-webkit-box-pack: end;
+	box-pack: end;
+	-webkit-box-align: justify;
+	box-align: justify;
+	position: absolute;
+	z-index: 999982;
+	overflow: hidden;
+	border: 4px solid #000;
+	background-color: #000;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: auto;
+	padding: 5px;
+	overflow: visible
+}
+
+.tau-actionsheet-popup .tau-scrollpanel {
+	display: block;
+	height: auto
+}
+
+.tau-actionsheet-popup .tau-button {
+	position: relative;
+	width: 100%
+}
+
+.tau-actionsheet-popup-arrow {
+	position: absolute;
+	height: 0;
+	width: 0;
+	border-style: solid;
+	border-width: .63em;
+	border-color: transparent;
+	-webkit-box-sizing: content-box;
+	box-sizing: content-box
+}
+
+.tau-actionsheet-title {
+	font-size: inherit;
+	margin: 2px
+}
+
+.tau-systemdialog {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	padding: 10px;
+	overflow: hidden;
+	background-color: transparent;
+	display: -webkit-box;
+	display: box;
+	-webkit-box-orient: vertical;
+	box-orient: vertical;
+	-webkit-box-pack: center;
+	box-pack: center;
+	-webkit-box-align: center;
+	box-align: center
+}
+
+.tau-systemdialog-mask {
+	position: fixed;
+	opacity: .4;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 999981;
+	background-color: #000
+}
+
+.tau-systemdialog-popup {
+	position: absolute;
+	z-index: 999982;
+	overflow: hidden;
+	position: relative;
+	left: 0;
+	max-width: 100%;
+	width: 90%;
+	height: 40%;
+	display: -webkit-box;
+	display: box;
+	-webkit-box-orient: vertical;
+	box-orient: vertical;
+	-webkit-box-pack: center;
+	box-pack: center;
+	-webkit-box-align: center;
+	box-align: center;
+	padding: 5px;
+	border: 2px solid white;
+	background-color: rgba(33, 48, 112, 0.8);
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	-webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.7) !important;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.7) !important;
+	background-image: -webkit-gradient(radial, 50% -560, 100, 50% 0, 1200, from(#fff),
+		color-stop(23%, #fff), color-stop(30%, rgba(255, 255, 255, 0) ),
+		color-stop(30%, rgba(0, 0, 0, 0.25) ), to(rgba(0, 0, 0, 0) ) )
+}
+
+.tau-systemdialog-popup-title {
+	position: relative;
+	display: block;
+	height: 30px;
+	width: 100%;
+	margin: 5px 2px;
+	padding: 0;
+	font-size: 18px;
+	text-shadow: 0px -1px 0px #000;
+	overflow: hidden;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: #fff;
+	text-align: center;
+	text-decoration: none;
+	line-height: 1.2
+}
+
+.tau-systemdialog-msg {
+	position: relative;
+	display: block;
+	text-overflow: inherit;
+	overflow: hidden;
+	max-width: 100%;
+	font-size: 1em;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	-webkit-box-flex: 1;
+	box-flex: 1;
+	color: #fff
+}
+
+.tau-systemdialog-msg>.tau-scrollpanel {
+	display: block;
+	text-align: center
+}
+
+.tau-systemdialog-msg>.tau-textfield {
+	-webkit-box-flex: 1;
+	box-flex: 1;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+	width: 100%
+}
+
+.tau-systemdialog-control {
+	display: -webkit-box;
+	display: -moz-box;
+	display: flexbox;
+	position: relative;
+	height: 44px;
+	width: 100%;
+	padding: 2px;
+	margin-top: 10px;
+	font-size: 1.2em;
+	font-weight: bold;
+	text-shadow: 0 -1px 1px #000
+}
+
+.tau-systemdialog-control-cancel {
+	display: -webkit-box;
+	display: -moz-box;
+	display: flexbox;
+	-webkit-box-align: center;
+	box-align: center;
+	-webkit-box-pack: center;
+	box-pack: center;
+	position: relative;
+	overflow: hidden;
+	height: 100%;
+	width: 50%;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: #fff;
+	text-align: center;
+	text-decoration: none;
+	line-height: 1.2;
+	-webkit-box-flex: 1;
+	box-flex: 1;
+	background-color: rgba(0, 0, 0, 0);
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(255, 255,
+		255, 0.5) ), color-stop(50%, rgba(255, 255, 255, 0.2) ),
+		color-stop(51%, rgba(0, 0, 0, 0) ),
+		color-stop(100%, rgba(255, 255, 255, 0.1) ) );
+	background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0.5),
+		rgba(255, 255, 255, 0.2) 50%, rgba(0, 0, 0, 0) 51%,
+		rgba(255, 255, 255, 0.1) );
+	background-image: linear-gradient(rgba(255, 255, 255, 0.5),
+		rgba(255, 255, 255, 0.2) 50%, rgba(0, 0, 0, 0) 51%,
+		rgba(255, 255, 255, 0.1) );
+	border: 1px solid #0a0e21
+}
+
+.tau-systemdialog-control-cancel:active {
+	background-color: #0a0e21
+}
+
+.tau-systemdialog-control-ok {
+	display: -webkit-box;
+	display: -moz-box;
+	display: flexbox;
+	-webkit-box-align: center;
+	box-align: center;
+	-webkit-box-pack: center;
+	box-pack: center;
+	position: relative;
+	overflow: hidden;
+	height: 100%;
+	width: 50%;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: #fff;
+	text-align: center;
+	text-decoration: none;
+	line-height: 1.2;
+	-webkit-box-flex: 1;
+	box-flex: 1;
+	background-color: rgba(255, 255, 255, 0.1);
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(255, 255,
+		255, 0.6) ), color-stop(50%, rgba(255, 255, 255, 0.3) ),
+		color-stop(51%, rgba(255, 255, 255, 0.1) ),
+		color-stop(100%, rgba(255, 255, 255, 0.2) ) );
+	background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0.6),
+		rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.1) 51%,
+		rgba(255, 255, 255, 0.2) );
+	background-image: linear-gradient(rgba(255, 255, 255, 0.6),
+		rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.1) 51%,
+		rgba(255, 255, 255, 0.2) );
+	border: 1px solid #0a0e21
+}
+
+.tau-systemdialog-control-ok:active {
+	background-color: rgba(10, 14, 33, 0.8)
+}
+
+.tau-picker {
+	position: fixed;
+	z-index: 1000;
+	left: 0;
+	width: 100%;
+	font-family: helvetica, sans-serif;
+	background: rgba(0, 0, 0, 0.7);
+	background-image: initial;
+	background-repeat-x: initial;
+	background-repeat-y: initial;
+	background-attachment: initial;
+	background-position-x: initial;
+	background-position-y: initial;
+	background-origin: initial;
+	background-clip: initial;
+	background-color: rgba(0, 0, 0, 0.699);
+	text-align: left
+}
+
+.tau-picker>.tau-picker-header {
+	position: relative;
+	width: 100%;
+	height: 43px;
+	border-top: 1px solid black;
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: black;
+	border-bottom: 1px solid black;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: black;
+	background: url(sw-header.png) 0 0 repeat-x;
+	background-image: url(../../images/picker/header.png);
+	background-repeat-x: repeat;
+	background-repeat-y: no-repeat;
+	background-attachment: initial;
+	background-position-x: 0px;
+	background-position-y: 0px;
+	background-origin: initial;
+	background-clip: initial;
+	background-color: initial;
+	opacity: 0.9
+}
+
+.tau-picker>.tau-picker-header>.tau-picker-done {
+	float: right
+}
+
+.tau-picker>.tau-picker-frame {
+	position: absolute;
+	z-index: 1000;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 215px;
+	border-width: 16px;
+	border-top-width: 16px;
+	border-right-width: 16px;
+	border-bottom-width: 16px;
+	border-left-width: 16px;
+	-webkit-border-image: url(../../images/picker/frame.png) 16
+}
+
+.tau-picker>.tau-picker-slotswrapper {
+	position: relative;
+	z-index: 999;
+	display: block;
+	height: 215px;
+	width: 100%;
+	padding: 0 11px;
+	overflow: hidden
+}
+
+.tau-picker>.tau-picker-slotswrapper>.tau-picker-slots {
+	display: table;
+	width: 100%;
+	background: #FCFCFC
+}
+
+.tau-picker>.tau-picker-slotswrapper>.tau-picker-slots div {
+	display: table-cell;
+	height: 100%;
+	padding-top: 86px;
+	border-left: 2px solid #0D0E0F;
+	background-color: #FCFCFC;
+	background-image: url(../../images/picker/slot-border.png);
+	background-position: 0 0, 100% 0;
+	background-repeat: repeat-y
+}
+
+.tau-picker>.tau-picker-slotswrapper>.tau-picker-slots div:first-child {
+	border: 0
+}
+
+.tau-picker>.tau-picker-slotswrapper>.tau-picker-slots>.tau-picker-slot
+	{
+	text-align: right
+}
+
+.tau-picker>.tau-picker-slotswrapper>.tau-picker-slots>.tau-picker-separator
+	{
+	background: #DDD;
+	width: 1%
+}
+
+.tau-picker>.tau-picker-slotswrapper>.tau-picker-slots ul {
+	padding: 0 0 85px 0;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 85px;
+	padding-left: 0px;
+	margin: 0;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	list-style: none;
+	list-style-type: none;
+	list-style-position: initial;
+	list-style-image: initial
+}
+
+.tau-picker>.tau-picker-slotswrapper>.tau-picker-slots li {
+	padding: 0 8px;
+	padding-top: 0px;
+	padding-right: 8px;
+	padding-bottom: 0px;
+	padding-left: 8px;
+	height: 44px;
+	overflow: hidden;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	font: bold 23px/44px Helvetica, sans-serif
+}
+
+.tau-picker>.tau-picker-slotswrapper>.tau-picker-slots li>.tau-datepicker-slot-item-day
+	{
+	font: bold 22px/44px Helvetica, sans-serif;
+	color: gray
+}
+
+.tau-picker>.tau-picker-slotswrapper>.tau-picker-slots li>.tau-datepicker-slot-item-ampm
+	{
+	font: bold 22px/44px Helvetica, sans-serif
+}
+
+.tau-picker>.tau-picker-slotswrapper>.tau-picker-slots li>.tau-datepicker-slot-item-highlight
+	{
+	color: blue
+}
+
+.tau-picker>.tau-picker-slotswrapper>.tau-picker-slots li.tau-datepicker-slot-item-disabled
+	{
+	color: gray
+}
+
+.tau-spinner-button {
+	position: relative;
+	display: -webkit-inline-box;
+	display: -moz-inline-box;
+	display: inline-flexbox;
+	-webkit-box-orient: horizontal;
+	box-orient: horizontal;
+	-webkit-box-align: center;
+	box-align: center;
+	-webkit-box-pack: center;
+	box-pack: center;
+	min-width: 20px;
+	padding: 0;
+	margin: 0;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	line-height: 1.2;
+	overflow: visible;
+	font-size: 1em;
+	border: 1px solid black;
+	background-color: #555555;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #999b9a),
+		color-stop(50%, #6a6b6d), color-stop(51%, #555),
+		color-stop(100%, #7e7e7e) );
+	background-image: -webkit-linear-gradient(#999b9a, #6a6b6d 50%, #555 51%, #7e7e7e);
+	background-image: linear-gradient(#999b9a, #6a6b6d 50%, #555555 51%, #7e7e7e)
+}
+
+.tau-popoverController {
+	position: fixed;
+	overflow: visible;
+	z-index: 9999;
+	border-style: solid;
+	border-width: 3px;
+	border-color: black;
+	-webkit-border-radius: 3px;
+	-webkit-box-shadow: 5px 5px 7px gray;
+}
+
+.tau-popoverController-content {
+	position: absolute;
+	background-color: white;
+	overflow: hidden;
+	z-index: 9999;
+}
+
+.tau-popoverController-masking {
+	position: fixed;
+	z-index: 9998;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+}
+
+.tau-popoverController-direction {
+	width: 0px;
+	height: 0px;
+	position: fixed;
+	border: 10px solid black;
+}
+
+.qq-uploader {
+	position: relative;
+	width: 100%;
+}
+
+.qq-upload-button {
+	display: block; /* or inline-block */
+	width: 105px;
+	padding: 7px 0;
+	text-align: center;
+	background: #880000;
+	border-bottom: 1px solid #ddd;
+	color: #fff;
+}
+
+.qq-upload-button-hover {
+	background: #cc0000;
+}
+
+.qq-upload-button-focus {
+	outline: 1px dotted black;
+}
+
+.qq-upload-drop-area {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	min-height: 70px;
+	z-index: 2;
+	background: #FF9797;
+	text-align: center;
+}
+
+.qq-upload-drop-area span {
+	display: block;
+	position: absolute;
+	top: 50%;
+	width: 100%;
+	margin-top: -8px;
+	font-size: 16px;
+}
+
+.qq-upload-drop-area-active {
+	background: #FF7171;
+}
+
+.qq-upload-list {
+	margin: 5px 35px;
+	padding: 0;
+	list-style: disc;
+}
+
+.qq-upload-list li {
+	margin: 0;
+	padding: 0;
+	line-height: 15px;
+	font-size: 12px;
+	color: black
+}
+
+.qq-upload-file,.qq-upload-spinner,.qq-upload-size,.qq-upload-cancel,.qq-upload-failed-text,.aj-upload-delete,.aj-upload-preview
+	{
+	margin-right: 7px;
+}
+
+.qq-upload-file {
+	
+}
+
+.qq-upload-spinner {
+	display: inline-block;
+	background: url("images/loading.gif");
+	width: 15px;
+	height: 15px;
+	vertical-align: text-bottom;
+}
+
+.qq-upload-size,.qq-upload-cancel {
+	font-size: 11px;
+}
+
+.qq-upload-failed-text {
+	display: none;
+}
+
+.qq-upload-fail .qq-upload-failed-text {
+	display: inline;
+}
+

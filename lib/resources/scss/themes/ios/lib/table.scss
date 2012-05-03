@@ -1,0 +1,455 @@
+$table-bgcolor: #fff !default;
+
+$header-height: 40px !default;
+$footer-height: 40px !default;
+
+$paginationbar-height: 40px !default;
+
+$tablesection-container-start-bgcolor: #B0BAC2 !default;
+$tablesection-container-stop1-bgcolor: #95A4AE 2px !default;
+$tablesection-container-end-bgcolor: #B7C0C7 !default;
+$tablesection-container-border-top: 1px solid #7A868E !default;
+$tablesection-container-border-bottom: 1px solid #7A868E !default;
+$tablesection-header-text-color: #fff !default;
+$tablesection-header-text-shadow:  0px 1px 0px rgba(0, 0, 0, 0.5) !default;
+
+$sectionGroup-tablesection-header-text-color: #4C566C !default;
+$sectionGroup-tablesection-header-text-shadow: white 0 1px 0 !default;
+$sectionGroup-tablesection-content-border: 1px solid #ADAEAD !default;
+$sectionGroup-tablesection-content-bgColor: #fff !default;
+$sectionGroup-tablesection-conten-text-shadow: inset 0 1px rgba(0, 0, 0, .08), 0 1px rgba(255, 255, 255, .81) !default; 
+$sectionGroup-tablesection-border-radius: 8px !default;
+
+$header-text-color: #6A6E70 !default;
+$header-start-bgcolor: #DEE4E8 !default;
+$header-end-bgcolor: #B4BEC5 !default;
+$header-border-top: 1px #E3E9ED solid !default;
+$header-border-bottom: 1px #81929F solid !default;
+$header-text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.5) !default;
+
+
+$footer-text-color: #6A6E70 !default;
+$footer-start-bgcolor: #DEE4E8 !default;
+$footer-end-bgcolor: #B4BEC5 !default;
+$footer-border-top: 1px  #C0CCD2 solid  !default;
+$footer-border-bottom: 2px #C0CCD2 solid !default;
+$footer-text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.5) !default;
+
+$index-default-color: #737373 !default;
+$index-selected-color: #fff !default;
+$index-start-bgcolor: #4A4A4A !default;
+$index-end-bgcolor: #717171 !default;
+
+
+/**
+ * tau-table
+ */
+@mixin tau-table {
+  /** table ******************************************************************/
+  @include tau-scrollpanel(tau-table, $table-bgcolor);
+  
+  @include tau-tablecell-content(tau-table);
+  
+  .tau-table {
+    @include display-box;
+    width: 100%;
+    height: 100%;
+    @include box-flex(1);
+    @include box-orient(vertical);
+  }
+  
+  .tau-table-ios {
+  background-color : #C5CCD3;
+  @if ($enable-gradient) {
+    @include background-image(linear-gradient(left, rgba(255,255,255,0) 75%, rgba(255,255,255,.1) 75% ));
+    @include background-size(7px);
+  }
+  }
+  
+  .tau-table-container {
+    @include box-flex(1);
+
+    & > .tau-scroller {
+      @include box-flex(1);
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+    }
+  }
+
+  /** header footer *************************************************************/
+  .tau-table-header {
+    @include display-box;
+	@include box-align(center);
+	@include box-pack(center);
+    position: relative;
+    width: 100%;
+    height : auto;
+    min-height: $header-height;
+    padding: 2px;
+    margin: 0;
+    border-top: $header-border-top;
+	border-bottom: $header-border-bottom;
+    background-color: $header-end-bgcolor;
+	@include tau-gradient2($header-start-bgcolor,
+        $header-end-bgcolor);
+    font-size: 1em;
+	font-weight: bold;
+    color: $header-text-color;
+    overflow: hidden;
+	text-shadow: $header-text-shadow;
+  }
+  
+  .tau-table-footer {
+    position: relative;
+    @include display-box;
+	@include box-align(center);
+	@include box-pack(center);
+    width: 100%;
+    height : $footer-height;
+    min-height: $footer-height;
+    padding: 2px;
+    margin: 0;
+    border-top: $footer-border-top;
+	border-bottom: $footer-border-top;
+    background-color: $footer-end-bgcolor;
+	@include tau-gradient2($footer-start-bgcolor,
+        $footer-end-bgcolor);
+    font-size: 1em;
+	font-weight: bold;
+    color: $footer-text-color;
+	text-shadow: $footer-text-shadow;
+  }
+  
+  /** more **********************************************************************/
+  .tau-table-more {
+    /*position: relative;*/
+  }
+  
+  /** section *******************************************************************/ 
+  .tau-tablesection {
+    display: block;
+    position: relative;
+    width: 100%;
+  }
+
+  .tau-tablesection-container {
+    @include display-box;
+    @include box-pack(justify);
+    @include box-align(center);
+    
+    width: 100%;
+    height: 25px;
+	
+	background-color: $tablesection-container-end-bgcolor;
+	@if($enable-gradient) {
+		@include background-image(linear-gradient(color_stops($tablesection-container-start-bgcolor,$tablesection-container-stop1-bgcolor, $tablesection-container-end-bgcolor)));
+	}
+	
+	border-top: $tablesection-container-border-top;
+	border-bottom: $tablesection-container-border-bottom;
+  }
+  
+  .tau-tablesection-header {
+    @include display-box;
+    @include box-align(center);
+    @include box-pack(end);
+    height: 100%;
+  
+    padding: 0 15px 0 5px;
+    overflow: hidden;
+  
+    font-size: .8em;
+	font-weight: bold;
+    
+	color: $tablesection-header-text-color;
+    text-align: right;
+    text-overflow: ellipsis;
+    text-shadow: $tablesection-header-text-shadow;
+  }
+
+  .tau-tablesection-bar {
+    display: none !important;
+  }
+  
+  .tau-tablesection-arrow {
+	dispaly: none !important;
+  }
+  
+  /* Section Group */
+  
+  .tau-table-sectionGroup {
+    background-color: transparent;
+    & .tau-tablesection {
+      margin-bottom: 10px;
+	  &:first-child {
+		margin-top: 10px;
+	  }
+    }
+    & .tau-tablesection-container {
+	  background: transparent;
+      @include box-shadow(none);
+      @include border-right-radius(none);
+      @include box-pack(start);
+      width: 100%;
+      min-width: 100%;
+	  border: 0;
+	  margin: 4px;
+    }
+	
+	& .tau-tablesection-header {
+	 font-size: 1.1em;
+	 text-shadow: $sectionGroup-tablesection-header-text-shadow;
+	 color: $sectionGroup-tablesection-header-text-color;
+	 overflow: visible;
+	}
+	
+    & .tau-tablesection-bar {
+      display: none;
+    }
+    & .tau-tablesection-arrow {
+      display: none;
+    }
+    
+    & .tau-tablesection-content {
+      border: $sectionGroup-tablesection-content-border;
+      @include tau-border-radius($sectionGroup-tablesection-border-radius);
+      margin: 0 4px 4px 4px;
+      background-color: $sectionGroup-tablesection-content-bgColor;
+	  @include tau-box-shadow(($sectionGroup-tablesection-conten-text-shadow));          
+	  & .tau-tablecell:last-child {
+		border: 0;
+	  }
+    }
+  }
+  
+  .tau-tablesection-sectionGroup {
+    margin-bottom: 10px;
+    
+    & .tau-tablesection-header {
+      background-color: transparent;
+      color: #888;
+      @include box-shadow(none);
+      @include border-right-radius(none);
+      @include box-pack(start);
+    }
+    & .tau-tablesection-bar {
+      display: none;
+    }
+    & .tau-tablesection-arrow {
+      display: none;
+    }
+    
+    & .tau-tablesection-content {
+      border: 2px #888 solid;
+      @include border-radius;
+      margin: 4px 6px 4px 4px;
+      background-color: #fff;
+    }
+  }
+  
+  /** fold **********************************************************************/
+  .tau-tablesection-fold {
+	display : none !important;
+  }
+  
+  .tau-tablesection-accordion > .tau-tablesection-content {
+    overflow: hidden;
+    height: 0;
+  }
+  
+  .tau-tablesection-content {
+    & > .tau-tablecell:first-child {
+      border-top: none;
+    }
+  }
+    
+  /** indexbar ******************************************************************/
+  .tau-indexbar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    
+    height: 100%;
+    width: 30px;
+    margin: 0 5px;
+    text-align: center;
+  }
+  
+  .tau-indexbar-content {
+    height: 100%;
+    width: 100%;
+    
+    @include display-box;
+    @include box-pack(justify);
+    @include box-align(center);
+    @include box-orient(vertical);
+    
+    padding: 18px 0;
+    color: $index-default-color;
+  }
+  
+  .tau-indexbar-highlighted .tau-indexbar-content{
+    color : $index-selected-color;
+    background-color: $index-start-bgcolor;
+    @if ($enable-gradient) {
+      @include background-image(linear-gradient(left, color_stops(
+        $index-start-bgcolor, 
+        $index-end-bgcolor)));
+    }
+  }
+  
+  .tau-indexbar-index {
+    display: block;
+    width: 100%;
+    @include box-flex(1);
+    font-size: 0.6em;
+  }
+  
+  /** pagination ****************************************************************/
+  .tau-paginationbar {
+    position: absolute;
+    @include display-box;
+    @include box-pack(center);
+    @include box-align(center);
+    
+    opacity: .5;
+    text-align: center;
+    z-index: 1;
+  }
+  
+  @each $dock in top, bottom, left, right {
+    $direction: horizontal;
+    $size1: width;
+    $size2: height;
+    $pos: left;
+      
+    @if ($dock == left or $dock == right) {
+      $direction: vertical;
+      $size1: height;
+      $size2: width;
+      $pos: top;
+    }
+    
+    .tau-table-content-#{$dock} {
+      & > .tau-table-page {
+        margin-#{$dock}: $paginationbar-height;
+      }
+    }
+    
+    .tau-paginationbar-#{$dock} {
+      @include box-orient($direction);
+      #{$size1}: 100%;
+      #{$size2}: $paginationbar-height;
+      #{$dock}: 0;
+      #{$pos}: 0;
+	  
+	  @if($direction == vertical) {
+		padding: 10px 0;
+	  }
+      
+      & .tau-paginationbar-pageinfo {
+        @if ($dock == bottom) {
+          margin-top: -20px;
+        } @else {
+          #{dock}: $paginationbar-height;
+        }
+      }
+      
+      & .tau-paginationbar-pager {
+        @include box-orient($direction);
+        height: 100%;
+        width: 100%;
+        
+        & > .tau-slider {
+          @include box-flex(1);
+          max-#{$size1}: 100%;
+        }
+      }
+    }
+  }
+  
+  .tau-paginationbar-pager{
+    @include display-box;
+    @include box-pack(center);
+    @include box-align(center);
+    @include box-flex(1);
+    overflow: hidden;
+	padding-top: 4px;
+    
+    & > .tau-slider {
+      position: relative;
+      display: block;
+    }
+    
+    & .tau-slider-container {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+    
+  .tau-paginationbar-pageinfo {
+    position: absolute;
+    background-color: green;
+    opacity: 0;
+    overflow-x: visible;
+    height: 20px;
+    width: 60px;
+  }
+  
+  .tau-table-page {
+    display: none;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .tau-table-page-selected {
+    display: block;
+  }
+  
+  .tau-paginationbar-index {
+    text-align: center;
+    width: 25px;
+    height: 25px;
+    color: #000;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .tau-paginationbar-index-selected{
+    color: #000;
+    min-width: 25px;
+    max-width: 100px;
+    width: auto;
+	font-weight: bold;
+  }
+  
+  @each $button in first, last, prev, next {
+    .tau-paginationbar-#{$button} {
+      width: 20px;
+      height: 20px;
+
+      background-image: url(#{$images-path}/paginationbar/page-#{$button}.gif);
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    
+    .tau-paginationbar-#{$button}:active {
+      background-color: #fff;
+    }
+  }
+  
+  .tau-paginationbar-left, .tau-paginationbar-right {
+   & .tau-paginationbar-first, 
+   & .tau-paginationbar-prev, 
+   & .tau-paginationbar-next,
+   & .tau-paginationbar-last, {
+    @include rotate(90deg);
+   }
+  }
+}

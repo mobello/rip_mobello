@@ -1,0 +1,13 @@
+$modal-border-color: #394459 !default;
+
+$modal-radius: 10px !default;
+
+@mixin tau-modal {
+  /** madal controller ********************************************************/
+  .tau-modal{
+    > :first-child {
+      @include box-shadow(0 0 2px rgba(255,255,255,1), 0 0 30px rgba(0,0,0,0.8) !important);
+    }
+
+  }
+}

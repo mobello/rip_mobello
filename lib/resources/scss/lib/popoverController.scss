@@ -1,0 +1,40 @@
+$popoverController-border-color: #09090A !default;
+
+@mixin tau-popoverController {
+	
+
+  /** popover controller ********************************************************/
+  .tau-popoverController {  
+    position: fixed;
+	overflow: visible;
+	z-index: 9999;
+	border-style: solid;
+	border-width: 3px;
+	border-color: black;
+	-webkit-border-radius: 3px;
+	-webkit-box-shadow: 5px 5px 7px gray;
+    
+    .tau-popoverController-content { 
+  	    position: absolute;
+		background-color: white;
+		overflow: hidden;
+		z-index: 9999;
+    }
+
+    .tau-popoverController-masking{  
+  	    position: fixed;
+		z-index: 9998;
+		top: 0px;
+		left: 0px;
+		width: 100%;
+		height: 100%;
+    }
+
+    .tau-popoverController-direction{
+  	    width: 0px;
+		height: 0px;
+		position: fixed;
+		border: 10px solid black;
+    }
+  }
+}

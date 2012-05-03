@@ -1,0 +1,13 @@
+@mixin tau-imageview {
+  /** imageview ****************************************************************/
+  .tau-imageview {
+    display: inline-block;
+    height: auto;
+    width: auto;
+    @include background-size(contain);
+    background-repeat : no-repeat;
+    background-position: top center;
+    background-color: transparent;
+  }
+}
+

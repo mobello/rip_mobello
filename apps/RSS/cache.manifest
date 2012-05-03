@@ -1,0 +1,12 @@
+CACHE MANIFEST
+# ver 1.0
+
+CACHE:
+config.json
+icon.png
+main.js
+
+FALLBACK:
+
+NETWORK:
+*

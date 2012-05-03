@@ -1,0 +1,34 @@
+CACHE MANIFEST
+# v1.0
+
+CACHE:
+config.json
+main.js
+detail.js
+detail.scene.js
+edit.js
+edit.scene.js
+list.js
+
+# required images
+icon.png
+img/back_ar.png
+img/back_selected.png
+img/back.png
+img/done.png
+img/edit.png
+img/forward.png
+img/minus.png
+img/next.png
+img/prev.png
+img/plus.png
+img/radiopause.png
+img/radioplay.png
+img/refresh.png
+img/title.png
+img/toolbar.png
+
+FALLBACK:
+
+NETWORK:
+*

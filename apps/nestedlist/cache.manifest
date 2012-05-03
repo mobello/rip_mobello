@@ -1,0 +1,10 @@
+CACHE MANIFEST
+
+CACHE:
+config.json
+main.js
+
+FALLBACK:
+
+NETWORK:
+*

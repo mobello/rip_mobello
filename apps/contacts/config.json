@@ -1,0 +1,21 @@
+config({
+  classname   : 'tau.sample.ContactsController',
+  require     : '/main.js', 
+  icon        : '/icon.png',
+  title       : 'Contacts',
+  version     : '1.0.0',
+  vendor      : 'KT Corp',
+  theme       : 'ios',
+  desc        : '아이폰의 연락처 앱을 Mobello Framework으로 재구성했습니다. 빠른시간 안에 아이폰과 동일한 주솔록 앱을 쉽게 만들 수 있습니다. 동작을 확인해 보세요!',
+  model	      : [{group: '친구', name: 'Steve', mobile: '011-1024-1111', company: 'ABCD Inc.', position: 'Chairman', img: '/img/02.jpg'},
+                 {group: '친구', name: 'Billy', mobile: '011-1024-2222', company: 'CC Inc.', position: 'Chairman', img: '/img/01.jpg'},
+                 {group: '친구', name: 'Mark', mobile: '011-1024-3333', company: 'DD Inc.', position: 'CEO', img: '/img/03.jpg'},
+                 {group: '가족', name: '아버지', mobile: '011-1024-9999', img: ''},
+                 {group: '가족', name: '어머니', mobile: '011-1024-1122', img: ''},
+                 {group: '가족', name: '누나', mobile: '011-1024-1123', img: ''},
+                 {group: '회사', name: '김정근', mobile: '010-1234-1234', office: '010-1234-1234', email: 'skanto@kt.com', deppartment: '웹플랫폼개발팀', company: 'kt corp.', position: '팀장', img: '/img/jeonggeun.jpg'},                 
+                 {group: '회사', name: '이왕수', mobile: '010-1234-1234', office: '010-1234-1234', email: 'ws.lee@kt.com', deppartment: '웹플랫폼개발팀', company: 'kt corp.', position: '매니저', img: '/img/wangsoo.jpg'},
+                 {group: '회사', name: '민병욱', mobile: '010-1234-1234', office: '010-1234-1234', email: 'bw.min@kt.com ', deppartment: '웹플랫폼개발팀', company: 'kt corp.', position: '매니저', img: '/img/byunguk.jpg'},
+                 {group: '회사', name: '권종현', mobile: '010-1234-1234', office: '010-1234-1234', email: 'jonghyun.kwon@kt.com', deppartment: '웹플랫폼개발팀', company: 'kt corp.', position: '매니저', img: '/img/jonghyun.jpg'},
+                 {group: '회사', name: '이호연', mobile: '010-1234-1234', office: '010-1234-1234', email: 'hoyeon.lee@kt.com', deppartment: '웹플랫폼개발팀', company: 'kt corp.', position: '매니저', img: '/img/hoyeon.jpg'}]
+});

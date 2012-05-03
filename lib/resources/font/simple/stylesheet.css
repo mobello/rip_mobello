@@ -1,0 +1,12 @@
+#tau-root, .tau-tabbar, .tau-tablecell, .tau-textfield, .tau-textview, .tau-textarea { 
+  font-family: "Helvetica Neue", HelveticaNeue, "Helvetica-Neue",
+    Helvetica, "BBAlpha Sans", sans-serif;
+}
+.tau-shortcut-badge, .tau-navigationbar-title, .tau-button, .tau-tablecell-title { 
+  font-family: "Helvetica Neue", HelveticaNeue, "Helvetica-Neue",
+    Helvetica, "BBAlpha Sans", sans-serif;
+}
+
+.tau-tab-selected {
+  font-style: oblique;
+}

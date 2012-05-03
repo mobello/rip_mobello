@@ -1,0 +1,23 @@
+config({
+  classname: 'tau.stocks.MainController',
+  require: '/main.js',
+  version: '1.0.0',
+  title: 'Stocks',
+  desc:'투자 원칙에 맞는 종목을 빠르게 찾아주는 주식 검색 애플리케이션. 종목의 간단한 가치지표와 현재가를 제공합니다. ',
+  vendor: 'kt corp.',
+  icon: '/icon.png',
+  theme: 'ios',
+  timeout: 300,
+  STOCKS: {
+    list: [
+      {symbol: 'KT', name: 'KT Corp.'},
+      {symbol: 'AAPL', name: 'Apple Inc.'}  
+    ],
+    type: '0'
+  },
+  STOCK_LIST: [
+    {symbol: 'KT', name: 'KT Corp.'},
+    {symbol: 'AAPL', name: 'Apple Inc.'}
+  ],
+  STOCK_VALUE_TYPE: '0'
+});

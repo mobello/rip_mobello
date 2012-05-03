@@ -1,0 +1,4 @@
+@IMPORT url("font.css");
+.tau-shortcut-badge, .tau-navigationbar-title, .tau-button, .tau-tablecell-title {
+  font-family: MuseoSans500
+}

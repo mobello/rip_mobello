@@ -1,0 +1,53 @@
+$activityindicator-size: 40px !default;
+$activityindicator-minsize: 20px !default;
+$tau-activityindicator-icon: "activityIndicator/activityIndicator_ios.png" !default;
+
+@mixin tau-activityindicator {
+  /** activityindicator ********************************************************/
+  .tau-activityindicator {
+    position: absolute;
+    
+    @include display-box;
+    @include box-sizing(content-box);
+    @include box-orient(vertical);
+    @include box-pack(center);
+    @include box-align(center);
+    top: 0;
+    left: 0;
+    min-height: $activityindicator-minsize;
+    min-width: $activityindicator-minsize;
+    height: 100%;
+    width: 100%;
+  
+    background: transparent;
+    overflow: hidden;
+  }
+  
+  .tau-activityindicator-icon {
+    display: inline-block;
+    top: 0;
+    width: $activityindicator-size/2;
+    height: $activityindicator-size/2;
+    background:url(#{$images-path}/#{$tau-activityindicator-icon}) 0 0 no-repeat;
+    background-size: $activityindicator-size/2 $activityindicator-size/2;
+    background-position: 0 100%;
+    -webkit-animation-name: 'tau-spin';
+    -webkit-animation-duration: 1.5s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+  
+    animation-name: 'tau-spin';
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;  
+  } 
+  
+  .tau-activityindicator-message {
+    @include tau-container-text(#555);
+    display: inline-block;
+	margin-left: 6px;
+    font-size: 0.8em;
+    font-weight:bold;
+    text-shadow: 0px 1px 0px #ffffff;
+  }
+}

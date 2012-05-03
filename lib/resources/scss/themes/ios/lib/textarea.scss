@@ -1,0 +1,47 @@
+$textarea-start-bgcolor: #eef0f1 !default;
+$textarea-stop1-bgcolor: #fefefe !default;
+$textarea-stop2-bgcolor: #fff !default;
+$textarea-end-bgcolor: #fff !default;
+
+@mixin tau-textarea {
+  /** textarea ***************************************************************/
+  @include tau-scrollpanel(tau-textarea, $textarea-stop2-bgcolor);
+  
+  .tau-textarea {
+    position: relative;
+    @include tau-inline-flexbox;
+    @include box-orient(horizontal);
+    @include box-align(center);
+
+    border: 1px solid $default-input-border-color;
+  
+    background-color: $textarea-end-bgcolor;
+    font-size: 12pt;
+    @include tau-border-radius(10px);
+    @include tau-box-shadow(0 1px 3px rgba(0,0,0,0.6) inset);
+    padding: 5px;
+  }
+  
+  .tau-textarea-control {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    resize: none;
+    outline:none;
+    border: 0 none !important;
+    padding: 0;
+    overflow: hidden;
+    -webkit-appearance : none;
+    font-size: inherit;
+    font-family: inherit;
+    color: inherit;
+    background: none;
+  }
+  
+  .tau-textarea-highlighted {
+    border: 1px solid $default-input-highlighted-border-color;
+  }
+}

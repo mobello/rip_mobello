@@ -1,0 +1,11 @@
+CACHE MANIFEST
+
+CACHE:
+appstore.png
+config.json
+main.js
+
+FALLBACK:
+
+NETWORK:
+*

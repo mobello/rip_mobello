@@ -1,0 +1,252 @@
+@import "compass/css3";
+@import "compass/typography";
+@import "compass/typography/text/force-wrap";
+
+/** global variables *********************************************************/
+$images-path: "../../images" !default;
+
+$default-container-bgcolor: #fff !default;
+$default-container-color: #000 !default;
+
+$default-color: #fff !default;
+$selected-color: #fff !default;
+$highlighted-color: #fff !default;
+$diabled-color: #a5a5a5 !default;
+$mask-bgcolor: #e4e4e2 !default;
+$enable-gradient: true !default;
+$enable-border-radius: true !default;
+$enable-box-shadow: true !default;
+
+$default-input-border-color: #959595 !default;
+$default-input-highlighted-border-color: #32BBE7 !default;
+
+$badge-width: 24px !default;
+$badge-margin: -($badge-width / 2) + 2px;
+
+$round-radius: 999999px;
+$default-border-radius: .4em !default;
+
+$badge-start-bgcolor: #F4B9BD !default;
+$badge-stop1-bgcolor: #E7565D !default;
+$badge-stop2-bgcolor: #E24850 !default;
+$badge-end-bgcolor: #CD4D5C !default;
+
+$experimental-support-for-mozilla: false;
+$experimental-support-for-opera: false;
+$experimental-support-for-microsoft: false;
+$experimental-support-for-khtml: false;
+
+
+/**
+ * container text
+ * @param {color} [$color=$default-color] color
+ * @param {boolean} [$no-wrap=true] white-space
+ */
+@mixin tau-container-text($color: $default-color, $no-wrap: true) { 
+  @include ellipsis($no-wrap);
+  color: $color;
+  text-align: center;
+  text-decoration: none;
+  line-height: 1.2;
+}
+
+/**
+ * content text
+ * @param {measurement} [$font-size= 1em]
+ */
+@mixin tau-content-text($font-size: 1em) {
+  position: relative;
+  display: block;
+  
+  text-overflow: inherit;
+  overflow: hidden;
+  
+  max-width: 100%;
+  font-size: $font-size;
+}
+
+/**
+ * title
+ * @param {measurement} [$font-size= 1em]
+ */
+@mixin tau-title ($font-size: 1em) {
+  @include tau-content-text($font-size);
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+/**
+ * content
+ */
+@mixin tau-content {
+  text-overflow: inherit;
+}
+
+/**
+ * container
+ */
+@mixin tau-container {
+  text-overflow: inherit;
+}
+
+/**
+ * component default state
+ * @param {color} [$color= $default-color]
+ */
+@mixin tau-default($color: $default-color) {
+  color: $color;
+}
+/**
+ * component selected state
+ * @param {color} [$color= $selected-color]
+ */
+@mixin tau-selected($color: $selected-color)  {
+  color: $color;
+}
+
+/**
+ * component disabled state
+ * @param {color} [$color= $diabled-color]
+ */
+@mixin tau-disabled($color: $diabled-color) {
+  color: $color;
+}
+
+/**
+ * component highlighted state
+ * @param {color} [$color= $highlighted-color]
+ */
+@mixin tau-highlighted($color: $highlighted-color) {
+  color: $color;
+}
+
+/**
+ * vertical방향의 content
+ */
+@mixin tau-vertical-content {
+  @include box-orient(vertical);
+}
+
+/**
+ * horizontal방향의 content
+ */
+@mixin tau-horizontal-content {
+  @include box-orient(horizontal);
+}
+
+
+/**
+ * popup - mask
+ * @param {string} [$position= absolute]
+ * @param {color} [$bgcolor= $mask-bgcolor]
+ */
+@mixin tau-mask($position: absolute, $bgcolor: $mask-bgcolor){
+  position: $position;  
+  opacity: .8;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;  
+  z-index: 999981;
+  background-color: $mask-bgcolor;
+  border: none;
+}
+/**
+ * popup
+ */
+@mixin tau-popup {
+  position: absolute;
+  z-index: 999982;
+  overflow: hidden;
+}
+
+/**
+ * full screen
+ * @param {string} [$position= absolute]
+ */
+@mixin tau-full($position: absolute) {
+  position: $position;
+  top: 0 !important;
+  left: 0 !important;
+  overflow: hidden;
+}
+
+/** 
+ * round shape 
+ */
+@mixin tau-round {
+  @include border-radius($round-radius);
+}
+
+/**
+ * badge
+ * @param {measurement} [$font-size= 1em]
+ * @param {measurement} [$margin-size= $badge-margin]
+ */
+@mixin tau-badge($font-size: 1em, $margin-size: $badge-margin) {
+  @include tau-container-text;
+  background-color: #fff;
+
+  position: absolute;
+  z-index: 91;
+  margin: $margin-size; /*margin: -<half of width>px;*/
+  
+  @if ($enable-border-radius) {
+    @include tau-round;
+  }
+}
+
+/**
+ * badge text
+ * @param {measurement} [$size= $badge-width]
+ * @param {measurement} [$margin-size= 2px]
+ */
+@mixin tau-badge-text($size: $badge-width, $margin-size: 2px) {
+  position: relative;
+  @include display-box;
+  @include box-align(center);
+  @include box-pack(center);
+	@include tau-gradient($badge-start-bgcolor, $badge-stop1-bgcolor, $badge-stop2-bgcolor, $badge-end-bgcolor);
+  @if ($enable-border-radius) {
+  	@include border-radius(inherit);
+  }
+  width: auto;
+  max-width: $size * 2;
+  min-width: $size;
+  height: $size;
+  margin: $margin-size;
+  
+  font-size: .8em;
+}
+
+/**
+ * background gradient
+ * @param {color} $start-bgcolor
+ * @param {color} $stop1-bgcolor
+ * @param {color} $stop2-bgcolor
+ * @param {color} $end-bgcolor
+ */
+@mixin tau-gradient($start-bgcolor, $stop1-bgcolor, $stop2-bgcolor, $end-bgcolor) {
+  background-color: $stop2-bgcolor;
+  @if ($enable-gradient) {
+  @include background-image(linear-gradient(color_stops(
+    $start-bgcolor,
+    $stop1-bgcolor 50%,
+    $stop2-bgcolor 51%,
+    $end-bgcolor
+    )));
+  }
+}
+
+/**
+ * display:inline-flexbox
+ * @param {boolean} [$important='']
+ */
+@mixin tau-inline-flexbox($important:'') {
+  display: -webkit-inline-box unquote($important);
+  display: -moz-inline-box unquote($important);
+  display: inline-flexbox unquote($important);
+}

@@ -1,0 +1,12 @@
+config({
+  classname: 'tau.sample.fr.Flickr',
+  require: '/main.js',
+  version: '1.0.0',
+  title: 'Flickr',
+  vendor      : 'KT Corporation',
+  icon: '/flickr.png',
+  desc: '사진을 공유하고 세상을 바라보세요. Flickr for the iPhone(WebApp)을 통해 휴대폰으로 이동 중에도 전세계와 사진을 공유할 수 있습니다. 이 앱에서는 최근에 Flickr에 올라온 사진을 실시간으로 감상할 수 있습니다.',
+  flickrUrl: 'http://api.flickr.com/services/feeds/photos_public.gne',
+  flickrTags: 'iphone',
+  timeout: 300
+});

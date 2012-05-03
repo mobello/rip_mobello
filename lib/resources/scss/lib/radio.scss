@@ -1,0 +1,59 @@
+$radio-size: 24px !default;
+$tau-radio-selected-icon: "radio/selected.png" !default;
+
+@mixin tau-radio {
+  /** radio ******************************************************************/
+  .tau-radio {
+    position: relative;
+    display: inline-block;   
+    text-decoration: none;
+    color: inherit;
+    height: $radio-size;
+    width: $radio-size;
+    @include tau-round;
+    border: 1px solid #4d4e50;
+    background: #c3c3c3;
+    @if ($enable-box-shadow) {  
+      @include box-shadow(inset #b9b9b9 0 -2px, inset #d7d7d7 0 2px);
+    }
+    @if ($enable-gradient) {
+      @include background-image(linear-gradient(color_stops(#c3c3c3, #c6c6c6)));
+    }
+  }
+  
+  /** component state **********************************************************/
+  .tau-radio-selected {
+    background: #070708;
+    @if ($enable-box-shadow) {
+      @include box-shadow(rgba(#000, .5) 0 3px 3px 0);
+    }
+    @if ($enable-gradient) {
+      @include background-image(linear-gradient(color_stops(#070708, #8d8d8d)));
+    }
+  }
+  
+  .tau-radio-selected::before {
+    position: absolute;
+    top: 2px;
+    bottom: 2px;
+    left: 2px;
+    right: 2px;
+    content: "";
+    background-image: url(#{$images-path}/#{$tau-radio-selected-icon});
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    background-color: transparent;
+  }
+  
+  .tau-radio-disable {
+    border: 1px solid #9fa0a0;
+    background: #ccc;
+    @if ($enable-box-shadow) {
+      @include box-shadow(inset #cacaca 0 -2px, inset #dedede 0 2px);
+    }
+    @if ($enable-gradient) {
+      @include background-image(linear-gradient(color_stops(#ccc, #d0d0d0)));
+    }
+  }
+}

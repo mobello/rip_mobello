@@ -1,0 +1,17 @@
+config({
+  classname: 'tau.sample.Map',
+  main: '/main.js',
+  version: '1.0.0',
+  title: 'map',
+  vendor : 'KT Corporation',
+  latitude: 953887,
+  longitude: 1952015,
+  header: "topper.png",
+  footer: "bottom.gif",
+  markerTitle: "Seoul City Hall",  
+  mapOptions: {
+    zoom: 5,
+    minZoom: 1,
+    maxZoom: 11
+  }
+});

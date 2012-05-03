@@ -1,0 +1,22 @@
+config({
+  classname: 'tau.bbc.Main',
+  require: '/main.js', 
+  version: '1.0.0',
+  title: 'BBC',
+  vendor      : 'KT Corporation',
+  icon: '/icon.png',
+  theme: 'bbc',
+  desc: 'Get the latest, breaking news from the BBC and our global network of journalists. By downloading the BBC News app you can view: News stories by geographical region. News by category including business, technology, entertainment and sport.',
+  RSS: [
+    {isDefault: true,  title : 'TOP STORIES', url : 'http://feeds.bbci.co.uk/news/rss.xml', fixed: true},
+    {isDefault: false, title : 'World', url : 'http://feeds.bbci.co.uk/news/world/rss.xml'},
+    {isDefault: false, title : 'BUSINESS', url : 'http://feeds.bbci.co.uk/news/business/rss.xml'},
+    {isDefault: false, title : 'UK', url : 'http://feeds.bbci.co.uk/news/uk/rss.xml'},
+    {isDefault: false, title : 'Politics', url : 'http://feeds.bbci.co.uk/news/politics/rss.xml'},
+    {isDefault: false, title : 'Health', url : 'http://feeds.bbci.co.uk/news/health/rss.xml'},
+    {isDefault: false, title : 'Education & Family', url : 'http://feeds.bbci.co.uk/news/education/rss.xml'},
+    {isDefault: false, title : 'SCIENCE & ENVIRONMENT', url : 'http://feeds.bbci.co.uk/news/science_and_environment/rss.xml'},
+    {isDefault: false, title : 'TECHNOLOGY', url : 'http://feeds.bbci.co.uk/news/technology/rss.xml'},
+    {isDefault: false, title : 'Entertainment & Arts', url : 'http://feeds.bbci.co.uk/news/entertainment_and_arts/rss.xml'}
+  ]
+});

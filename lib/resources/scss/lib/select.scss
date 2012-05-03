@@ -1,0 +1,156 @@
+$select-color: #000;
+$tau-select-icon: "select/select.png" !default;
+$tau-select-popup-close-icon: "textfield/clear.png" !default;
+$tau-select-popup-close--highlighted-icon: "textfield/clearSel.png" !default;
+$tau-select-item-selected-icon: "checkbox/selected.png" !default;
+
+@mixin tau-select {
+  /** select *****************************************************************/
+  .tau-select {
+    position: relative;
+    display: inline-block;
+    height: 32px;
+    width: 50%;
+    
+    @if ($enable-border-radius) {
+      @include border-radius(10px);
+    }
+    border: 2px solid #232323;
+  }
+  
+  .tau-select-control {
+    @include display-box;
+    @include box-orient(horizontal);
+    @include box-pack(center);
+    @include box-align(center);
+    @include tau-container-text($select-color);
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    padding: 0 25px 0 5px;
+    background-image: url(#{$images-path}/#{$tau-select-icon});
+    background-position: center right;
+    background-repeat: no-repeat;
+  }
+  
+  .tau-select-control-title {
+    @include tau-content-text;
+    @include box-flex(1);
+  }
+  
+  .tau-select-badge {
+    @include tau-badge;
+    position: relative;
+    margin: 0;
+  }
+
+  .tau-select-badge-label {
+    @include tau-badge-text;
+  }
+  
+  .tau-select-mask {
+    @include tau-mask(fixed);
+  }
+  
+  .tau-select-popup {
+    @include tau-popup;
+    left:0;
+    width: auto;
+    height: auto;
+    max-width: 50%;
+    max-height: 50%;
+    margin: 8px 2px;
+    border: 4px solid #000;
+    background-color: $default-container-bgcolor;
+  }
+  
+  .tau-select-popup-full {
+    @include tau-full(fixed);
+    margin: 4px !important;
+    max-width: 100%;
+    max-height: 100%;
+    
+    & > .tau-scrollpanel {
+      display: block;
+    }
+  }
+  
+  .tau-select-popup-title {
+    position: relative;
+    display: block;
+    height: 30px;
+    width: 100%;
+    background-color: #000;
+  }
+  
+  .tau-select-popup-close {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width : 26px;
+     height: 27px;
+     margin-bottom: 50px;
+     background: url(#{$images-path}/#{$tau-select-popup-close-icon}) no-repeat;
+  }
+  
+  .tau-select-popup-close:active {
+    background: url(#{$images-path}/#{$tau-select-popup-close--highlighted-icon}) no-repeat;
+  }
+  
+  .tau-select-item {
+    @include display-box;
+    @include tau-container-text($select-color);
+    text-align: left;
+    height: 30px;
+    padding: 2px;
+    overflow: hidden;
+    border-bottom: 1px solid #000;
+    
+    &:before {
+      position: relative;
+      display: block;
+      width: 14px;
+      height: 14px;
+      margin: 2px;
+      content: "";
+      @include tau-round;
+      @include box-sizing(content-box);
+      border: 2px solid #000;
+    }
+  }
+  
+  .tau-select-item-text {
+    @include tau-content-text;
+    @include display-box;
+    @include box-flex(1);
+    @include box-align(center);
+  }
+  
+  .tau-select-item-selected {
+    background-color: gray;
+    
+    &:before {
+      background-color: #000;
+    }
+  }
+  
+  .tau-select-multiple .tau-select-item:before {
+    @include border-radius(0 !important);
+  }
+  
+  .tau-select-multiple .tau-select-item-selected:before {
+    content: url(#{$images-path}/#{$tau-select-item-selected-icon});
+  }
+  
+  .tau-select-popup-arrow {
+    position: absolute;
+    height: 0;
+    width: 0;
+    border-style: solid;
+    border-width: .63em;
+    border-color: transparent;
+    @include box-sizing(content-box);
+  }  
+}

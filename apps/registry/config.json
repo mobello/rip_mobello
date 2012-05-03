@@ -1,0 +1,19 @@
+config({
+  classname: 'tau.sample.store.AppStore',
+  require: '/main.js',
+  version: '1.0.0',
+  title: 'Registry',
+  theme: 'ios',
+  vendor: 'KT Corporation',
+  desc:'Smart Phone의 응용프로그램을 검색중이십니까? 이 앱을 이용하시면 손쉽게 앱을 검색하고 다운로드 받을 수 있습니다.',
+  icon: '/appstore.png',
+  timeout: 100,
+  tabs : [
+    {title : '추천', icon: '/img/24-gift.png', selectedIcon: '/img/24-gift_selected.png'},
+    {title : '카테고리', icon: '/img/44-shoebox.png', selectedIcon: '/img/44-shoebox_selected.png'},
+    {title : '인기25', icon: '/img/28-star.png', selectedIcon: '/img/28-star_selected.png'},
+    {title : '검색', icon: '/img/06-magnify.png', selectedIcon: '/img/06-magnify_selected.png'}
+  ],
+  apps: [{name: 'bbc'}, {name: 'contacts'}, {name: 'RSS'}, {name: 'flickr'}, 
+       {name: 'hotnews'}, {name: 'map'}, {name: 'nestedlist'}]
+});

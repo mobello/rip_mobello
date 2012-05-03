@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Scene xmlns="http://mobello.github.com/tau/scene" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	viewPortWidth="320px" viewPortHeight="450px">
+	<Panel>
+		<Panel.styles width="100%" padding="10px 10px 6px 10px"
+			borderBottomColor="#D0D0D0" borderBottomStyle="solid"
+			borderBottomWidth="2px"
+			backgroundImage="-webkit-gradient(linear, left top, left bottom,from(#FEFEFE),to(#E2E2E2))"></Panel.styles>
+		<Button onTap="popScene">
+			<Button.styles
+				backgroundImage="-webkit-gradient(linear, left top, left bottom,from(#FCFCFC),color-stop(50%,#F7F6F6),color-stop(51%,#F3F1F1),to(#F3F3F3))"
+				color="#898989" height="auto" padding="2px 6px" borderColor="#DEDDDD"
+				float="left"></Button.styles>
+			<Button.label normal="이전"></Button.label>
+		</Button>
+		<Label text="@article.title">
+			<Label.styles padding="4px 10px" display="block" whiteSpace="nowrap" color="#666666"></Label.styles>
+		</Label>
+	</Panel>
+	<TextView id="textView1" text="@article.description">
+		<TextView.styles backgroundColor="#FFFFFF"></TextView.styles>
+	</TextView>
+</Scene>

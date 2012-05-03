@@ -1,0 +1,87 @@
+$toolbar-height: 51px !default;
+$toolbar-content-height: 48px !default;
+$toolbar-bgcolor: #4f4f4f !default;
+$toolbar-button-width: 72px !default;
+$toolbar-button-height: 31px !default;
+$toolbar-bgcolor: #4f4f4f;
+$toolbar-start-bgcolor: #545454;
+$toolbar-stop1-bgcolor: #505050;
+$toolbar-stop2-bgcolor: #4f4f4f;
+$toolbar-end-bgcolor: #464646;
+
+@mixin tau-toolbar {
+  
+  /** toolbar ****************************************************************/
+  @include tau-scrollpanel(tau-toolbar, $toolbar-bgcolor);
+
+  .tau-toolbar {
+    position: absolute;
+    left: 0;
+    height: $toolbar-height;
+    border-top: 1px solid #fff;
+    @include tau-gradient($toolbar-start-bgcolor, $toolbar-stop1-bgcolor, $toolbar-stop2-bgcolor, $toolbar-end-bgcolor);
+    @include box-pack(justify);
+    @include box-align(center);
+  }
+  
+	.tau-toolbar-container {
+    @include box-pack(inherit);
+    @include box-align(inherit);
+    
+    & > .tau-scroller {
+      @include box-pack(inherit);
+      @include box-align(inherit);
+    }
+	}
+  
+  .tau-toolbar-content {
+    @include display-box;
+    @include box-orient(horizontal);
+    @include box-pack(inherit);
+    @include box-align(inherit);
+    height: 100%;
+    
+    & > * {
+      max-height: $toolbar-content-height;
+    }
+    
+    & > .tau-button {  
+      position: relative !important;
+      @include display-box;
+      width: $toolbar-button-width;
+      height: $toolbar-button-height;
+      margin-right: 2px;
+    }
+  }
+
+  .tau-toolbar-bottom {
+    display: block;
+    bottom: 0;
+  }
+  
+  .tau-toolbar-top {
+    display: block;
+    top: 0;
+  }
+  
+  /** space ******************************************************************/
+  .tau-space {
+    display: block;
+    height: 80%;
+  }
+  
+  .tau-space-flex {
+    @include box-flex(1);
+  }
+  
+  .tau-space-sep {
+    width: 0;
+    border-left: 1px dotted #767676;
+    border-right: 1px dotted #1C1C1C;
+    margin: 0 2px;
+  }
+  
+  .tau-space-fixed {
+    width: 50px;
+  }
+}

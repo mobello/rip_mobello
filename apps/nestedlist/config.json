@@ -1,0 +1,7 @@
+config({
+  classname: 'tau.sample.list.NestedList',
+  version: '1.0.0',
+  title: 'Sequence',
+  vendor: 'kt',
+  data: {title: 'Nested List', items: [{title: 'Asia', items: [{title: 'Japan', items: [{title: 'Acura'}, {title: 'Honda'}, {title: 'Infiniti'}, {title: 'Mitsubishi'}, {title: 'Nissan'}, {title: 'Scion'}, {title: 'Subaru'}, {title: 'Toyota'}]}, {title: 'Korea', items: [{title: 'Hyundai'}, {title: 'Kia'}]}]}, {title: 'United Kingdom', items: [{title: 'Aston Martin'}, {title: 'Bentley'}, {title: 'TVR'}, {title: 'Land Rover'}]}, {title: 'Europe', items: [{title: 'Germany', items: [{title: 'Audi'}, {title: 'BMW'}, {title: 'Open'}, {title: 'Porche'}, {title: 'Volkswagen'}]}, {title: 'France', items: [{title: 'Citroen'}, {title: 'Renault'}, {title: 'Peugeot'}]}]}, {title: 'United Staes', items: [{title: 'Buick'}, {title: 'Cadillac'}, {title: 'Chevrolet'}, {title: 'Chrysler'}, {title: 'Ford'}, {title: 'Jeep'}, {title: 'Oldsmobile'}, {title: 'Saturn'}, {title: 'Tesla'}]}]}
+});

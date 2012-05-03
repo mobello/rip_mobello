@@ -1,0 +1,14 @@
+@mixin tau-panel {
+  /** panel *******************************************************************/
+  .tau-panel {
+    position: relative;
+    display: block; 
+  
+    height: auto;
+    width: auto;
+    overflow: hidden;
+  }
+  .tau-panel-dark {
+  @include tau-gradient($toolbar-dark-start-bgcolor, $toolbar-dark-stop1-bgcolor, $toolbar-dark-stop2-bgcolor, $toolbar-dark-end-bgcolor);
+  }
+}

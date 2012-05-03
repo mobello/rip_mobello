@@ -1,0 +1,14 @@
+config({
+  title       : 'Mobello',
+  apps        : ['setting', 'registry', 'demo', 'kitchensink', 'stocks'],
+  version     : '1.0.0',
+  vendor      : 'kt corp.',
+  theme       : 'default',
+  language    : 'ko',
+  region      : 'KR',
+  splash	  : '',
+  icon        : '',
+  dashboard	  : {cols: 4, maxcols: 6, controller: ''},
+  systemdock  : {maxShortcuts: 6, attached: 2},
+  loglevel	  : 1 // DEBUG: 1, INFO: 2, WARN: 3, ERROR: 4, FATAL: 5, NONE: 6
+});

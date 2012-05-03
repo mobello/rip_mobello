@@ -1,0 +1,9 @@
+$textview-bgcolor: transparent !default;
+$textview-padding: 12px !default;
+@mixin tau-textview {
+  /** textview ***************************************************************/
+  @include tau-scrollpanel(tau-textview, $textview-bgcolor);
+  .tau-textview-content {
+    padding: $textview-padding;
+  }
+}

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scene xmlns="http://mobello.github.com/tau/scene" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	viewPortWidth="320px" viewPortHeight="450px">
+	<Table moreCell="true" listSize="20" indicator="true">
+		<Table.styles backgroundColor="#F6F6F6" color="#363636"
+			fontFamily='sans-serif' top="56px" position="absolute">
+		</Table.styles>
+	</Table>
+	<Panel>
+		<Panel.styles width="100%" textAlign="center"></Panel.styles>
+		<ImageView src="@appCtx.getRealPath('/img/hot_news.png')">
+			<ImageView.styles height="50px"></ImageView.styles>
+		</ImageView>
+	</Panel>
+	<Panel>
+		<Panel.styles height="6px"
+			backgroundImage="-webkit-gradient(linear, left top, left bottom,from(#C7C7C7),color-stop(83%,#D6D6D6),to(#B6B6B6))"
+			width="100%"></Panel.styles>
+	</Panel>
+</Scene>

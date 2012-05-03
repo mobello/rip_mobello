@@ -1,0 +1,9 @@
+config({
+  classname: 'tau.sample.RSS',
+  require: '/main.js', 
+  icon: '/icon.png',
+  title: 'Bloter',
+  version: '1.0.0',
+  vendor: 'KT Corporation',
+  desc: 'Bloter.net의 RSS 피드를 앱으로 만들었습니다. Bloter.net에서 제공하는 최신의 정보를 확인해 보세요~'
+});

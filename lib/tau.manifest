@@ -1,0 +1,62 @@
+CACHE MANIFEST
+# v1.0
+ 
+CACHE:
+# core library
+tau.core.js
+tau.data.js
+tau.fx.js
+tau.js
+tau.rt.js
+tau.ui.comp.js
+tau.ui.ctrl.js
+tau.ui.renderer.js
+tau.util.js
+
+# Global configuration
+../config.json
+
+# System resources
+resources/base.css
+resources/themes/default/tau.css
+resources/font/arimo/stylesheet.css
+resources/font/arimo/font.css
+resources/font/arimo/arimo-regular-webfont.woff
+resources/font/museosans/stylesheet.css
+resources/font/museosans/font.css
+resources/font/museosans/MuseoSans_500-webfont.woff
+resources/font/applegothic/stylesheet.css
+resources/font/simple/stylesheet.css
+resources/images/button/back_arrow.png
+resources/images/checkbox/selected.png
+resources/images/dashboard/xtmp_ci.png
+resources/images/navigationbar/back_ar.png
+resources/images/paginationbar/page-first.gif
+resources/images/paginationbar/page-prev.gif
+resources/images/paginationbar/page-next.gif
+resources/images/paginationbar/page-last.gif
+resources/images/picker/header.png
+resources/images/picker/slot-border.png
+resources/images/picker/frame.png
+resources/images/radio/selected.png
+resources/images/scrollpanel/pull-icon.png
+resources/images/segmentedbutton/ios_segmented_button_checked.png
+resources/images/select/arrow.png
+resources/images/select/select.png
+resources/images/spinner/minus.png
+resources/images/spinner/plus.png
+resources/images/systemdock/tauicon.png
+resources/images/systemdock/drawer-bg.jpg
+resources/images/systemdock/handle.png
+resources/images/systemdock/ios-systemdock.png
+resources/images/systemdock/ios-handle.png
+resources/images/switch/beforebar-icon.png
+resources/images/switch/afterbar-icon.png
+resources/images/table/section.png
+resources/images/textfield/clear.png
+resources/images/textfield/clearSel.png
+
+FALLBACK:
+
+NETWORK:
+*

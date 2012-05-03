@@ -1,0 +1,175 @@
+$tablecell-color: inherit;
+$tablecell-selected-color: #fff;
+$tablecell-highlighted-color: #fff;
+$tablecell-disabled-color: #fff;
+
+$tablecell-height: 54px !default;
+$tablecell-item-width: 40px !default;
+$tablecell-item-padding: 2px !default;
+
+$tablecell-highlighted-start-bgcolor: #648EE7 !default;
+$tablecell-highlighted-end-bgcolor: #2362DE !default;
+$tablecell-selected-start-bgcolor: #648EE7 !default;
+$tablecell-selected-end-bgcolor: #2362DE !default;
+
+$tablecell-border-top: 1px solid #F2F2F0 !default;
+$tablecell-border-bottom: 1px solid #E0E0E0 !default;
+
+$tablecell-border-radius: 8px !default;
+
+@mixin tau-tablecell {
+  
+  /** tablecell ****************************************************************/
+  .tau-tablecell {
+    position: relative;
+    @include display-box;
+    width: 100%;
+    height: $tablecell-height;
+  
+    @include tau-container-text($tablecell-color);
+    @include box-align(start);
+    text-align: left;
+    overflow: hidden;
+    padding: $tablecell-item-padding;  
+    border-bottom: $tablecell-border-bottom;
+  }
+  
+  /** content item **************************************************************/
+  .tau-tablecell-contentitem {
+    height: 100%;
+    @include box-flex(1);
+    padding: 0 4px;
+    text-overflow: inherit;
+    
+    @include display-box;
+    @include box-orient(vertical);
+    @include box-pack(center);
+    @include box-align(inherit);
+  }
+  
+  /** title *********************************************************************/
+  .tau-tablecell-title {
+    @include tau-title;
+    height: auto;
+    @include box-align(center);    
+    text-overflow: inherit;
+  }
+  
+  .tau-tablecell-subtitle {
+    @include tau-title(.8em);
+    @include box-align(center);    
+    text-overflow: inherit;
+    height: auto;
+    color: #888;
+  }
+  
+  @each $direction in left, right {
+    .tau-tablecell-#{$direction}item {
+      position: relative;
+      @include display-box;
+      @include box-pack(center);
+      @include box-align(center);
+
+      width: $tablecell-item-width;
+      height: 100%;
+      background-color: transparent;
+  
+      & > .tau {
+        @include display-box;
+        @include box-pack(inherit);
+        @include box-align(inherit);
+        height: 100%;
+        width: 100%;
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+  }
+  
+  .tau-tablecell-highlighted {
+    background-color: $tablecell-highlighted-start-bgcolor;
+    @if ($enable-gradient) {
+      @include background-image(linear-gradient(color_stops(
+        $tablecell-highlighted-start-bgcolor, 
+        $tablecell-highlighted-end-bgcolor)));
+    }
+    @include tau-highlighted($tablecell-highlighted-color);
+  }
+  .tau-tablecell-selected  {
+    background-color: $tablecell-selected-start-bgcolor;
+    @if ($enable-gradient) {
+      @include background-image(linear-gradient(color_stops(
+        $tablecell-selected-start-bgcolor, 
+        $tablecell-selected-end-bgcolor)));
+    }
+    @include tau-selected($tablecell-selected-color);
+  }
+  
+  .tau-table-sectionGroup  {
+	  .tau-tablecell-selected , .tau-tablecell-highlighted {
+		&:first-child {
+		  @include tau-border-radius($tablecell-border-radius $tablecell-border-radius 0 0);
+		}
+		&:last-child {
+		  @include tau-border-radius(0 0 $tablecell-border-radius $tablecell-border-radius);
+		}  
+		&:only-child {
+			@include tau-border-radius($tablecell-border-radius);
+		}
+	  }
+  }
+  @include tau-tablecell-content(tau-tablecell);
+}
+
+/**
+ * content style
+ * @param {$prefix}
+ */
+@mixin tau-tablecell-content($prefix) {
+   .#{$prefix}-auto {
+      @if ($prefix == tau-tablecell) {
+        height: auto;
+      } @else {
+        & .tau-tablecell {
+          height: auto;
+        }
+      }
+      
+      & .tau-tablecell-contentitem > * {
+        white-space : normal;
+      }
+   }
+   
+  .#{$prefix}-titleleft {
+    & .tau-tablecell-contentitem {
+      @include display-box;
+      @include box-orient(horizontal);
+      @include box-pack(justify);
+    }
+    
+    & .tau-tablecell-title {
+      @include box-pack(start);
+      @include box-flex(1);
+    }
+    & .tau-tablecell-subtitle {
+      @include box-pack(end);
+      @include box-flex(1);
+    }
+  }
+  
+  .#{$prefix}-titleright {
+    & .tau-tablecell-contentitem {
+      @include display-box;
+      @include box-orient(horizontal);
+      @include box-pack(justify);
+      @include box-direction(reverse);
+      
+      & .tau-tablecell-title {
+        @include box-pack(end);
+      }
+      & .tau-tablecell-subtitle {
+        @include box-pack(start);
+      }
+    }
+  }
+}

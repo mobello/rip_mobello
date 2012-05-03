@@ -1,0 +1,160 @@
+$switch-thumb-size: 36px !default;
+$switch-bar-height: 36px !default;
+
+$switch-beforebar-boder-bottom-color: #36A2C6 !default;
+$switch-beforebar-border-left-color: #2BA3C8 !default;
+
+$switch-beforebar-border-top-color: #278BAB !default;
+$switch-beforebar-start-bgcolor: #2991B4 !default;
+$switch-beforebar-stop1-bgcolor: #2A9AC0 !default;
+$switch-beforebar-stop2-bgcolor: #2EACD4 !default;
+$switch-beforebar-stop3-bgcolor: #32B7E2 !default;
+$switch-beforebar-end-bgcolor: #32BBE7 !default;
+
+$switch-afterbar-start-bgcolor: #3C3C3C !default;
+$switch-afterbar-stop1-bgcolor: #3F3F3F !default;
+$switch-afterbar-stop2-bgcolor: #454545 !default;
+$switch-afterbar-stop3-bgcolor: #4C4C4C !default;
+$switch-afterbar-end-bgcolor: #727272 !default;
+
+$switch-afterbar-boder-bottom-color: #6A6A6A !default;
+
+$switch-thumb-start-bgcolor: #d9d9d9 !default;
+$switch-thumb-end-bgcolor: #f9f9f9 !default;
+
+$switch-default-color: #fff;
+
+@mixin tau-switch-bar ($direction, $bar) {
+  $pos1: top; // top, left
+  $pos2: bottom; // bottom, right
+  $border-pos1: left; 
+  $gradientDir: right; // right
+  
+  $start-bgcolor: $switch-afterbar-start-bgcolor;
+  $stop1-bgcolor: $switch-afterbar-stop1-bgcolor;
+  $stop2-bgcolor: $switch-afterbar-stop2-bgcolor;
+  $stop3-bgcolor: $switch-afterbar-stop3-bgcolor;
+  $end-bgcolor: $switch-afterbar-end-bgcolor;
+  $bottom-color: $switch-afterbar-boder-bottom-color;
+  
+  @if ($bar == beforebar) {
+    $start-bgcolor: $switch-beforebar-start-bgcolor;
+    $stop1-bgcolor: $switch-beforebar-stop1-bgcolor;
+    $stop2-bgcolor: $switch-beforebar-stop2-bgcolor;
+    $stop3-bgcolor: $switch-beforebar-stop3-bgcolor;
+    $end-bgcolor: $switch-beforebar-end-bgcolor;
+    
+    $bottom-color: $switch-beforebar-boder-bottom-color;
+  }
+  
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  
+  @if ($direction == horizontal) {
+    $pos1: left;
+    $pos2: right;
+    $border-pos1: bottom; 
+    $gradientDir: top;
+  }
+  #{$pos1}: 0;
+  #{$pos2}: 0;
+  border-#{$border-pos1}: 1px solid $bottom-color;
+  background-color: $end-bgcolor;
+  @if ($enable-gradient) {
+    @include background-image(linear-gradient($gradientDir, color_stops(
+      $start-bgcolor 1px, 
+      $stop1-bgcolor 2px,
+      $stop2-bgcolor 3px,
+      $stop3-bgcolor 4px,
+      $end-bgcolor)));
+  }  
+  @if ($enable-border-radius) {
+    @include tau-round;
+  }
+}
+
+@mixin tau-switch {
+  /** switch *******************************************************************/
+  .tau-switch {
+    display: inline-block;
+    background: transparent;
+    color: $switch-default-color;
+  }
+
+  .tau-switch-container {
+    position: relative;
+    @if ($enable-border-radius) {
+      @include tau-round;
+    }
+  }
+  
+  /** beforebar, afterbar ******************************************************/
+  .tau-switch-beforebar, .tau-switch-afterbar {
+    @include display-box;
+    @include box-pack(center);
+    @include box-align(center);
+    overflow: hidden;
+    text-align: center;
+  }
+  
+  /** thumb ********************************************************************/
+  .tau-switch-thumb {
+    position: absolute;
+    height: $switch-thumb-size;
+    width : $switch-thumb-size;
+    z-index: 3;
+    border: 1px solid #919191;
+    @if ($enable-border-radius) {
+      @include tau-round;
+    }
+    background-color: $switch-thumb-start-bgcolor;
+  }
+  
+  @each $direction in vertical, horizontal {
+    $size1: width;
+    $size2: height;
+    $pos1: top;
+    $pos2: bottom;
+    $gradientDir: right;
+    
+    @if ($direction == horizontal) {
+      $size1: height;
+      $size2: width;
+      $pos1: left;
+      $pos2: right;
+      $gradientDir: top;
+    }
+    
+    .tau-switch-#{$direction} {
+      #{$size2}: 100px;
+      
+      & > .tau-switch-container {
+        #{$size1}: $switch-bar-height;
+        #{$size2}: 100%;
+      }
+      
+      & .tau-switch-beforebar {
+        #{$pos1}: 0;
+        #{$size1}: $switch-bar-height;
+        z-index: 2;
+        border-top: 1px solid $switch-beforebar-border-top-color;
+        @include box-shadow($switch-beforebar-border-top-color 0 2px 2px inset);
+        
+        @include tau-switch-bar($direction, beforebar);
+      }
+      
+      & .tau-switch-afterbar {
+        #{$size1}: $switch-bar-height;
+        z-index: 1;
+        @include tau-switch-bar($direction, afterbar);
+      }
+      
+      & .tau-switch-thumb {
+        @if ($enable-gradient) {
+          @include background-image(linear-gradient($gradientDir, color_stops($switch-thumb-start-bgcolor, $switch-thumb-end-bgcolor)));
+        }
+      }
+    }
+  }
+}

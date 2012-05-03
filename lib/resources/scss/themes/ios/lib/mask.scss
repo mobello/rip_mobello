@@ -1,0 +1,9 @@
+@mixin tau-mask-comp {
+  .tau-mask {
+    @include tau-mask();
+  }
+  
+  .tau-mask-fullscreen {
+    position: fixed;
+  }
+}

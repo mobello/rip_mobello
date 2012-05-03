@@ -1,0 +1,170 @@
+$tau-segmentedbutton-item-selected-icon: "segmentedbutton/ios_segmented_button_checked.png" !default;
+$segmentedbutton-radius: 8px !default;
+$segmentedbutton-height: auto !default;
+$segmentedbutton-horizontal-color: #afafaf !default;
+$segmentedbutton-vertical-color: #000 !default;
+
+$segmentedbutton-default-border-color: #ADAEAD !default;
+$segmentedbutton-default-start-bgcolor: #FCFCFC !default;
+$segmentedbutton-default-stop1-bgcolor: #3e3e3e !default;
+$segmentedbutton-default-stop2-bgcolor: #4d4d4d !default;
+$segmentedbutton-default-end-bgcolor: #C9C9C9 !default;
+
+$segmentedbutton-selected-start-bgcolor: #376FD4 !default;
+$segmentedbutton-selected-stop1-bgcolor: #417FE7 !default;
+$segmentedbutton-selected-stop2-bgcolor: #4C88E9 !default;
+$segmentedbutton-selected-end-bgcolor: #73A8FB !default;
+
+$segmentedButton-text-color: #444 !default;
+
+
+@mixin tau-segmentedbutton {
+  /** segmentedbutton *******************************************************************/
+  .tau-segmentedbutton {
+    display: inline-block;
+    overflow: hidden;
+  }
+  
+  .tau-segmentedbutton-horizontal {
+    @include tau-inline-flexbox;
+    @include box-orient(horizontal);
+    @include box-pack(center);
+    @include box-align(center);
+    color: $segmentedbutton-horizontal-color;
+    height: $segmentedbutton-height;
+    text-align: center;
+    @include tau-border-radius($segmentedbutton-radius);
+	
+	/* sanmarino type */
+	&.tau-segmentedbutton-sanmarino >  .tau-segmentedbutton-item {
+		color: white;
+		border-color: $sanmarino-highlighted-border-color;
+		@include tau-gradient($toolbar-start-bgcolor, $toolbar-stop1-bgcolor, $toolbar-stop2-bgcolor, $toolbar-end-bgcolor);
+	}
+    
+    & > .tau-segmentedbutton-item {
+    @include box-align(center);
+    @include box-pack(center);
+    @include box-flex(1);
+    position: relative;
+	@include tau-gradient2($segmentedbutton-default-start-bgcolor, $segmentedbutton-default-end-bgcolor);
+	border-width: 1px;
+	border-style: solid solid solid none;
+	border-color: $segmentedbutton-default-border-color;
+	color: $segmentedButton-text-color;
+    }
+    
+    & > .tau-segmentedbutton-item:first-child {
+      @if ($enable-border-radius) {
+        @include border-left-radius($segmentedbutton-radius);
+      }
+    }
+    
+    & > .tau-segmentedbutton-item:last-child {
+      @if ($enable-border-radius) {
+        @include border-right-radius($segmentedbutton-radius);
+      }
+    }
+    
+    & > .tau-segmentedbutton-item-selected {
+      @include tau-selected;
+      @include tau-gradient($segmentedbutton-selected-start-bgcolor, 
+        $segmentedbutton-selected-stop1-bgcolor,
+        $segmentedbutton-selected-stop2-bgcolor,
+        $segmentedbutton-selected-end-bgcolor); 
+      color: white;
+      @include tau-box-shadow(0 2px 5px rgba(0,0,0,0.5) inset);
+    }
+    
+    & > .tau-segmentedbutton-item-selected + .tau-segmentedbutton-item-selected {
+      border-left: 1px solid transparent;
+    }
+	
+		/* sanmarino type */
+	&.tau-segmentedbutton-sanmarino >  .tau-segmentedbutton-item {
+		color: white;
+		border-color: #637690;
+		@include tau-gradient($toolbar-start-bgcolor, $toolbar-stop1-bgcolor, $toolbar-stop2-bgcolor, $toolbar-end-bgcolor);
+	}
+	
+	&.tau-segmentedbutton-sanmarino  > .tau-segmentedbutton-item-selected {
+		border-color: #375073;
+		@include tau-gradient(#89A0BE, 
+        #5877A2,
+        #476999,
+        #4A6C9B);
+	  }
+	
+  }
+
+  .tau-segmentedbutton-vertical {
+    color: $segmentedbutton-vertical-color;
+    background-color: #F7F7F7;
+	@include tau-box-shadow((inset 0 1px rgba(0, 0, 0, .08), 0 1px rgba(255, 255, 255, .81)));
+    border: 1px solid #A1A7AE;
+    text-align: left;
+    @include tau-border-radius($segmentedbutton-radius);
+    
+    & > .tau-segmentedbutton-item {
+      font-weight: bold;
+      border-bottom: 1px solid #CACACA;
+      @include tau-box-shadow(inset 0 1px #FDFDFD);
+      padding-left: 25px;
+      padding-right: 20px;
+      position: relative;
+      
+      &:first-child {
+		@include box-shadow(none);
+	  }
+	  
+	  &:last-child {
+		border-bottom: 0;
+	  }
+    }
+    
+    & > .tau-segmentedbutton-item-selected{
+    	color: #253C6A;
+    	
+    }
+    
+    & > .tau-segmentedbutton-item-selected:before {
+		position: absolute;
+		top: 10px;
+		left: 4px;
+		width: 14px;
+		content: '\0000a0';
+		background-image: url(#{$images-path}/#{$tau-segmentedbutton-item-selected-icon});
+		background-size: 100%;
+		background-repeat : no-repeat;
+		background-position: center;
+    }
+   
+    & > .tau-segmentedbutton-item-selected:first-child{
+     @if ($enable-border-radius) {
+       @include border-top-radius($segmentedbutton-radius);
+     }
+    }
+    
+    & > .tau-segmentedbutton-item-selected:last-child{
+      @if ($enable-border-radius) {
+        @include border-bottom-radius($segmentedbutton-radius);
+      }
+    }
+
+  }
+
+  .tau-segmentedbutton-item {
+    @include tau-container-text(inherit);
+    @include display-box;
+    height: 100%;
+    padding: 10px;
+    text-align: inherit;
+  }
+
+  
+  
+  .tau-segmentedbutton-item-text {
+    @include tau-content-text;
+    @include box-flex(1);
+  }
+}

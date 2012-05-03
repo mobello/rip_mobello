@@ -1,0 +1,23 @@
+$linkurl-height: 44px !default;
+$linkurl-bgcolor: #c1c8d4 !default;
+$tau-linkurl-icon: "table/arrow_gray.png" !default;
+
+@mixin tau-linkurl {
+  /** linkurl ******************************************************************/
+  .tau-linkurl {
+    width: 100%;
+    min-height: $linkurl-height;
+    z-index: 10;
+    background: url(#{$images-path}/#{$tau-linkurl-icon}) no-repeat right $linkurl-bgcolor;
+    font-size: 1.2em;
+  }
+  
+  /** linkurl text *************************************************************/
+  .tau-linkurl-title {
+    @include tau-title;
+  }
+  
+  .tau-linkurl-subtitle {
+    @include tau-title(.8em);
+  }
+}

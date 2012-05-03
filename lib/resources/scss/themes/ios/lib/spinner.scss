@@ -1,0 +1,51 @@
+$tau-spinner-minus-icon: "spinner/minus.png" !default;
+$tau-spinner-plus-icon: "spinner/plus.png" !default;
+
+@mixin tau-spinner {
+  /** spinner **********************************************************************/
+  .tau-spinner {
+	@include tau-box-shadow(inset 0px 1px 0px 0px rgba(255, 255, 255, 1));
+	@include tau-gradient2(#C7C7C7,#FAFAFA);
+	border-style: solid;
+	border-width: 1px;
+	border-color: #7E7E7E #919191 #B3B3B3 #9C9C9C;
+	@include tau-border-radius(4px);
+	@include display-box;
+	@include box-align(center);
+	width: 160px;
+	height: 40px;
+  }
+  
+  .tau-spinner-button {    
+	display: block;
+	width: 40px;
+	color: transparent;
+	text-align: center;
+	border-style: solid;
+	border-color: #ADADAD;
+	background-repeat: no-repeat;
+	background-position: center center;
+	
+	&:first-child {
+		border-width: 0 1px 0 0;
+		background-image: url(#{$images-path}/#{$tau-spinner-minus-icon});
+	}
+	&:last-child {
+		border-width: 0 0 0 1px;
+		background-image: url(#{$images-path}/#{$tau-spinner-plus-icon});
+	}
+  }
+  
+  .tau-spinner-control {
+	background: transparent;
+    display: block;
+	@include box-flex(1);
+	
+	border-style: none;
+	border-width: 0px;
+	text-align: right;
+	padding: 0 3px;
+	@include box-shadow(none);
+	@include border-radius(0);
+  }
+}

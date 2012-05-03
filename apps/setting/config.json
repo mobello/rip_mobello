@@ -1,0 +1,8 @@
+config({
+  classname: 'tau.demo.Setting',
+  require: '/main.js', 
+  icon: '/icon.png',
+  title: 'Setting',
+  version: '1.0.0',
+  vendor: 'KT Corporation'
+});

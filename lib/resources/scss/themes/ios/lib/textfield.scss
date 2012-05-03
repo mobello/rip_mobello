@@ -1,0 +1,78 @@
+$tau-textfield-clearbutton-icon: "textfield/clear.png" !default;
+$tau-textfield-clearbutton-highlighted-icon: "textfield/clearSel.png" !default;
+
+$textfield-start-bgcolor: #eef0f1 !default;
+$textfield-stop1-bgcolor: #fefefe !default;
+$textfield-stop2-bgcolor: #fff !default;
+$textfield-end-bgcolor: #fff !default;
+
+
+@mixin tau-textfield {
+  /** textfield **************************************************************/
+  .tau-textfield {
+    position: relative;
+    @include tau-inline-flexbox;
+    @include box-orient(horizontal);
+    @include box-align(center);
+    
+    min-height: 32px;
+    min-width: 40px;
+    border: 1px solid $default-input-border-color;
+  
+    background-color: $textfield-end-bgcolor;
+    font-size: 14pt;
+    
+    @include tau-border-radius(100px);
+    @include tau-box-shadow(0 1px 3px rgba(0,0,0,0.6) inset);
+    padding-left: 5px;
+  }
+  
+  .tau-textfield._tau-disp-block {
+    @include display-box;
+  }
+  
+  /** placeholderimage, control, clearbutton ************************************/
+  .tau-textfield-placeholderimage {
+    position: relative;
+    display: block;
+    max-height:28px;
+    max-width: 30px;
+    height: auto;
+    width: auto;
+    padding: 2px;
+  }
+  
+  .tau-textfield-control {
+    position: relative;
+    display: block;
+    @include box-flex(1);
+    background: none;
+    border: 0 none !important;
+    -webkit-appearance: none;
+    
+    font-size: inherit;
+    font-family: inherit;
+    text-overflow: ellipsis;
+    text-align: inherit;
+    outline: none;
+    background: transparent;
+  }
+  
+  .tau-textfield-clearbutton{
+    position: reletive;
+    display: block;
+    width: 26px;
+    height: 26px;
+    border-style: none;
+    background: url(#{$images-path}/#{$tau-textfield-clearbutton-icon}) no-repeat right;
+  }
+  
+  /** component state **********************************************************/
+  .tau-textfield-highlighted, .tau-textfield-selected {
+   border: 1px solid $default-input-highlighted-border-color;
+  }
+
+  .tau-textfield-clearbutton:active{
+    background: url(#{$images-path}/#{$tau-textfield-clearbutton-highlighted-icon}) no-repeat right;
+  }
+}

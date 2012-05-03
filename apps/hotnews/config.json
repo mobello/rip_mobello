@@ -1,0 +1,29 @@
+config({
+  classname : 'tau.sample.hotnews.MainController',
+  require : '/main.js',
+  icon    : '/icon.png',
+  version : '1.0',
+  title : 'HOT News',
+  vendor      : 'KT Corporation',
+  desc:'뜨거운 이슈들을 선별해 제공하는 HOT 기사들과 스포츠, 연예 및 정치, 경제 분야의 최신 뉴스들이 실시간으로 업데이트 됩니다.',
+  tabs : [
+  	{title : '종합', icon: '/img/home.png', selectedIcon: '/img/home_selected.png', 
+  	url : 'http://query.yahooapis.com/v1/public/yql?q=%20SELECT%20*%20FROM%20rss%20WHERE%20url%3D%22http%3A%2F%2Frss.ohmynews.com%2Frss%2Ftop.xml%22&format=json'},
+    {title : '문화', icon: '/img/entertainment.png', selectedIcon: '/img/entertainment_selected.png', 
+    url : 'http://query.yahooapis.com/v1/public/yql?q=%20SELECT%20*%20FROM%20rss%20WHERE%20url%3D%22http%3A%2F%2Fentertainforus.tistory.com%2Frss%22&format=json'},
+    {title : '스포츠', icon: '/img/star.png', selectedIcon: '/img/star_selected.png', 
+    url : 'http://query.yahooapis.com/v1/public/yql?q=%20SELECT%20*%20FROM%20rss%20WHERE%20url%3D%22http%3A%2F%2Frss.ohmynews.com%2Frss%2Fsports.xml%22&format=json'},
+    {title : 'IT', icon: '/img/shopping.png', selectedIcon: '/img/shopping_selected.png', 
+    url : 'http://query.yahooapis.com/v1/public/yql?q=%20SELECT%20*%20FROM%20rss%20WHERE%20url%3D%22http%3A%2F%2Ffeeds.feedburner.com%2Fbloter%22&format=json'}
+  ],
+  tabs2 : [
+  	{title : '종합', icon: '/img/home.png', selectedIcon: '/img/home_selected.png', 
+  	url : 'http://query.yahooapis.com/v1/public/yql?q=%20SELECT%20*%20FROM%20rss%20WHERE%20url%3D%22http%3A%2F%2Frss.ohmynews.com%2Frss%2Ftop.xml%22&format=json'},
+    {title : '문화', icon: '/img/entertainment.png', selectedIcon: '/img/entertainment_selected.png', 
+    url : 'http://query.yahooapis.com/v1/public/yql?q=%20SELECT%20*%20FROM%20rss%20WHERE%20url%3D%22http%3A%2F%2Fentertainforus.tistory.com%2Frss%22&format=json'},
+    {title : '스포츠', icon: '/img/star.png', selectedIcon: '/img/star_selected.png', 
+    url : 'http://query.yahooapis.com/v1/public/yql?q=%20SELECT%20*%20FROM%20rss%20WHERE%20url%3D%22http%3A%2F%2Frss.ohmynews.com%2Frss%2Fsports.xml%22&format=json'},
+    {title : 'IT', icon: '/img/shopping.png', selectedIcon: '/img/shopping_selected.png', 
+    url : 'http://query.yahooapis.com/v1/public/yql?q=%20SELECT%20*%20FROM%20rss%20WHERE%20url%3D%22http%3A%2F%2Ffeeds.feedburner.com%2Fbloter%22&format=json'}
+  ],
+});

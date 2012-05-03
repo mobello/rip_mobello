@@ -1,0 +1,100 @@
+$toolbar-height: 46px !default;
+$toolbar-content-height: 43px !default;
+$toolbar-bgcolor: #4f4f4f !default;
+$toolbar-button-width: auto !default;
+$toolbar-button-height: auto !default;
+
+$toolbar-bgcolor: #4f4f4f;
+$toolbar-start-bgcolor: #b0bccd;
+$toolbar-stop1-bgcolor: #889bb3;
+$toolbar-stop2-bgcolor: #8195af;
+$toolbar-end-bgcolor: #6d84a2;
+
+$toolbar-dark-start-bgcolor: #717172;
+$toolbar-dark-stop1-bgcolor: #3A3A3A;
+$toolbar-dark-stop2-bgcolor: #0D0D0F;
+$toolbar-dark-end-bgcolor: #0F0F10;
+
+@mixin tau-toolbar {
+  
+  /** toolbar ****************************************************************/
+  @include tau-scrollpanel(tau-toolbar, $toolbar-bgcolor);
+
+  .tau-toolbar {
+    position: absolute;
+    left: 0;
+    height: $toolbar-height;
+    border-top: 1px solid #fff;
+    @include tau-gradient($toolbar-start-bgcolor, $toolbar-stop1-bgcolor, $toolbar-stop2-bgcolor, $toolbar-end-bgcolor);
+    @include box-pack(justify);
+    @include box-align(center);
+  }
+  
+	.tau-toolbar-container {
+    @include box-pack(inherit);
+    @include box-align(inherit);
+    
+		& > .tau-scroller {
+		  @include box-pack(inherit);
+		  @include box-align(inherit);
+		}
+	}
+  
+  .tau-toolbar-content {
+    @include display-box;
+    @include box-orient(horizontal);
+    @include box-pack(inherit);
+    @include box-align(inherit);
+	padding-left: 8px;
+	padding-right: 8px;
+    height: 100%;
+    
+    & > * {
+      max-height: $toolbar-content-height;
+    }
+    
+    & > .tau-button {  
+      position: relative !important;
+      @include display-box;
+      width: $toolbar-button-width;
+      height: $toolbar-button-height;
+      margin-right: 2px;
+	  padding: 4px 10px;
+    }
+  }
+
+  .tau-toolbar-bottom {
+    display: block;
+    bottom: 0;
+  }
+  
+  .tau-toolbar-top {
+    display: block;
+    top: 0;
+  }
+  
+  /** space ******************************************************************/
+  .tau-space {
+    display: block;
+    height: 80%;
+  }
+  
+  .tau-space-flex {
+    @include box-flex(1);
+  }
+  
+  .tau-space-sep {
+    width: 0;
+    border-left: 1px dotted #767676;
+    border-right: 1px dotted #1C1C1C;
+    margin: 0 2px;
+  }
+  
+  .tau-space-fixed {
+    width: 50px;
+  }
+}
+
+.tau-toolbar.tau-toolbar-dark {
+	@include tau-gradient($toolbar-dark-start-bgcolor, $toolbar-dark-stop1-bgcolor, $toolbar-dark-stop2-bgcolor, $toolbar-dark-end-bgcolor);
+}

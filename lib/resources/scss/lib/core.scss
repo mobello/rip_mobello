@@ -1,0 +1,363 @@
+$tau-dashboard-banner-left-icon: "dashboard/lefttmp_ci.png" !default;
+$tau-dashboard-banner-x-icon: "dashboard/xtmp_ci.png" !default;
+$tau-dock-icon: "systemdock/drawer-bg.jpg" !default;
+$tau-dock-handle-icon: "systemdock/handle.png" !default;
+$font-family: '' !default;
+
+/**
+ * 기본적인 스타일 정의 및  root, scene, system component에 대한 class 정의
+ */
+@mixin tau-core {
+
+  #tau-root {
+    background: $default-container-bgcolor;
+    color: $default-container-color;
+    @if ($font-family != '') {
+      font-family: unquote($font-family);
+    }
+  }
+  
+  /** dashboard ***************************************************************/
+  #tau-dashboard {
+   background-color: #c5ccd3;
+   @include background-image(linear-gradient(left, color_stops(
+      rgba(#fff, 0) 75%,
+      rgba(#fff, .1) 75%
+    )));
+    background-size: 7px;
+    min-width: 320px;
+    min-height: 460px; /* status bar : 20pixels */
+   
+   & td {
+    text-align: center;
+    height: 100px;
+    @include tau-container-text;
+    
+    & img {
+      margin: 15px 0 0;
+    }
+   }
+   
+   & li {
+  		float: left;
+  		list-style: none;
+	}
+
+	& ul {
+		  width: 100%;
+		  height: 100%;
+		  text-align: center;
+	}
+	
+	& li div.shortcuts {
+	  position: absolute;
+	  text-align: center;
+	}
+
+	& li div.empty_placeholder {
+	  position: absolute;
+	  text-align: center;
+	  border: 0px;
+	}
+
+	& li .moving{
+	}
+	& li .moving_inner{
+  		border:4px dotted #E100FF;
+	}
+	
+	& li .replacable {
+	}
+	& li .replacable_inner {
+  		opacity:0.8;
+  		border:4px dotted #00C3FF;
+	}
+	
+	& li div.dashed{
+		border: 1px dashed cyan;
+	}
+
+	& > .dashboard_section {
+  		text-align: center;		
+	}
+  }
+
+  .tau-dashboard-banner {
+    height: 38px;
+    background-image:url(#{$images-path}/#{$tau-dashboard-banner-x-icon}); 
+    background-position: center top; 
+    background-repeat: repeat-x ;
+  }
+  #addToHomeScreen {
+	z-index:9999;
+	-webkit-user-select:none;
+	-webkit-box-sizing:border-box;
+	width:240px;
+	font-size:15px;
+	padding:12px 14px;
+	text-align:left;
+	font-family:helvetica;
+	background-image:-webkit-gradient(linear,0 0,0 100%,color-stop(0,#fff),color-stop(0.02,#eee),color-stop(0.98,#ccc),color-stop(1,#a3a3a3));
+	border:1px solid #505050;
+	-webkit-border-radius:8px;
+	-webkit-background-clip:padding-box;
+	color:#333;
+	text-shadow:0 1px 0 rgba(255,255,255,0.75);
+	line-height:130%;
+	-webkit-box-shadow:0 0 4px rgba(0,0,0,0.5);
+	}
+	
+	#addToHomeScreen.addToHomeIpad {
+		width:268px;
+		font-size:18px;
+		padding:14px;
+	}
+	
+	/**
+	 *
+	 * The 'wide' class is added when the popup contains the touch icon
+	 *
+	 */
+	#addToHomeScreen.addToHomeWide {
+		width:296px;
+	}
+	
+	#addToHomeScreen.addToHomeIpad.addToHomeWide {
+		width:320px;
+		font-size:18px;
+		padding:14px;
+	}
+	
+	/**
+	 *
+	 * The balloon arrow
+	 *
+	 */
+	#addToHomeScreen .addToHomeArrow {
+		position:absolute;
+		background-image:-webkit-gradient(linear,0 0,100% 100%,color-stop(0,rgba(204,204,204,0)),color-stop(0.4,rgba(204,204,204,0)),color-stop(0.4,#ccc));
+		border-width:0 1px 1px 0;
+		border-style:solid;
+		border-color:#505050;
+		width:16px; height:16px;
+		-webkit-transform:rotateZ(45deg);
+		bottom:-9px; left:50%;
+		margin-left:-8px;
+		-webkit-box-shadow:inset -1px -1px 0 #a9a9a9;
+		-webkit-border-bottom-right-radius:2px;
+	}
+	
+	
+	/**
+	 *
+	 * The balloon arrow for iPad
+	 *
+	 */
+	#addToHomeScreen.addToHomeIpad .addToHomeArrow {
+		-webkit-transform:rotateZ(-135deg);
+		background-image:-webkit-gradient(linear,0 0,100% 100%,color-stop(0,rgba(238,238,238,0)),color-stop(0.4,rgba(238,238,238,0)),color-stop(0.4,#eee));
+		-webkit-box-shadow:inset -1px -1px 0 #fff;
+		top:-9px; bottom:auto; left:50%;
+	}
+	
+	
+	/**
+	 *
+	 * Close button
+	 *
+	 */
+	#addToHomeScreen .addToHomeClose {
+		-webkit-box-sizing:border-box;
+		position:absolute;
+		right:4px;
+		top:4px;
+		width:18px;
+		height:18px; line-height:14px;
+		text-align:center;
+		text-indent:1px;
+		-webkit-border-radius:9px;
+		background:rgba(0,0,0,0.12);
+		color:#707070;
+		-webkit-box-shadow:0 1px 0 #fff;
+		font-size:16px;
+	}
+	
+	
+	/**
+	 *
+	 * The '+' icon, displayed only on iOS < 4.2
+	 *
+	 */
+	#addToHomeScreen .addToHomePlus {
+		font-weight:bold;
+		font-size:1.3em;
+	}
+	
+	
+	/**
+	 *
+	 * The 'share' icon, displayed only on iOS >= 4.2
+	 *
+	 */
+	#addToHomeScreen .addToHomeShare {
+		display:inline-block;
+		width:18px;
+		height:15px;
+		background-repeat:no-repeat;
+		background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAPCAQAAABDj1eZAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAUdJREFUKFNtkLtLw1AYxS/qJLhXVKr2ZRulUNtiqgSb3CziICI6ucTFVYcOnaQOFRwUnNTRwUWXgpP/QdHNUEQUHGxofYBTlRs83iZNjKTncOGe7/vx3QchXUWn6FL3jhfKUdCCr5zuifV5oDiHQM+c+CIhiiCSWNu08iq9oHXKLAiqrgR4UXqlOEYZt++ExEL0wW7+OW0G10muLv9gmqfe5FAWKmTMYQYiFL7PYwyLOD8lSjNh2gdnPzMII4QUBxc4OothbAF7GCBKQ0YbSWyPQsIhqvetS+y0ygGMo/KFZfviDvR4AhwgZU9dGYnA0J/6ndc15i3ouYIMcVVUcEXIoOxCeRCfwP8sXBSdjtpUv/1QW+K16kCCIUC4id9Fa0JtkluwVkSfqPL6RwfSDA0aNlx7k/bWgViB7bMS2/1vk5sdsZLN/ALSuL3tylO4RAAAAABJRU5ErkJggg==);
+		background-size:18px 15px;
+		text-indent:-9999em;
+		overflow:hidden;
+	}
+	
+	
+	/**
+	 *
+	 * The touch icon (if available)
+	 *
+	 */
+	#addToHomeScreen .addToHomeTouchIcon {
+		display:block;
+		float:left;
+		-webkit-border-radius:6px;
+		-webkit-box-shadow:0 1px 3px rgba(0,0,0,0.5),
+			inset 0 0 2px rgba(255,255,255,0.9);
+		background-repeat:no-repeat;
+		width:57px; height:57px;
+		-webkit-background-size:57px 57px;
+		margin:0 12px 0 0;
+		border:1px solid #333;
+		-webkit-background-clip:padding-box;
+	}
+	
+	
+	/**
+	 *
+	 * The 'share' icon for retina display
+	 *
+	 */
+	@media all and (-webkit-min-device-pixel-ratio: 2) {
+		#addToHomeScreen .addToHomeShare {
+			background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAeCAQAAADu6HTYAAADPElEQVR4Xq3TX2gcRRzA8e/M7mVv2+TSNpc/TZtrY6jUGqgaSAmEChKLrYK0YH0RFC2CSCkEfCghiKU04J8qNigq6os+iQV98MHWFwVBrQQRWs21lBw5cw3NNb1/udu72RGG5Y77IzXW77D7sAwf5scyYoL6BGXSDKFZwaGpLvIUaeoCkvX1MmsM0Ny6oRSQYOLuIS+YZOpfQdqslpUxcZrzTVAz4qPwW2O3CeIwC/RSzeY6Ow1QhUrkr+YOWfEKDkEP8Rij7CHKJmrFSDHBdwGEE5wiGChPN+PnT8VdRtEIl1d4gRj/1EVe5ZSBKGh8iqQpo/Fo5+3C/gz0MYg4zgwbqday1/Q4B8BGQ45d/Hi54lakCrU5obOcidJpu1+Lg9whjabyaOYLnrIBFFaRD+xe2ybMDWY66GmP/WA9cGfGp0CWhy0wkMN8inepFiH2rV1j0NQSNQbFLRQnS8/8YSDBBpadfv4CYDub2fmeHDNAsL1MBWUel0iA+Xik6eHcyvD3vAMSU1TGuA/YRS+dD7ovCQN43GKRFCU20Kd3V/avDVVyAZ5niTEuLA5/zBGWg9EEEhfJKN200Tat8CmRAQb9+wv7soPlHt2tQorsz1uPbr0HTY4sJwrH47zJZwABBAKLMBoQXepwgTwdHCo+fXMkQ4lrxEmQ5AaXipPqDY9V2vn09tgvTPI71EEGYxM+/uMJLJ4svpgaWGKOi/xKgmqLSUGSUd5f2vIVJ/CgBaTIUsZ7ZBsn0+NzfMOXLFCXQyTcybN6ep5ZZgUOHn7jpfUpsZshdugPGf+E5zjbyHTSRyQ8xfRPPM/s63RHeuknSoT22mjmmnAOIMkUZ6D1xSfPPAfd1WFKM3sO2CMaHx8M1NjnXKHaAGGkOW0C02WeYHUz4qMtx+w5gUDS8NckYe5lHsMYwCZEPyEEmjLDZFmAS7CDviMdxyTkMNVBKEmYLvbiQQBIBBbCQG04bGQvFWz6CfsCQLWCigILFwcfkGYBiOpbYuOizTAyYyDdCtrGaRG1LCkIgMYEFhI0WqQZoSlbGRyHKe4qOx7iv2bVQW9dp4dlM/x6kmwnWQcd/Q3FCqwTEiT5s+6D5v/pb0SSHyg7uhMWAAAAAElFTkSuQmCC);
+		}
+	}
+  /** shortcut ***************************************************************/  
+  .tau-shortcut {
+    position: relative;
+    display: inline-block;
+    color: #000;
+    font: bold 11px helvetica;
+    text-align: center;
+    margin: -$badge-margin;
+    background: transparent;
+  }
+  
+  .tau-shortcut-icon {
+    width: 57px;
+    height: 57px;
+    margin: 0 auto 4px;
+    background-size: 100% 100%;
+    @if ($enable-box-shadow) {
+      @include box-shadow(0 4px 4px rgba(#000, .5));
+    }
+    @if ($enable-border-radius) {
+      @include border-radius(8px); 
+    }
+   
+    &:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: "";
+      width: 57px;
+      height: 57px;
+      margin: 0 auto 4px;
+      background-size: 100% 100%;
+      @if ($enable-border-radius) {
+        @include border-radius(8px);
+      }
+      @if ($enable-gradient) {
+        background-image: -webkit-gradient(radial, 50% -40, 37, 50% 0, 100, 
+          from(rgba(#fff, .75)), 
+          color-stop(30%, rgba(#fff, 0)), 
+          color-stop(30%, rgba(#000, 0.25)), 
+          to(rgba(#000, 0)));
+      }
+    }
+    
+    &:active {
+      @include scale(1.1);
+    }
+  }
+  
+  .tau-shortcut-badge {
+    @include tau-badge;
+    top: 0;
+    right: 0;
+  }
+  
+  .tau-shortcut-delete {
+      @include tau-badge;
+      top: 0;
+      left: 0;
+  }  
+  
+  
+  .tau-shortcut-badge-label {
+    @include tau-badge-text;
+  }
+  
+/******************************* System Dock **********************************/
+  .tau-dock {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    z-index: 999991;
+    background:#c05500 url(#{$images-path}/#{$tau-dock-icon});
+    font-size: 12px;
+    
+    & ul {
+      display:block;
+      width:auto;
+    }
+    & li {
+      display: inline-block;
+      max-width: 57px;
+      max-height: 57px;
+      margin: 20px 10px;
+      text-align: center;
+      font-weight: bold;
+      text-shadow:0 1px 1px #000;
+    }
+    
+    & .tau-shortcut {
+      display: inline-block;
+      position: relative;
+      color: #fff;
+    }
+  
+    & .tau-shortcut-close {
+      @include tau-badge;
+      top: 0;
+      left: 0;
+    }  
+  }
+
+  .tau-dock-handle {
+    position: relative;
+    left: 0;
+    width: 100%;
+    height: 28px;
+    border-top: 1px solid #532500;
+    border-bottom: 1px solid #111;
+    
+    @if ($enable-gradient) {
+      @include background (
+        url(#{$images-path}/#{$tau-dock-handle-icon}) no-repeat 50%,
+        linear-gradient(color-stops(#e07b29, #b85300 10%, #793600 80%)));
+    } @else {
+      background: #b85300 url(#{$images-path}/#{$tau-dock-handle-icon}) no-repeat 50%;
+    }
+    -webkit-user-select:none;
+  }
+}

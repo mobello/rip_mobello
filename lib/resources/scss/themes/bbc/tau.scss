@@ -1,0 +1,26 @@
+$enable-gradient: true;
+$enable-border-radius: false;
+$enable-box-shadow: false;
+
+$navibar-start-bgcolor: #fc2020;
+$navibar-stop1-bgcolor: #a00000;
+$navibar-stop2-bgcolor: #880000;
+$navibar-end-bgcolor: #ac0000;
+
+$tablesection-container-border-top: 1px solid #3c3c3c;
+$tablesection-container-border-bottom: 1px solid #474747;
+$tablesection-container-bgcolor: transparent;
+$tablesection-bgcolor: transparent;
+
+$tablecell-border-top: 1px solid #3c3c3c;
+$tablecell-border-bottom: 1px solid #474747;
+$font: 'verdana,helvetica,arial,sans-serif'; 
+@import '../../lib/all';
+
+.tau-navbar {
+  background-image : url(images/navbar.png);
+}
+
+.tau-tablesection-container {
+  background-image : url(images/section.png);
+}

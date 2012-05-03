@@ -1,0 +1,150 @@
+$tau-picker-header-icon: "picker/header.png" !default;
+$tau-pickerframe-icon: "picker/frame.png" !default;
+$tau-slot-border-icon: "picker/slot-border.png" !default;
+
+@mixin tau-picker {
+  /** picker **********************************************************************/
+  .tau-picker {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    width: 100%;
+    font-family: helvetica, sans-serif;
+    background: rgba(0, 0, 0, 0.7);
+    background-image: initial;
+    background-repeat-x: initial;
+    background-repeat-y: initial;
+    background-attachment: initial;
+    background-position-x: initial;
+    background-position-y: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: rgba(0, 0, 0, 0.699219);
+    text-align: left;
+    
+    & > .tau-picker-header {
+	 @extend .tau-toolbar.tau-toolbar-dark; /* toolbar.scss */
+     display: block;
+	 @include box-align(center);
+	 @include box-pack(justify);
+	 padding: 8px 5px;
+      
+      & > .tau-picker-done {
+        float:right;
+      }
+    }
+    
+    & > .tau-picker-frame {
+      position: absolute;
+      z-index: 1000;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 215px;
+      border-width: 16px;
+      border-top-width: 16px;
+      border-right-width: 16px;
+      border-bottom-width: 16px;
+      border-left-width: 16px;
+      -webkit-border-image: url(#{$images-path}/#{$tau-pickerframe-icon}) 16;
+    }
+    
+    & > .tau-picker-slotswrapper {
+      position: relative;
+      z-index: 999;
+      display: block;
+      height: 215px;
+      width:100%;
+      padding: 0 11px;
+      overflow: hidden;
+      
+      & > .tau-picker-slots {
+        display: table;
+        width: 100%;
+        background: #FCFCFC;
+        
+        & div {
+          display: table-cell;
+          height: 100%;
+          padding-top: 86px;
+          border-left: 2px solid #0D0E0F;
+          background-color: #FCFCFC;
+          background-image: url(#{$images-path}/#{$tau-slot-border-icon});
+          background-position: 0 0, 100% 0;
+          background-repeat: repeat-y;
+        }
+        
+        & div:first-child {
+          border: 0;
+        }
+        
+        & > .tau-picker-slot {
+          text-align: right;
+        }
+        
+        & > .tau-picker-separator {
+          background: #DDD;
+          width: 1%;
+        }
+        
+        & ul {
+          padding: 0 0 85px 0;
+          padding-top: 0px;
+          padding-right: 0px;
+          padding-bottom: 85px;
+          padding-left: 0px;
+          margin: 0;
+          margin-top: 0px;
+          margin-right: 0px;
+          margin-bottom: 0px;
+          margin-left: 0px;
+          list-style: none;
+          list-style-type: none;
+          list-style-position: initial;
+          list-style-image: initial;
+        }
+        
+        & li {
+          padding: 0 8px;
+          padding-top: 0px;
+          padding-right: 8px;
+          padding-bottom: 0px;
+          padding-left: 8px;
+          height: 44px;
+          overflow: hidden;
+          overflow-x: hidden;
+          overflow-y: hidden;
+          font: bold 23px/44px Helvetica,sans-serif;
+          
+          & > .tau-datepicker-slot-item-day {          	
+  			font: bold 22px/44px Helvetica,sans-serif;
+          	color: gray;
+          }
+          & > .tau-datepicker-slot-item-ampm {          	
+  			font: bold 22px/44px Helvetica,sans-serif;
+          }
+          & > .tau-datepicker-slot-item-highlight {
+          	color: blue;
+          }
+          &.tau-datepicker-slot-item-disabled {
+          	color: gray;
+          }
+        }
+      }
+    }
+  }
+  .tau-picker-cancel {
+	@extend .tau-button-dark;
+	height: auto;
+	@include tau-inline-flexbox;
+	font-size: 0.7em;
+	padding: 5px 6px;
+  }
+  .tau-picker-done {
+	@extend .tau-button-blue;
+	height: auto;
+	@include tau-inline-flexbox;
+	font-size: 0.7em;
+	padding: 5px 6px;
+  }
+}

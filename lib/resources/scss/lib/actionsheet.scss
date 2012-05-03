@@ -1,0 +1,62 @@
+$actionsheet-pop-bgcolor: #000 !default;
+$actionsheet-color: #fff !default;
+
+@mixin tau-actionsheet {
+  /** actionsheet *****************************************************************/
+  .tau-actionsheet {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 10px;    
+    overflow: hidden;
+    color: $actionsheet-color;
+  }
+  
+  .tau-actionsheet-mask {
+    @include tau-mask(fixed);
+  }
+  
+  .tau-actionsheet-popup {
+    @include display-box;
+    @include box-orient(vertical);
+    @include box-pack(end);
+    @include box-align(justify);
+    @include tau-popup;
+    border: 4px solid #000;
+    background-color: $actionsheet-pop-bgcolor;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    overflow: visible; /** arrow를 표시하기 위해 visible이어야 함.*/
+    
+    & .tau-scrollpanel {
+      display: block;
+      height: auto;
+    }
+    
+    & .tau-button {
+      position: relative;
+      width: 100%;
+    }
+  }
+  
+  .tau-actionsheet-popup-arrow {
+    position: absolute;
+    height: 0;
+    width: 0;
+    border-style: solid;
+    border-width: .63em;
+    border-color: transparent;
+    @include box-sizing(content-box);
+  }
+  
+  .tau-actionsheet-title {
+    font-size: inherit;
+    margin: 2px;
+  }
+}

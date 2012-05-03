@@ -1,0 +1,220 @@
+$tau-pull-vertical-icon: "scrollpanel/pull-icon.png" !default;
+$tau-pull-horizontal-icon: "scrollpanel/pull-icon-horizontal.png" !default;
+$tau-pulltorefresh-color: #888 !default;
+/**
+ * @param {string} $prefix
+ * @param {color} [$background=transparent]
+ */
+@mixin tau-scrollpanel($prefix, $background: transparent) {
+
+  .#{$prefix} {
+    position: relative;  /* needed */
+    @include tau-inline-flexbox;
+    
+    z-index: 1;      /* needed and important */
+    width: 100%;
+    height: 100%;
+    overflow: hidden;  /* suggested */
+    background: $background;
+    
+    /** display *******************************************************************/
+    &_tau-disp-block, &.tau-disp-block {
+      @include display-box;
+    }
+  }
+  
+  .#{$prefix}-container {
+  
+    position: relative;
+    display: block;
+  
+    width: 100%;
+    height: 100%;
+    
+    max-width: 100%;
+    max-height: 100%;
+     
+    /** FIXME */
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .#{$prefix}-content {
+    position: relative;
+    display: inherit;
+    @include box-orient(inherit);
+    @include box-flex(1);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    overflow: visible;
+  }
+}
+
+@mixin tau-scroller {
+  .tau-scroller {
+    position: relative;
+    display: block;
+    @include box-flex(1);
+
+    max-width: 100%;
+    max-height: 100%;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    
+    &.tau-hscroll {
+      @include display-box;
+      @include box-orient(horizontal);
+    
+      /* FIXME
+      & .tau {
+        @include display-box;
+      }*/
+    }
+    
+    &.tau-vscroll {
+      @include display-box;
+      @include box-orient(vertical);
+    }
+  }
+  
+  /** FIXME */
+  .tau-scrollbar {
+    position: absolute;
+    z-index: 10;
+    width: 1px;
+    height: 1px;
+    border-width: 3;
+  } 
+  .tau-scrollbar-horizontal {
+    bottom: 1px;
+    left: 1px;
+  }
+   
+  .tau-scrollbar-vertical {
+    top: 1px;
+    right: 1px;
+  }
+}
+
+@mixin tau-pulltorefresh {
+  .tau-pulldown {
+    position: relative;
+    padding: 10px;
+    color: $tau-pulltorefresh-color;
+    font-weight:bold;
+  }
+  
+  .tau-pullup {
+    position: relative;
+    @include display-box;
+
+    padding: 10px;
+    vertical-align: middle;
+
+    border-bottom: 0;
+    color: $tau-pulltorefresh-color;
+    font-weight:bold;
+  }
+
+  @each $direction in down, up {
+    
+    $deg: 0;
+    $releaseDeg: -180deg;
+    
+    @if ($direction == up) {
+      $deg: -180deg;
+      $releaseDeg: 0;
+    }
+  
+    .tau-pull#{$direction}-vertical {
+      @include display-box;
+      @include box-orient(horizontal);
+      @include box-align(center);
+      @include box-pack(start);
+      
+      @if ($direction == up) {
+        position: absolute;
+        left: 0;
+        height: 0;
+      } @else {
+        margin-top: -60px;
+      }
+      width: 100%;
+      font-size: 14px;
+      
+      & > .tau-pull#{$direction}-icon{
+        @if ($direction == up) {
+          display: inline-block;
+        } @else {
+          display: block;
+        }
+        
+        margin-right: 4px;
+        background:url(#{$images-path}/#{$tau-pull-vertical-icon}) 0 0 no-repeat;
+      }
+      
+      & > .tau-pull#{$direction}-label{
+        @if ($direction == up) {
+          display: inline-block;
+        } @else {
+          display: block;
+        }
+      }
+    }
+    
+    .tau-pull#{$direction}-horizontal {
+      @include display-box;
+      @include box-orient(vertical);
+      @include box-align(center);
+      @include box-pack(center);
+      @if ($direction == up) {
+        position: absolute;
+        width: 40px;
+        margin-left: 40px;
+      } @else {
+        width: 40px;
+        margin-left: -60px;
+      }
+      height: 100%;
+      font-size: 10px;
+
+      & > .tau-pull#{$direction}-icon{
+        margin-bottom: 4px;
+        background:url(#{$images-path}/#{$tau-pull-horizontal-icon}) 0 0 no-repeat;
+      }
+    }
+    
+    .tau-pull#{$direction}-icon {
+      display:block;
+      width: 40px; 
+      height: 40px;
+      @include transition-property(transform);
+      @include transition-duration(250ms);
+      @include rotate($deg);
+      background-size: 40px 80px;
+    }
+    
+    .tau-pull#{$direction}-release {
+      & > .tau-pull#{$direction}-icon {
+        @include rotate($releaseDeg);
+      }
+    }
+    
+    .tau-pull#{$direction}-loading {
+      & > .tau-pull#{$direction}-icon {
+        background-position: 0 100%;
+        -webkit-transform:rotate(0deg);
+        -webkit-transition-duration: 0ms;
+
+        -webkit-animation-name: 'tau-spin';
+        -webkit-animation-duration: 2s;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-timing-function: linear;
+      }
+    }
+  }    
+}

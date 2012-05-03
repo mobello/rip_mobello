@@ -1,0 +1,161 @@
+$tau-segmentedbutton-item-selected-icon: "checkbox/selected.png" !default;
+$segmentedbutton-radius: 8px !default;
+$segmentedbutton-height: 46px !default;
+$segmentedbutton-horizontal-color: #afafaf !default;
+$segmentedbutton-vertical-color: #000 !default;
+
+$segmentedbutton-default-start-bgcolor: #3c3c3c !default;
+$segmentedbutton-default-stop1-bgcolor: #3e3e3e !default;
+$segmentedbutton-default-stop2-bgcolor: #4d4d4d !default;
+$segmentedbutton-default-end-bgcolor: #727272 !default;
+
+$segmentedbutton-selected-start-bgcolor: #989a99 !default;
+$segmentedbutton-selected-stop1-bgcolor: #6b6b6d !default;
+$segmentedbutton-selected-stop2-bgcolor: #535456 !default;
+$segmentedbutton-selected-end-bgcolor: #7d7d7d !default;
+
+
+@mixin tau-segmentedbutton {
+  /** segmentedbutton *******************************************************************/
+  .tau-segmentedbutton {
+    display: inline-block;
+    @if ($enable-border-radius) {
+      @include border-radius(10px);
+    }
+    overflow: hidden;
+  }
+  
+  .tau-segmentedbutton-horizontal {
+    @include tau-inline-flexbox;
+    @include box-orient(horizontal);
+    @include box-pack(center);
+    @include box-align(center);
+    color: $segmentedbutton-horizontal-color;
+    height: $segmentedbutton-height;
+    text-align: center;
+    
+    & > .tau-segmentedbutton-item {
+      @include tau-selected;
+      @include tau-gradient($segmentedbutton-selected-start-bgcolor, 
+        $segmentedbutton-selected-stop1-bgcolor,
+        $segmentedbutton-selected-stop2-bgcolor,
+        $segmentedbutton-selected-end-bgcolor); 
+      @include box-shadow(none);
+    
+      @include box-align(center);
+      @include box-pack(center);
+      @include box-flex(1);
+      position: relative;
+      border-right: 1px solid #000;
+      border-top: 1px solid #000;
+      border-bottom: 1px solid #000;
+    }
+    
+    & > .tau-segmentedbutton-item:FIRST-CHILD {
+      @if ($enable-border-radius) {
+        @include border-left-radius($segmentedbutton-radius);
+      }
+      border-left: 1px solid #000;
+    }
+
+    & > .tau-segmentedbutton-item-selected:FIRST-CHILD {
+      @if ($enable-border-radius) {
+        @include border-left-radius($segmentedbutton-radius);
+      }
+      @if ($enable-box-shadow) {
+       @include box-shadow(-1px -1px 1px rgba(#626262, 0.5) inset);
+      }
+    }
+
+    & > .tau-segmentedbutton-item:LAST-CHILD {
+      @if ($enable-border-radius) {
+        @include border-right-radius($segmentedbutton-radius);
+      }
+      border-right: 1px solid #000;
+    }
+    
+    & > .tau-segmentedbutton-item-selected:LAST-CHILD {
+      @if ($enable-box-shadow) {
+       @include box-shadow(-2px 0 2px rgba(#626262, 0.5));
+      }
+    }
+    
+    & > .tau-segmentedbutton-item-selected {
+      @include background-image(linear-gradient(color_stops(
+        $segmentedbutton-default-start-bgcolor,
+        $segmentedbutton-default-stop1-bgcolor 10%, 
+        $segmentedbutton-default-stop2-bgcolor 11%,
+        $segmentedbutton-default-end-bgcolor
+        )));
+      @if ($enable-box-shadow) {
+       @include box-shadow(-2px 0 2px rgba(#626262, 0.5), -1px -1px 1px rgba(#626262, 0.5) inset);
+      }
+      border-top: 1px solid #2b2b2b;
+      border-bottom: 1px solid #252525;
+    }
+  }
+
+  .tau-segmentedbutton-vertical {
+    color: $segmentedbutton-vertical-color;
+    background-color: #fff;
+    border: 1px solid #000;
+    text-align: left;
+    
+    & > .tau-segmentedbutton-item {
+      border: 1px solid #000;
+      
+      &:before {
+        position: relative;
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        content: "";
+        margin: 2px;    
+        border: 1px solid #000;
+        @include tau-round;
+        @include box-sizing(content-box);
+      }
+    }
+
+    &.tau-segmentedbutton-muliple > .tau-segmentedbutton-item:before {
+      @include border-radius(0 !important);
+    }
+    
+    & > .tau-segmentedbutton-item-selected:before {
+      background-color: #000;
+    }
+    
+    & > .tau-segmentedbutton-item-selected:FIRST-CHILD{
+      @if ($enable-border-radius) {
+        @include border-top-radius($segmentedbutton-radius);
+      }
+    }
+    
+    & > .tau-segmentedbutton-item-selected:LAST-CHILD{
+      @if ($enable-border-radius) {
+        @include border-bottom-radius($segmentedbutton-radius);
+      }
+    }
+    
+    &.tau-segmentedbutton-muliple > .tau-segmentedbutton-item-selected:before {
+      content: url(#{$images-path}/#{$tau-segmentedbutton-item-selected-icon});
+    }
+  }
+
+  .tau-segmentedbutton-item {
+    @include tau-container-text(inherit);
+    @include display-box;
+    height: 100%;
+    padding: 10px;
+    text-align: inherit;
+  }
+
+  .tau-segmentedbutton-item-selected{
+    background-color: gray;
+  }
+  
+  .tau-segmentedbutton-item-text {
+    @include tau-content-text;
+    @include box-flex(1);
+  }
+}

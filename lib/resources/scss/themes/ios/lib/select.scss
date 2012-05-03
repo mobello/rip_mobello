@@ -1,0 +1,153 @@
+$select-color: #000;
+$tau-select-arrow-icon: "select/arrow.png" !default;
+/* 
+ NOTE: segementedButton �� actionSheet ���� �����ϴ� ���� ����
+*/
+@mixin tau-select {
+  /** select *****************************************************************/
+  .tau-select {
+    position: relative;
+    display: inline-block;
+    height: 32px;
+    width: 50%;
+  }
+  
+  .tau-select-control {
+    @include display-box;
+    @include box-orient(horizontal);
+    @include box-pack(center);
+    @include box-align(center);
+    @include tau-container-text($select-color);
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    @include tau-border-radius(10px);
+    border-style: solid;
+	border-width: 1px;
+	border-color: #B3B3B3;
+    padding: 0;
+    @include tau-gradient2(#fff, #D0D0D0);
+	&:after {
+		content: '\0000a0';
+		background-image: url(#{$images-path}/#{$tau-select-arrow-icon}) , -webkit-linear-gradient(#949494, #5A5A5A);
+		background-repeat: no-repeat;
+		background-position: center, left top;
+		background-size: 35%, auto;
+		@include tau-border-radius(0px 8px 8px 0px);
+		border-left: 1px solid #B3B3B3;
+		width: 40px;
+		height: 30px;
+		display: block; 
+	}
+  }
+  
+  .tau-select-control-title {
+    @include tau-content-text;
+    @include box-flex(1);
+	padding-left: 5px;
+	font-size: 0.9em;
+  }
+  
+  .tau-select-badge {
+    @include tau-badge;
+    position: relative;
+    margin: 0 3px 0 0;
+  }
+
+  .tau-select-badge-label {
+    @include tau-badge-text;
+  }
+  
+  .tau-select-mask {
+    @include tau-mask(fixed);
+  }
+  
+  .tau-select-popup {
+    @include tau-popup;
+    @include tau-dialog-popup;
+    left:0;
+    width: auto;
+    height: auto;
+    max-width: 50%;
+    max-height: 50%;
+    margin: 8px 2px;
+	  overflow: visible;
+  }
+  
+  .tau-select-popup-full {
+    @include tau-full(fixed);
+    margin: 4px !important;
+    max-width: 100%;
+    max-height: 100%;
+    
+    & > .tau-scrollpanel {
+      display: block;
+    }
+  }
+  
+  .tau-select-popup-title {
+    position: relative;
+    display: block;
+    height: 30px;
+    width: 100%;
+    
+    
+  }
+  
+  .tau-select-popup-close {
+	@include tau-dialog-popup-close;
+  }
+  
+  .tau-select-item {
+    @include display-box;
+    @include tau-container-text($select-color);
+    text-align: left;
+    height: 30px;
+    padding: 2px 20px 2px 30px;
+    overflow: hidden;
+    border-bottom: 1px solid #CACACA;
+	position: relative;
+	background-color: #fff;
+	
+	&:first-child {
+		@include box-shadow(none);
+		@include tau-border-radius(6px 6px 0 0);
+	}
+	  
+	&:last-child {
+		border-bottom: 0;
+		@include tau-border-radius(0 0 6px 6px);
+	}
+  }
+  
+  .tau-select-item-text {
+    @include tau-content-text;
+    @include display-box;
+    @include box-flex(1);
+    @include box-align(center);
+  }
+  
+  .tau-select-item-selected {
+    &:before {
+		position: absolute;
+		top: 7px;
+		left: 4px;
+		width: 14px;
+		content: '\0000a0';
+		background-image: url(#{$images-path}/#{$tau-segmentedbutton-item-selected-icon});
+		background-size: 100%;
+		background-repeat : no-repeat;
+		background-position: center;
+    }
+  }
+  
+  .tau-select-popup-arrow {
+    position: absolute;
+    height: 20px;
+    width: 36px;
+	top: -20px;
+	left: 35%;
+    background-image: url(#{$images-path}/#{$actionsheet-arrow-img});
+  }  
+}

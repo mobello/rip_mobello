@@ -1,0 +1,136 @@
+$navi-height: 46px !default;
+$navi-shadow-height: 0px !default;
+$navi-padding: 5px !default;
+$navi-item-max-width: 120px !default;
+
+$navibar-start-bgcolor: #b0bccd !default;
+$navibar-stop1-bgcolor: #889bb3 !default;
+$navibar-stop2-bgcolor: #8195af  !default;
+$navibar-end-bgcolor: #6d84a2 !default;
+
+$tau-navbar-icon:false !default;
+
+@mixin tau-sequencenavigator {
+  /** sequencenavigator ********************************************************/
+  .tau-sequencenavigator{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /** navigationbar가 화면에 보여지는 경우  sequencenavigator root DOM Element에 추가한다. **/
+  .tau-navbar-padding {
+    @if ($enable-box-shadow) {
+      padding-top: $navi-height + $navi-shadow-height; 
+    } @else {
+      padding-top: $navi-height;
+    }
+  }
+  
+  /**  scene의 parent가 되는 DOM element에 추가되는 class ********************************/
+  .tau-sequencenavigator-content {
+    position: relative;
+    height: 100%;
+    width: 100%;
+  }
+  
+  /**  navigationbar의 parent가 되는 DOM element에 추가되는 class ************************/
+  .tau-navbar {
+    position: absolute;
+    top: 0;
+    height: $navi-height;
+    width: 100%;
+    @include tau-gradient(
+	  $navibar-start-bgcolor,
+	  $navibar-stop1-bgcolor, 
+	  $navibar-stop2-bgcolor, 
+	  $navibar-end-bgcolor);
+  }
+  
+  .tau-navigationbar {
+    position: absolute;
+    
+    @include display-box;
+    @include box-align(center);
+    @include box-pack(justify);
+      
+    width: 100%;
+    height: 100%;
+    
+    overflow:hidden;
+    padding: 2px;
+    z-index: 9991;
+    color: $default-color;
+    
+    border-style: solid;
+    border-bottom-color: #2D3033;
+    border-top-color: #E6E6E6;
+    border-width: 1px 0px;
+  }
+  
+  /** navigationbar 하위 item(leftitem, content, rightitem) ***********************/
+  
+  .tau-navigationbar-content {
+
+    position: relative;
+    @include display-box;
+    @include box-align(center);
+    @include box-pack(center);
+  
+    z-index: 0;
+    @include box-flex(1);
+    
+    height: 100%;  
+
+    @include tau-container-text;
+    
+    overflow: hidden;
+    padding: 5px;
+    font-size: 1.4em;
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.5);
+  }
+  
+  .tau-navigationbar-leftitem {
+    position: relative;
+    max-height: $navi-height - $navi-padding * 2;
+    @include display-box;
+  }
+  .tau-navigationbar-rightitem {
+    position: relative;
+    max-height: $navi-height - $navi-padding * 2;
+    @include display-box;
+  }
+  
+  .tau-navigationbar-hasrightitem .tau-navigationbar-content-lspace,
+  .tau-navigationbar-hasleftitem .tau-navigationbar-content-rspace {
+    @include box-flex(1);
+  }
+  
+  .tau-navigationbar-hasrightitem.tau-navigationbar-hasleftitem {
+    & .tau-navigationbar-content-lspace, & .tau-navigationbar-content-rspace {
+      display:none;
+    }
+  }
+  
+  /** title을 center에 위치 시키기 위한 dummy element를 위한  class *************************/
+  .tau-navigationbar-content-lspace, .tau-navigationbar-content-rspace {
+    position: relative;
+    height: 100%;
+    width: 0;
+    margin: 0;
+    padding: 0;
+  }
+  
+  
+  /** navigationbar title *******************************************************/
+  .tau-navigationbar-title {
+    @include tau-title;
+    @include box-pack(center);
+    @include box-align(center);
+    @include box-flex(1);
+    display: block;
+    width: auto;
+  }
+}
+
+

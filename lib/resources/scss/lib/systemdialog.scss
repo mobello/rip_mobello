@@ -1,0 +1,136 @@
+@mixin tau-systemdialog {
+  /** systemdialog ***********************************************************/
+  .tau-systemdialog {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 10px;    
+    overflow: hidden;
+    
+    background-color: transparent;
+    
+    @include display-box;
+    @include box-orient(vertical);
+    @include box-pack(center);
+    @include box-align(center);
+  }
+  
+  .tau-systemdialog-mask {
+    @include tau-mask(fixed);
+  }
+  
+  .tau-systemdialog-popup {
+    @include tau-popup;
+    position: relative;
+    left: 0;
+    max-width: 100%;
+    width: 90%;
+    height: 40%;
+  
+    @include display-box;
+    @include box-orient(vertical);
+    @include box-pack(center);
+    @include box-align(center);
+    
+    padding: 5px;
+    overflow: hidden;
+    border: 4px solid #000;
+    background-color: #000;
+    @include border-radius(5px);
+  }
+  
+  .tau-systemdialog-popup-title {
+    position: relative;
+    display: block;
+    height: 30px;
+    width: 100%;
+    margin: 2px;
+    padding: 0;
+    overflow:hidden;
+    
+    @include tau-container-text;
+    background-color: #000;
+  }
+  
+  .tau-systemdialog-msg {
+    @include tau-title;
+    color: gray;
+    @include box-flex(1);
+    
+    & > .tau-scrollpanel {
+      display: block;
+    }
+
+    & > .tau-textfield {
+      @include box-flex(1);
+      width: 100%;
+    }
+  }
+  
+  .tau-systemdialog-control {
+    position: relative;
+    height: 32px;
+    width: 100%;
+    font-size: .7em;
+  
+    padding: 2px;
+    text-align: center;
+  }
+
+  .tau-systemdialog-control-cancel {
+    position: relative;
+    color: #888;
+    overflow: hidden;
+    height: 100%;
+    width: 50%;
+    
+    @include tau-inline-flexbox;
+    @include box-orient;
+    @include box-align(center);
+    @include box-pack(center);
+    @include tau-container-text;
+
+    font-size: 1em;
+    border: 2px solid #262626;
+    background-color: #953a3a;
+    @if ($enable-gradient) {
+      @include background-image(linear-gradient(color_stops(#953a3a, #c54d4d)));
+    }
+
+    &:active {
+      background-color: #5a1616;
+      @if ($enable-gradient) {
+        @include background-image(linear-gradient(color_stops(#5a1616, #ae4444)));
+      }
+    }
+  }
+
+  .tau-systemdialog-control-ok {
+    position: relative;
+    color: gray;
+    overflow: hidden;
+    height: 100%;
+    width: 50%;
+    
+    @include tau-inline-flexbox;
+    @include box-orient;
+    @include box-align(center);
+    @include box-pack(center);
+    @include tau-container-text;
+
+    font-size: 1em;
+    border: 2px solid #262626;
+    background-color: #808080;
+    @if ($enable-gradient) {
+      @include background-image(linear-gradient(color_stops(#808080, #9b9a9a)));
+    }  
+    &:active {
+      background-color: #535353;
+      @if ($enable-gradient) {
+        @include background-image(linear-gradient(color_stops(#535353, #919191)));
+      }
+    }
+  }
+}

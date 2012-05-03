@@ -1,0 +1,9 @@
+config({
+  classname   : 'tau.demo.Demo',
+  require     : '/main.js', 
+  icon        : '/icon.png',
+  title       : 'UI Demo',
+  desc: '이 데모앱은 Mobello에서 제공되는 모든 UI Component의 기능을 체험해볼 수 있는 앱입니다. Mobello에서 제공되는 UI Component에는 ActivityIndicator, ToolBar, Button, Checkbox, Radio, TextField, TextArea, Slider, Switch, Select, SegmentedButton, SystemDialog, Dialog, ActionSheet, Badge, ImageView, Label, Panel, ScrollPanel, Table, TableCell, TextView, Carousel, Picker, DatePicker, Spinner 가 있습니다.',
+  version     : '1.0.0',
+  vendor      : 'KT Corporation'
+});

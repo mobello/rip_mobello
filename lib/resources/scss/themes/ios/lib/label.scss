@@ -1,0 +1,23 @@
+$label-height: 1em !default;
+
+@mixin tau-label {
+  /** label ********************************************************************/
+  .tau-label {
+    display: inline-block; 
+    min-height: $label-height;
+    width: auto;
+    max-width: 100%;
+    padding: 0;
+    overflow: hidden;
+    line-height : $label-height;
+    text-overflow: ellipsis;
+    font-size: 1em;
+    @include box-sizing(content-box);
+    @include force-wrap;
+  }
+  
+  /** label text ***************************************************************/
+  .tau-label-text {
+    @include tau-content-text;
+  }
+}

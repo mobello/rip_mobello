@@ -1,0 +1,78 @@
+$dialog-popup-bgcolor: #fff !default;
+$dialog-popup-title-bgcolor: #000 !default;
+$tau-dialog-popup-close-icon: "textfield/clear.png" !default;
+$tau-dialog-popup-close-highlighted-icon: "textfield/clearSel.png" !default;
+
+@mixin tau-dialog() {
+  /** dialog *****************************************************************/
+  .tau-dialog {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 10px;    
+    overflow: hidden;
+  }
+  
+  .tau-dialog-mask {
+    @include tau-mask(fixed);
+  }
+  
+  .tau-dialog-popup {
+    @include tau-popup;
+    @include tau-scrollpanel(tau-dialog-content);
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    width: auto;
+    border: 4px solid #000;
+    margin: 4px !important;
+    background-color: $dialog-popup-bgcolor;
+  }
+  
+  .tau-dialog-popup-full {
+    & > .tau-scrollpanel {
+      display: block;
+    }
+  }
+  
+  .tau-dialog-popup-title {
+    position: relative;
+    @include display-box;
+    height: 30px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    color: white;
+    background-color: $dialog-popup-title-bgcolor;
+  }
+
+  .tau-dialog-popup-close {
+     position: relative;
+     width: 26px;
+     height: 27px;
+     margin-bottom: 50px;
+     background: url(#{$images-path}/#{$tau-dialog-popup-close-icon}) no-repeat;
+  }
+  
+  .tau-dialog-popup-title > h1 {
+    position: relative;
+    display: block;
+    
+    font-size: 1.4em;
+    text-align: center;
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    @include box-flex(1);
+  }  
+  
+  .tau-dialog-popup-close:active {
+    background: url(#{$images-path}/#{$tau-dialog-popup-close-highlighted-icon}) no-repeat;
+  }
+}

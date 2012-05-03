@@ -1,0 +1,11 @@
+@mixin tau-panel {
+  /** panel *******************************************************************/
+  .tau-panel {
+    position: relative;
+    display: inline-block; 
+  
+    height: auto;
+    width: auto;
+    overflow: hidden;
+  }
+}
