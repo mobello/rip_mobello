@@ -2,7 +2,7 @@ h1. Mobello, HTML5 framwork for building mobile apps
 
 Mobello is high performance javascript framework for HTML5 mobile apps. You can build native-like HTML5 apps for smartphones and tablets with Mobello. Mobello is open source provided under the LGPL license.
 
-h1. Features
+h2. Features
 
 h3. UI Components
 
@@ -33,9 +33,9 @@ h3. Mobello Studio (coming soon)
 * Layout editing
 * Eclipse based
 
-h1. Documentation
+h2. Documentation
 
-h3. "API Documents":http://mobello.github.com/api/index.html
+* "API Documents":http://mobello.github.com/api/index.html
 
 h3. Tutorials
 
@@ -49,12 +49,12 @@ h3. Tutorials
 * "Table과 TableCell을 이용한 연락처 구현하기 - part1 [korean]":http://mobello.tumblr.com/post/21706131998/table-tablecell-part1
 * "Table과 TableCell을 이용한 연락처 구현하기 - part2 [korean]":http://mobello.tumblr.com/post/21706135932/table-tablecell-part2
 
-h1. License
+h2. License
 
 Licensed under the LGPL, Version 3.0: http://www.gnu.org/copyleft/lesser.html
 
 
-h1. Contacts
+h2. Contacts
 
 * Email: "mobello.js@gmail.com":mailto:mobello.js@gmail.com
 * Twitter: <a href="https://twitter.com/mobello_js" target="_blank">@mobello_js</a>
