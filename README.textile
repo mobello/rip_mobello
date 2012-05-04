@@ -16,7 +16,7 @@ Mobello includes a complete set of user interface components for building rich m
 
 h3. Mobello Runtime 
 
-Runtime manages the lifecycle of applications and provides abstraction layers for interaction and animation, advanced effects.
+Runtime manages the lifecycle of web apps and provides abstraction layers for user interaction and animation, advanced effects.
 
 * Device agnostic event system (touch events)
 * Provides advanced amimation
@@ -31,7 +31,7 @@ h3. Mobello Studio (coming soon)
 * Javascript debugging
 * Device emulator
 * Layout editing
-* Eclipse based
+* Eclipse plug-in architecture
 
 h2. Documentation
 
