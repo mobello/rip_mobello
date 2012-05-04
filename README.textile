@@ -12,7 +12,7 @@ Mobello includes a complete set of user interface components for building rich m
 * 20+ beautifully designed components
 * Supports wide range of device form-factor
 * Optimized for touch UI
-* Extendable and customizable components in easy way
+* Highly extendable and customizable components
 
 h3. Mobello Runtime 
 
