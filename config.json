@@ -6,7 +6,7 @@ config({
   theme       : 'default',
   language    : 'ko',
   region      : 'KR',
-  splash	  : '',
+  splash      : '',
   icon        : '',
   dashboard	  : {cols: 4, maxcols: 6, controller: ''},
   systemdock  : {maxShortcuts: 6, attached: 2},
