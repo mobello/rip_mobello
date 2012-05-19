@@ -27,6 +27,8 @@ Runtime manages the lifecycle of web apps and provides abstraction layers for us
 
 h3. Mobello Studio (coming soon)
 
+*Preview Video*:http://youtu.be/2Bh2ggdMPrA
+
 * Design web apps with HTML5 and CSS3
 * Visual design editor
 * Real-time synchronized editing
