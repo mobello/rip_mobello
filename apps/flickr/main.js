@@ -109,7 +109,7 @@ $class('tau.sample.fr.ListController').extend(tau.ui.TableSceneController).defin
     if (current instanceof tau.ui.TableCell) {
       var path = table.indexOf(current).pop(); // index is array
       var item = this.flickr.items[path];
-      var detailController = new tau.sample.fr.DetailController(item);
+      var detailController = new tau.sample.fr.DetailController({'scene': '/detail.scene.js', 'item': item});
       this.getParent().pushController(detailController); 
     }
   },
@@ -129,11 +129,8 @@ $class('tau.sample.fr.ListController').extend(tau.ui.TableSceneController).defin
  * This class will be loading scene using compiled scene file(detail.scene.js) 
  */
 $class('tau.sample.fr.DetailController').extend(tau.ui.SceneController).define({
-  /**
-   * Constructor
-   * @param {Object} item flickr individual item
-   */
-  DetailController: function(item) { 
+  
+  setItem: function (item) {
     this._item = item;
   },
   
