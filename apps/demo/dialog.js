@@ -119,7 +119,7 @@ $class('tau.demo.ActionSheet').extend(tau.ui.SceneController).define( {
     label = new tau.ui.Label(
           {id: 'label1', text: 'Selected index is ', styles: {margin: '10px'}});
     
-    button0 = new tau.ui.Button({label: 'Button2',styleClass: {type: 'red'} });
+    button0 = new tau.ui.Button({label: 'Button2', styleClass: {type: 'red'} });
     button0.onEvent(tau.rt.Event.TAP, this.handleButtonTap, this);
     actionsheet = new tau.ui.ActionSheet({
       id: 'sheet1',
@@ -128,11 +128,11 @@ $class('tau.demo.ActionSheet').extend(tau.ui.SceneController).define( {
       components: [
         {label: 'Button1'},
         button0,
-        new tau.ui.Button({label: 'Button3',  styleClass: {type: 'red'}})
+        new tau.ui.Button({label: 'Button3', styleClass: {type: 'red'}})
       ]
     });
     
-    actionsheet.onEvent(tau.rt.Event.SELECTCHANGE, this.handleSelectChange, this);
+    //actionsheet.onEvent(tau.rt.Event.SELECTCHANGE, this.handleSelectChange, this);
     button1 = new tau.ui.Button({
       label: 'ShowBottom',
       styles: {bottom: 0, right: '0'}
@@ -179,7 +179,8 @@ $class('tau.demo.ActionSheet').extend(tau.ui.SceneController).define( {
   handleShowFloatBtnTap: function (e, payload) {
     var sheet = this.getScene().getComponent('sheet1');
     var label = this.getScene().getComponent('label1');
-    sheet.open({comp: label, dir: this.i++ % 4});
+    //sheet.open({comp: label, dir: this.i++ % 4});
+    sheet.open({comp: label});
   },
   
   /**
@@ -273,6 +274,6 @@ $class('tau.demo.Dialog').extend(tau.ui.SceneController).define({
     var dialog = this.getScene().getComponent('dialog1');
     var label =  this.getScene().getComponent('label1');
     // shows the dialog around the specified label component
-    dialog.open({comp: label, dir: this.i++ % 4});
+    dialog.open({comp: label});
   }
 });

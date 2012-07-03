@@ -287,9 +287,7 @@ $class('tau.stocks.MainController').extend(tau.ui.SceneController).define({
   handleCellSelected: function (e, payload) {
     tau.log('handleCellSelected', 1, this);
     var cell = payload.current;
-    if (payload.before) payload.before.setSelected(false);
     if (cell) {
-      cell.setSelected(true);
       // detail stock data refresh
       var item = this.getItem(cell.getId());
       if (item) {

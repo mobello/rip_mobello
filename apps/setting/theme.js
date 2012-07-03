@@ -11,22 +11,24 @@ $class('tau.demo.Theme').extend(tau.ui.SceneController).define( {
   },
   
   loadScene: function() {
-    var themeName = tau.getRuntime().$themeMgr._getDefaultThemeName(),
+    var scene = this.getScene(),
+      themeName = tau.getRuntime().$themeMgr._getDefaultThemeName(),
       themes = tau.demo.Theme.THEMES,
-       index = themes.indexOf(themeName) || 0,
-       comps = [];
+      index = themes.indexOf(themeName) || 0,
+      comps = [];
 
     for(var i=0; i < themes.length; i++) {
       comps[i] = {label : themes[i]}; 
     }
 
-    this.getScene().add(new tau.ui.SegmentedButton({
+    var segmentedButton = new tau.ui.SegmentedButton({
       components: comps,
       vertical: true,
-      valueChange: this.changeTheme,
       styles: {width: '100%'},
       selectedIndexes: [index]
-    }));
+    })
+    segmentedButton.onEvent(tau.rt.Event.SELECTCHANGE, this.changeTheme, this);
+    scene.add(segmentedButton);
   },
   
   /**

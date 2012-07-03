@@ -47,7 +47,7 @@ $class('tau.demo.kitchensink.Button').extend(tau.ui.SceneController).define({
         if(j == 1)
           button.setSelected(true);
         if(j == 2)
-          button.setHighlighted(true);
+          //button.setHighlighted(true);
         if(j == 3)
           button.setDisabled(true);
         if (styleClassType[i])

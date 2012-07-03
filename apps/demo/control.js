@@ -3,7 +3,7 @@
  */
 $class('tau.demo.Checkbox').extend(tau.ui.SceneController).define({
   loadScene: function () {
-    var checkbox = new tau.ui.Checkbox({selected: true});
+    var checkbox = new tau.ui.Checkbox({checked: true});
     checkbox.setStyles({left: '10px', top: '10px'});
     checkbox.onEvent(tau.rt.Event.TAP, this.handleTap, this);
     this.getScene().add(checkbox);  
@@ -16,7 +16,7 @@ $class('tau.demo.Checkbox').extend(tau.ui.SceneController).define({
    */
   handleTap: function (e, payload) {
     var checkbox = e.getSource();
-    tau.alert('Checkbox is ' + (checkbox.isSelected() ? 'selected' : 'unselected'));
+    tau.alert('Checkbox is ' + (checkbox.isChecked() ? 'selected' : 'unselected'));
   }
 });
 
@@ -141,26 +141,24 @@ $class('tau.demo.Switch').extend(tau.ui.SceneController).define({
   loadScene: function () {
     var defaultSwitch, verticalSwitch, label,
         scene = this.getScene();
-    
     defaultSwitch = new tau.ui.Switch({
       id: 'ds',
       styles: {margin: '5px', width: '50%'},
-      onText: 'on', 
-      offText: 'off'
+      textOn: 'on', 
+      textOff: 'off'
     });
     
     verticalSwitch = new tau.ui.Switch({
       id: 'vs',
       styles: {margin: '5px', width: '50%'},
-      vertical: true, 
-      enabledThreshold: true,
-      enabledBarTouch: true
+      vertical: true,
+      checked: true
     });
     
     label = new tau.ui.Label({
       id: 'slabel',
       left: '20px',
-      text: defaultSwitch.getValue() + ',' + verticalSwitch.getValue()
+      text: defaultSwitch.isChecked() + ',' + verticalSwitch.isChecked()
     });
     
     scene.onEvent(tau.rt.Event.VALUECHANGE, this.handleValueChange, this);
@@ -179,7 +177,7 @@ $class('tau.demo.Switch').extend(tau.ui.SceneController).define({
     var ds = scene.getComponent('ds');
     var vs = scene.getComponent('vs');
     var label = scene.getComponent('slabel');
-    label.setText(ds.getValue() + ',' + vs.getValue());
+    label.setText(ds.isChecked() + ',' + vs.isChecked());
   }
 });
 
@@ -204,7 +202,7 @@ $class('tau.demo.Select').extend(tau.ui.SceneController).define( {
     
     var select1 = new tau.ui.Select({
       id: 's1',
-      components: options.slice(0, 15),
+      buttons: options.slice(0, 15),
       placeHolder: 'select',
       fullscreen: true,
       modal: true,
@@ -214,22 +212,22 @@ $class('tau.demo.Select').extend(tau.ui.SceneController).define( {
     
     var select2 = new tau.ui.Select({
       id: 's2',
-      components: options.slice(0, 5),
+      buttons: options.slice(0, 5),
       maxSelectableCnt: 2,
-      selectedIndexes: [1, 2],
+      value: [1, 2],
       styles: {marginTop: '5px'},
       togglable: false
     }); 
     
     var select3 = new tau.ui.Select({
       id: 's3',
-      components: [
+      buttons: [
         {label: '1234567890', value: 1},
         {label: 'abcdefghijklmnopqrstuvwxyz', value: 2},
         {label: 'ㄱㄴㄷ', value: 3}
       ],
       /*toggle: true,*/
-      selectedIndexes: [1],
+      value: [1],
       styles: {top: '50%'}
     });
     select3.onEvent(tau.rt.Event.VALUECHANGE, this.handleValueChange, this);

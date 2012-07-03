@@ -52,7 +52,6 @@ function initScene() {
   table.onEvent(tau.ui.Table.EVENT_CELL_LOAD, this.makeTableCell, this);
   
   scene.add(table);
-  
   var segmentedButton = new tau.ui.SegmentedButton({
     id: 'stockValueType',
     styles: {
@@ -66,6 +65,6 @@ function initScene() {
     ],
     selectedIndexes: [parseInt(this._stockValueType)]
   });
-  segmentedButton.onEvent(tau.rt.Event.VALUECHANGE, this.handleStockValueType, this);
+  segmentedButton.onEvent(tau.rt.Event.SELECTCHANGE, this.handleStockValueType, this);
   scene.add(segmentedButton);
 }

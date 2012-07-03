@@ -10,13 +10,13 @@ $class('tau.demo.Font').extend(tau.ui.SceneController).define( {
   },
   
   loadScene: function() {
-    this.getScene().add(new tau.ui.SegmentedButton({
+    var segmentedButton = new tau.ui.SegmentedButton({
       vertical: true,
       components: tau.demo.Font.FONTS,
-      valueChange: this.changeFont,
       styles: {width: '100%'}
-    })
-   );
+    });
+    segmentedButton.onEvent(tau.rt.Event.SELECTCHANGE, this.changeFont, this);
+    this.getScene().add(segmentedButton);
   },
   
   /**

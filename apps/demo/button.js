@@ -12,9 +12,9 @@ $class('tau.demo.Button').extend(tau.ui.SceneController).define( {
     var i, scene = this.getScene();
         
     this.buttons.push(new tau.ui.Button());
-    this.buttons.push(new tau.ui.Button({styleClass: {type: 'dark'}})); 
-    this.buttons.push(new tau.ui.Button({styleClass: {type: 'red'}}));  
-    this.buttons.push(new tau.ui.Button({styleClass: {type: 'khaki'}}));
+    this.buttons.push(new tau.ui.Button({styleClass: {type: 'dark', shape: 'round', size: 'small'}})); 
+    this.buttons.push(new tau.ui.Button({styleClass: {type: 'red', shape: 'rectangle'}}));  
+    this.buttons.push(new tau.ui.Button({styleClass: {type: 'khaki', shape: 'corner'}}));
     this.buttons.push(new tau.ui.Button({styleClass: {type: 'green'}}));
     
     for (i = 0, len = this.buttons.length; i < len; i++) {
@@ -118,10 +118,7 @@ $class('tau.demo.Button').extend(tau.ui.SceneController).define( {
       case 0: // disable
         this.button.setDisabled(!this.button.isDisabled());
         btn.setLabel(this.labels[idx] + ': ' + this.button.isDisabled());
-        break;
-      case 1: // highlight
-        this.button.setHighlighted(!this.button.isHighlighted());
-        btn.setLabel(this.labels[idx] + ': ' + this.button.isHighlighted());
+        btn.setDisabled(true);
         break;
       case 2: // select
         this.button.setSelected(!this.button.isSelected());
