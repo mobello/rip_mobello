@@ -14,6 +14,7 @@ $class('tau.sample.Map').extend(tau.ui.SceneController).define(
   },
   
   sceneDrawn: function () {
+    tau.log('sceneDrawn...');
     this.loadMap();
   },
   
@@ -28,10 +29,11 @@ $class('tau.sample.Map').extend(tau.ui.SceneController).define(
       } else {
         tua.alert('Olleh Map API is required');
       }
+      tau.log('wait.....');
       return;
     }
-    
-    
+    tau.log('loadMap.....');
+
     var panel = this.getScene().getComponent('map'),
       config = tau.getCurrentContext().getConfig();
     
@@ -65,6 +67,8 @@ $class('tau.sample.Map').extend(tau.ui.SceneController).define(
     // olleh map에서 발생한 이벤트에 대해 처리한다.
     panel.onEvent('center_changed', this.handleCenterChanged, this);
     panel.onEvent('zoom_changed', this.handleZoomChanged, this);
+    panel.onEvent('maptypeid_changed', this.handleMaptypeChanged, this);
+    panel.onEvent('bounds_changed', this.handleBoundsChanged, this);
   },
   
   handleCenterChanged: function (e, payload) {
@@ -75,10 +79,18 @@ $class('tau.sample.Map').extend(tau.ui.SceneController).define(
     tau.log('zoomChanged');
     var scene = this.getScene();
     var panel = scene.getComponent('map');
-    var ktposition = new olleh.maps.Coord(965913.7, 1928949.52);     
+    var ktposition = new olleh.maps.Coord(965913.7, 1928949.52);
     panel.ollehMap.setCenter(ktposition); 
   },
+  
+  handleMaptypeChanged: function (e, payload) {
+    tau.log('maptypeChanged');
+  },
 
+  handleBoundsChanged: function (e, payload) {
+    tau.log('boundsChanged');
+  },
+  
   /**
    * olleh.maps.event에서 이벤트가 발생했을 때 처리하는 콜백함수
    * @param {Object} event olleh map에서 native Event 객체를 wrapping한 Event 객체
