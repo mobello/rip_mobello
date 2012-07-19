@@ -13,5 +13,6 @@ config({
     zoom: 5,
     minZoom: 1,
     maxZoom: 11
-  }
+  },
+  loglevel    : 1 // DEBUG: 1, INFO: 2, WARN: 3, ERROR: 4, FATAL: 5, NONE: 6
 });

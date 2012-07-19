@@ -24,19 +24,57 @@ $class('tau.sample.Map').extend(tau.ui.SceneController).define(
       }
       return;
     }
+    
     var panel = this.getScene().getComponent('map'),
       config = tau.getCurrentContext().getConfig();
-
+    var _handler = tau.ctxAware(this._handleMapEvent, this);
     var latlng = new olleh.maps.Coord(config.latitude, config.longitude),
-        map = new olleh.maps.Map(panel.getDOM(), tau.mixin({
+        event = olleh.maps.event, 
+        map;
+    
+    map = panel.ollehMap = new olleh.maps.Map(panel.getDOM(), tau.mixin({
           center: latlng,
           mapTypeId: olleh.maps.MapTypeId.ROADMAP
         }, config.mapOptions));
 
-    new olleh.maps.Marker({
+    event.clearInstanceListeners(map);
+    event.addListener(map, 'center_changed', _handler);
+    event.addListener(map, 'zoom_changed', _handler);
+
+    panel.onEvent('center_changed', this.handleCenterChanged, this);
+    panel.onEvent('zoom_changed', this.handleZoomChanged, this);
+    
+    var marker = new olleh.maps.Marker({
         position: latlng,
         map: map,
         title: config.markerTitle
     });
+  },
+  
+  handleCenterChanged: function (e, payload) {
+    tau.log('centerChanged');
+  },
+  
+  handleZoomChanged: function (e, payload) {
+    tau.log('zoomChanged');
+    var scene = this.getScene();
+    var panel = scene.getComponent('map');
+    var ktposition = new olleh.maps.Coord(965913.7, 1928949.52);     
+    panel.ollehMap.setCenter(ktposition); 
+  },
+
+  _handleMapEvent: function (event) {
+    if (event) {
+      var eventMgr = tau.getRuntime().$eventMgr;
+      event.target = event.element;
+      eventMgr.handleEvent(event);
+    }
   }
+  
+  /*
+  _handleMapEvent: function (event) {
+    if (event) {
+      this.fireEvent(event.type, event);
+    }
+  }*/
 });
